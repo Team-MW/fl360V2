@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.fl360.com/sitemap.xml
