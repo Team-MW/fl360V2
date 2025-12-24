@@ -60,7 +60,7 @@ export const AirportAutocomplete: React.FC<AirportAutocompleteProps> = ({ onSele
     const [showSuggestions, setShowSuggestions] = useState(false);
     const [highlightedIndex, setHighlightedIndex] = useState(-1);
     const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
+    const [, setError] = useState<string | null>(null);
     const [isFocused, setIsFocused] = useState(false);
 
     const wrapperRef = useRef<HTMLDivElement>(null);
