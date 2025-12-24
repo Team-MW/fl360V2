@@ -1,11 +1,38 @@
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageTransition from '../components/PageTransition';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { AirportAutocomplete, type Airport } from '../components/AirportAutocomplete';
 
 const Contact = () => {
     const { t } = useTranslation();
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        phone: '',
+        email: '',
+        comment: ''
+    });
+    const [departure, setDeparture] = useState<Airport | null>(null);
+    const [arrival, setArrival] = useState<Airport | null>(null);
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!departure || !arrival) {
+            alert("Veuillez sélectionner les aéroports de départ et d'arrivée.");
+            return;
+        }
+        const payload = { ...formData, departure, arrival };
+        console.log("Submitting Payload:", payload);
+        alert("Demande envoyée avec succès (Simulation).");
+    };
 
     return (
         <PageTransition>
@@ -43,19 +70,88 @@ const Contact = () => {
                         <div className="absolute -top-1 -right-1 w-4 h-4 border-t border-r border-white/30"></div>
                         <div className="absolute -bottom-1 -left-1 w-4 h-4 border-b border-l border-white/30"></div>
 
-                        <form className="space-y-8">
-                            <div className="space-y-2 group">
-                                <label className="text-xs font-mono text-gray-500 uppercase tracking-widest group-focus-within:text-white transition-colors">{t('contact_page.labels.name')}</label>
-                                <input type="text" className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white focus:border-white outline-none transition-all placeholder-transparent" placeholder={t('contact_page.placeholders.name')} />
+                        <form onSubmit={handleSubmit} className="space-y-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="space-y-2 group">
+                                    <label className="text-xs font-mono text-gray-500 uppercase tracking-widest group-focus-within:text-white transition-colors">Prénom</label>
+                                    <input
+                                        type="text"
+                                        name="firstName"
+                                        value={formData.firstName}
+                                        onChange={handleInputChange}
+                                        className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white focus:border-white outline-none transition-all placeholder-transparent"
+                                        placeholder="Votre prénom"
+                                        required
+                                    />
+                                </div>
+                                <div className="space-y-2 group">
+                                    <label className="text-xs font-mono text-gray-500 uppercase tracking-widest group-focus-within:text-white transition-colors">Nom</label>
+                                    <input
+                                        type="text"
+                                        name="lastName"
+                                        value={formData.lastName}
+                                        onChange={handleInputChange}
+                                        className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white focus:border-white outline-none transition-all placeholder-transparent"
+                                        placeholder="Votre nom"
+                                        required
+                                    />
+                                </div>
                             </div>
-                            <div className="space-y-2 group">
-                                <label className="text-xs font-mono text-gray-500 uppercase tracking-widest group-focus-within:text-white transition-colors">{t('contact_page.labels.email')}</label>
-                                <input type="email" className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white focus:border-white outline-none transition-all placeholder-transparent" placeholder={t('contact_page.placeholders.email')} />
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="space-y-2 group">
+                                    <label className="text-xs font-mono text-gray-500 uppercase tracking-widest group-focus-within:text-white transition-colors">{t('contact_page.labels.phone') || "Téléphone"}</label>
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleInputChange}
+                                        className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white focus:border-white outline-none transition-all placeholder-transparent"
+                                        placeholder="+33 6 ..."
+                                        required
+                                    />
+                                </div>
+                                <div className="space-y-2 group">
+                                    <label className="text-xs font-mono text-gray-500 uppercase tracking-widest group-focus-within:text-white transition-colors">{t('contact_page.labels.email')}</label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleInputChange}
+                                        className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white focus:border-white outline-none transition-all placeholder-transparent"
+                                        placeholder={t('contact_page.placeholders.email')}
+                                        required
+                                    />
+                                </div>
                             </div>
+
+                            <div className="space-y-2 group">
+                                <label className="text-xs font-mono text-gray-500 uppercase tracking-widest group-focus-within:text-white transition-colors">Aéroport de Départ</label>
+                                <AirportAutocomplete
+                                    onSelect={setDeparture}
+                                    placeholder="Rechercher un aéroport..."
+                                />
+                            </div>
+
+                            <div className="space-y-2 group">
+                                <label className="text-xs font-mono text-gray-500 uppercase tracking-widest group-focus-within:text-white transition-colors">Aéroport d'Arrivée</label>
+                                <AirportAutocomplete
+                                    onSelect={setArrival}
+                                    placeholder="Rechercher un aéroport..."
+                                />
+                            </div>
+
                             <div className="space-y-2 group">
                                 <label className="text-xs font-mono text-gray-500 uppercase tracking-widest group-focus-within:text-white transition-colors">{t('contact_page.labels.message')}</label>
-                                <textarea className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white focus:border-white outline-none h-32 resize-none transition-all placeholder-transparent" placeholder={t('contact_page.placeholders.message')}></textarea>
+                                <textarea
+                                    name="comment"
+                                    value={formData.comment}
+                                    onChange={handleInputChange}
+                                    className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-white focus:border-white outline-none h-32 resize-none transition-all placeholder-transparent"
+                                    placeholder={t('contact_page.placeholders.message')}
+                                ></textarea>
                             </div>
+
                             <button type="submit" className="w-full bg-white text-black py-4 font-bold uppercase tracking-widest hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 group">
                                 {t('contact_page.button')} <ArrowRight className="group-hover:translate-x-1 transition-transform" />
                             </button>
