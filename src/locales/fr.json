@@ -1,0 +1,134 @@
+{
+    "header": {
+        "nav": {
+            "home": "Accueil",
+            "services": "Services",
+            "portfolio": "Portfolio",
+            "contact": "Contact",
+            "quote": "Demander un devis"
+        },
+        "mobile": {
+            "menu": "MENU",
+            "quote": "Demander un devis",
+            "copyright": "FL360 AVIATION SYSTEMS"
+        }
+    },
+    "hero": {
+        "subtitle": "Aviation Systems",
+        "description": "Redéfinir les standards de l'altitude.",
+        "tagline": "Sécurité. Innovation. Silence.",
+        "primary_cta": "Demander un devis",
+        "secondary_cta": "Découvrir nos services"
+    },
+    "home": {
+        "services": {
+            "title": "Nos Expertises",
+            "subtitle": "Des solutions d'ingénierie et de service conçues pour l'avenir de l'aéronautique.",
+            "cards": {
+                "security": {
+                    "title": "Sécurité Avancée",
+                    "desc": "Protocoles prédictifs basés sur l'IA et audits en temps réel."
+                },
+                "timing": {
+                    "title": "Précision Temporelle",
+                    "desc": "Synchronisation absolue pour une efficacité opérationnelle maximale."
+                },
+                "quality": {
+                    "title": "Excellence Certifiée",
+                    "desc": "Standards surpassant les normes internationales les plus strictes."
+                }
+            },
+            "more": "EN SAVOIR PLUS"
+        },
+        "testimonials": {
+            "title": "Témoignages Clients",
+            "review1": {
+                "text": "Une rigueur absolue. FL360 incarne la perfection technique que nous recherchions.",
+                "author": "JEAN DUPONT",
+                "role": "CEO, TechCorp"
+            },
+            "review2": {
+                "text": "L'approche minimaliste et efficace de leurs opérations est tout simplement révolutionnaire.",
+                "author": "MARIE MARTIN",
+                "role": "Director, Luxury Travel"
+            }
+        },
+        "cta": {
+            "title": "PRÊT ?",
+            "subtitle": "Commencez votre voyage vers l'excellence. N'attendez plus.",
+            "button": "Initialiser le contact"
+        }
+    },
+    "services_page": {
+        "title": "NOS SERVICES",
+        "items": {
+            "management": {
+                "title": "GESTION AÉRIENNE",
+                "desc": "Une logistique de vol orchestrée avec une précision militaire. Optimisation de flotte et réduction des coûts opérationnels."
+            },
+            "maintenance": {
+                "title": "MAINTENANCE MRO",
+                "desc": "Des protocoles d'ingénierie prédictive qui garantissent une disponibilité maximale et une sécurité sans compromis."
+            },
+            "consulting": {
+                "title": "CONSULTING STRATÉGIQUE",
+                "desc": "Analyses de marché approfondies et conseils pour l'acquisition ou la vente d'actifs aéronautiques."
+            },
+            "training": {
+                "title": "FORMATION & AUDIT",
+                "desc": "Programmes de formation d'élite pour équipages et audits de conformité aux standards internationaux."
+            }
+        }
+    },
+    "portfolio_page": {
+        "title": "PORTFOLIO",
+        "subtitle": "/// SÉLECTION DE PROJETS",
+        "items": {
+            "project1": {
+                "category": "INGÉNIERIE",
+                "title": "Modernisation Flotte Alpha"
+            },
+            "project2": {
+                "category": "GESTION",
+                "title": "Optimisation Hub Paris"
+            },
+            "project3": {
+                "category": "CONSULTING",
+                "title": "Audit Sécurité Global"
+            },
+            "project4": {
+                "category": "MAINTENANCE",
+                "title": "Programme MRO 2025"
+            }
+        }
+    },
+    "contact_page": {
+        "title": "CONTACT",
+        "description": "Prêt à repousser les limites ?\nDiscutons de votre prochain vol.",
+        "labels": {
+            "email": "Email",
+            "phone": "Téléphone",
+            "name": "Nom",
+            "message": "Message"
+        },
+        "placeholders": {
+            "name": "VOTRE NOM",
+            "email": "VOTRE EMAIL",
+            "message": "VOTRE MESSAGE..."
+        },
+        "button": "Envoyer"
+    },
+    "footer": {
+        "tagline": "Une vision futuriste de l'aviation.\nExcellence. Precision. Innovation.",
+        "links": "Exploration",
+        "contact": "Coordonnées",
+        "newsletter": {
+            "title": "Newsletter",
+            "placeholder": "VOTRE EMAIL",
+            "sub": "Rejoignez notre cercle exclusif."
+        },
+        "rights": "© {{year}} FL360 AVIATION SYSTEMS.",
+        "privacy": "Politique de confidentialité",
+        "legal": "Mentions légales"
+    }
+}

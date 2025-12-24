@@ -3,11 +3,14 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/logo360.webp';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
+    const { t } = useTranslation();
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -19,10 +22,10 @@ const Header = () => {
     }, []);
 
     const links = [
-        { name: 'Accueil', path: '/' },
-        { name: 'Services', path: '/services' },
-        { name: 'Portfolio', path: '/portfolio' },
-        { name: 'Contact', path: '/contact' },
+        { name: t('header.nav.home'), path: '/' },
+        { name: t('header.nav.services'), path: '/services' },
+        { name: t('header.nav.portfolio'), path: '/portfolio' },
+        { name: t('header.nav.contact'), path: '/contact' },
     ];
 
     return (
@@ -42,7 +45,7 @@ const Header = () => {
                 <nav className="hidden md:flex items-center gap-10">
                     {links.map((link) => (
                         <Link
-                            key={link.name}
+                            key={link.path}
                             to={link.path}
                             className="relative text-sm uppercase tracking-widest font-medium text-gray-400 hover:text-white transition-colors group"
                         >
@@ -50,22 +53,28 @@ const Header = () => {
                             <span className={`absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover:w-full ${location.pathname === link.path ? 'w-full' : ''}`}></span>
                         </Link>
                     ))}
-                    <Link
-                        to="/contact"
-                        className="border border-white/20 hover:border-white text-white px-6 py-2 rounded-full text-sm font-semibold transition-all hover:bg-white hover:text-black flex items-center gap-2"
-                    >
-                        DEMANDER UN DEVIS <ArrowRight size={14} />
-                    </Link>
+                    <div className="flex items-center gap-6">
+                        <LanguageSwitcher />
+                        <Link
+                            to="/contact"
+                            className="border border-white/20 hover:border-white text-white px-6 py-2 rounded-full text-sm font-semibold transition-all hover:bg-white hover:text-black flex items-center gap-2"
+                        >
+                            {t('header.nav.quote')} <ArrowRight size={14} />
+                        </Link>
+                    </div>
                 </nav>
 
                 {/* Mobile Burger Button */}
-                <button
-                    onClick={toggleMenu}
-                    className="md:hidden text-white hover:text-gray-300 transition-colors"
-                    aria-label="Toggle menu"
-                >
-                    {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
-                </button>
+                <div className="md:hidden flex items-center gap-4">
+                    <LanguageSwitcher />
+                    <button
+                        onClick={toggleMenu}
+                        className="text-white hover:text-gray-300 transition-colors"
+                        aria-label="Toggle menu"
+                    >
+                        {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+                    </button>
+                </div>
 
                 {/* Mobile Side Panel */}
                 <AnimatePresence>
@@ -89,7 +98,7 @@ const Header = () => {
                                 className="fixed inset-y-0 right-0 w-full sm:w-80 bg-black border-l border-white/10 z-50 md:hidden flex flex-col p-8"
                             >
                                 <div className="flex justify-between items-center mb-12">
-                                    <span className="text-xl font-bold font-mono">MENU</span>
+                                    <span className="text-xl font-bold font-mono">{t('header.mobile.menu')}</span>
                                     <button onClick={toggleMenu} className="text-gray-400 hover:text-white">
                                         <X className="w-8 h-8" />
                                     </button>
@@ -98,7 +107,7 @@ const Header = () => {
                                 <nav className="flex flex-col gap-8">
                                     {links.map((link, idx) => (
                                         <Link
-                                            key={link.name}
+                                            key={link.path}
                                             to={link.path}
                                             onClick={toggleMenu}
                                             className="text-3xl font-thin tracking-wide text-gray-400 hover:text-white hover:pl-4 transition-all"
@@ -112,12 +121,12 @@ const Header = () => {
                                         onClick={toggleMenu}
                                         className="mt-8 w-full border border-white text-white text-center py-4 rounded-none uppercase tracking-widest hover:bg-white hover:text-black transition-colors"
                                     >
-                                        Demander un devis
+                                        {t('header.mobile.quote')}
                                     </Link>
                                 </nav>
 
                                 <div className="mt-auto text-gray-600 text-xs font-mono">
-                                    <p>FL360 AVIATION SYSTEMS</p>
+                                    <p>{t('header.mobile.copyright')}</p>
                                     <p>© 2025</p>
                                 </div>
                             </motion.div>
