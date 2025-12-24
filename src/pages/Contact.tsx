@@ -36,7 +36,13 @@ const Contact = () => {
 
     return (
         <PageTransition>
-            <Helmet><title>{t('contact_page.title')} - fl360</title></Helmet>
+            <Helmet>
+                <title>{t('contact_page.title')} - fl360</title>
+                <meta name="description" content="Demandez un devis ou contactez nos experts pour vos besoins en aviation. Assistance rapide et professionnelle." />
+                <meta property="og:title" content={`${t('contact_page.title')} - fl360`} />
+                <meta property="og:description" content="Contactez fl360 Aviation Systems pour discuter de vos projets aéronautiques." />
+                <meta property="og:type" content="website" />
+            </Helmet>
             <div className="min-h-screen bg-black pt-40 pb-20 flex flex-col items-center justify-center text-white">
                 <div className="container mx-auto px-6 max-w-4xl">
                     <motion.div

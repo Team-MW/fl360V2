@@ -16,7 +16,13 @@ const Portfolio = () => {
 
     return (
         <PageTransition>
-            <Helmet><title>{t('portfolio_page.title')} - fl360</title></Helmet>
+            <Helmet>
+                <title>{t('portfolio_page.title')} - fl360</title>
+                <meta name="description" content="Explorez nos projets récents : modernisation de flottes, audits de sécurité et consulting stratégique pour l'aviation." />
+                <meta property="og:title" content={`${t('portfolio_page.title')} - fl360`} />
+                <meta property="og:description" content="Une sélection de projets d'excellence en ingénierie et gestion aéronautique." />
+                <meta property="og:type" content="website" />
+            </Helmet>
             <div className="pt-40 pb-20 bg-black min-h-screen text-white">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-32">

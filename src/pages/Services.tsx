@@ -16,7 +16,13 @@ const Services = () => {
 
     return (
         <PageTransition>
-            <Helmet><title>{t('services_page.title')} - fl360</title></Helmet>
+            <Helmet>
+                <title>{t('services_page.title')} - fl360</title>
+                <meta name="description" content="Nos expertises : Gestion de Navigabilité, Maintenance MRO, Consulting Stratégique, Formation. Des solutions complètes pour l'optimisation de vos actifs aéronautiques." />
+                <meta property="og:title" content={`${t('services_page.title')} - fl360`} />
+                <meta property="og:description" content="Découvrez nos services d'élite : Gestion CAMO, MRO, Audit et Consulting. L'ingénierie au service de la performance." />
+                <meta property="og:type" content="website" />
+            </Helmet>
             <div className="pt-40 pb-20 bg-black min-h-screen text-white">
                 <div className="container mx-auto px-6">
                     <motion.h1

@@ -57,6 +57,27 @@
             "title": "PRÊT ?",
             "subtitle": "Commencez votre voyage vers l'excellence. N'attendez plus.",
             "button": "Initialiser le contact"
+        },
+        "dna": {
+            "title": "Notre ADN",
+            "cards": {
+                "navigability": {
+                    "title": "Votre Navigabilité : Notre Priorité",
+                    "desc": "Nous connaissons vos enjeux et nous vous accompagnerons dans le maintien de votre gestion de navigabilité de votre aéronef."
+                },
+                "camo": {
+                    "title": "Certification CAO / CAMO PART M / ML",
+                    "desc": "FL 360 Aviation est titulaire de la certification CAO / CAMO PART M / ML délivrée par l’OSAC sous le numéro d'agrément FR.CAO.0170."
+                },
+                "spo": {
+                    "title": "Certification SPO",
+                    "desc": "FL 360 Aviation est titulaire de la certification SPO délivré par la DGAC sous le numéro d'agrément FR.DEC.0194"
+                },
+                "ato": {
+                    "title": "Certification ATO",
+                    "desc": "FL 360 Aviation est titulaire de la certification ATO délivré par la DGAC sous le numéro d'agrément FR.ATO.0000"
+                }
+            }
         }
     },
     "services_page": {

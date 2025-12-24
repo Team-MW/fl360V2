@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageTransition from '../components/PageTransition';
-import { ArrowRight, Shield, Clock, Award, ChevronDown } from 'lucide-react';
+import { ArrowRight, Shield, Clock, Award, ChevronDown, Plane, Hexagon, FileBadge, FileCheck, CheckCircle } from 'lucide-react';
 
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -25,8 +25,13 @@ const Home = () => {
     return (
         <PageTransition>
             <Helmet>
-                <title>fl360 - Le Futur de l'Aviation</title>
-                <meta name="description" content="Services d'aviation ultra-modernes." />
+                <title>fl360 - Excellence Aéronautique & Ingénierie</title>
+                <meta name="description" content="Leader en gestion de navigabilité, certification CAMO/SPO/ATO et consulting aéronautique. FL360 redéfinit les standards de sécurité et d'efficacité pour votre flotte." />
+                <meta property="og:title" content="fl360 - Excellence Aéronautique & Ingénierie" />
+                <meta property="og:description" content="Leader en gestion de navigabilité, certification CAMO/SPO/ATO et consulting aéronautique. Des solutions d'élite pour l'avenir de vos opérations." />
+                <meta property="og:image" content="/favicon.webp" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://fl360.com/" />
             </Helmet>
 
             {/* Hero Section */}
@@ -130,6 +135,65 @@ const Home = () => {
                                 <p className="text-gray-400 font-light leading-relaxed">{service.desc}</p>
                                 <div className="mt-8 opacity-0 group-hover:opacity-100 transition-all transform translate-y-4 group-hover:translate-y-0 text-white text-sm font-mono flex items-center gap-2">
                                     {t('home.services.more')} <ArrowRight size={14} />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Notre ADN - Premium Cards */}
+            <section className="py-32 bg-zinc-950 border-t border-white/5 relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                <div className="container mx-auto px-6 relative z-10">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-24 tracking-tight uppercase">
+                        {t('home.dna.title')}
+                    </h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {[
+                            {
+                                icon: Plane,
+                                badge: CheckCircle,
+                                title: t('home.dna.cards.navigability.title'),
+                                desc: t('home.dna.cards.navigability.desc')
+                            },
+                            {
+                                icon: Hexagon,
+                                title: t('home.dna.cards.camo.title'),
+                                desc: t('home.dna.cards.camo.desc')
+                            },
+                            {
+                                icon: FileBadge,
+                                title: t('home.dna.cards.spo.title'),
+                                desc: t('home.dna.cards.spo.desc')
+                            },
+                            {
+                                icon: FileCheck,
+                                title: t('home.dna.cards.ato.title'),
+                                desc: t('home.dna.cards.ato.desc')
+                            }
+                        ].map((item, idx) => (
+                            <div key={idx} className="group relative bg-black border border-white/10 p-8 hover:border-white/30 transition-all duration-500 rounded-sm">
+                                <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                                <div className="relative z-10 flex flex-col items-center text-center h-full">
+                                    <div className="mb-8 relative">
+                                        <div className="w-16 h-16 bg-zinc-900 rounded-full flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform duration-500">
+                                            <item.icon className="w-8 h-8 text-white" />
+                                        </div>
+                                        {item.badge && (
+                                            <item.badge className="w-6 h-6 text-white absolute -bottom-1 -right-1 bg-black rounded-full border border-black" fill="white" stroke="black" />
+                                        )}
+                                    </div>
+
+                                    <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider min-h-[3.5rem] flex items-center justify-center">
+                                        {item.title}
+                                    </h3>
+
+                                    <p className="text-sm text-gray-400 font-light leading-relaxed">
+                                        {item.desc}
+                                    </p>
                                 </div>
                             </div>
                         ))}
