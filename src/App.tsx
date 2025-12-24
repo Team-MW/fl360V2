@@ -9,6 +9,7 @@ const Home = lazy(() => import('./pages/Home'));
 const Services = lazy(() => import('./pages/Services'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
 const Contact = lazy(() => import('./pages/Contact'));
+const MentionsLegales = lazy(() => import('./pages/MentionsLegales'));
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -26,6 +27,7 @@ const AnimatedRoutes = () => {
             <Route path="services" element={<Services />} />
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="mentions-legales" element={<MentionsLegales />} />
           </Route>
         </Routes>
       </Suspense>

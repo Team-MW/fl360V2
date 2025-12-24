@@ -1,5 +1,6 @@
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     const { t } = useTranslation();
@@ -83,10 +84,16 @@ const Footer = () => {
                 </div>
 
                 <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 font-mono uppercase tracking-wider">
-                    <p>{t('footer.rights', { year: currentYear })}</p>
+                    <div className="flex flex-col md:flex-row items-center gap-4">
+                        <p>{t('footer.rights', { year: currentYear })}</p>
+                        <span className="hidden md:block text-gray-800">|</span>
+                        <a href="https://microdidact.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                            Réalisé par Microdidact
+                        </a>
+                    </div>
                     <div className="flex gap-8 mt-4 md:mt-0">
                         <a href="#" className="hover:text-white transition-colors">{t('footer.privacy')}</a>
-                        <a href="#" className="hover:text-white transition-colors">{t('footer.legal')}</a>
+                        <Link to="/mentions-legales" className="hover:text-white transition-colors">{t('footer.legal')}</Link>
                     </div>
                 </div>
             </div>
