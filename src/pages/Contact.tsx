@@ -37,35 +37,25 @@ const Contact = () => {
     return (
         <PageTransition>
             <Helmet><title>{t('contact_page.title')} - fl360</title></Helmet>
-            <div className="min-h-screen bg-black pt-40 pb-20 flex flex-col justify-center text-white">
-                <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-20">
+            <div className="min-h-screen bg-black pt-40 pb-20 flex flex-col items-center justify-center text-white">
+                <div className="container mx-auto px-6 max-w-4xl">
                     <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
+                        className="text-center mb-16"
                     >
-                        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-8">{t('contact_page.title')}</h1>
-                        <p className="text-lg md:text-xl text-gray-400 font-light mb-12 whitespace-pre-line leading-relaxed">
+                        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6">{t('contact_page.title')}</h1>
+                        <p className="text-lg md:text-xl text-gray-400 font-light whitespace-pre-line leading-relaxed max-w-2xl mx-auto">
                             {t('contact_page.description')}
                         </p>
-
-                        <div className="space-y-8 font-mono text-sm text-gray-500">
-                            <div>
-                                <span className="block text-xs uppercase tracking-widest mb-2 text-white/50">{t('contact_page.labels.email')}</span>
-                                <a href="mailto:contact@fl360.com" className="text-white hover:underline decoration-white/30 underline-offset-4 transition-all">contact@fl360.com</a>
-                            </div>
-                            <div>
-                                <span className="block text-xs uppercase tracking-widest mb-2 text-white/50">{t('contact_page.labels.phone')}</span>
-                                <span className="text-white">+33 1 23 45 67 89</span>
-                            </div>
-                        </div>
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
-                        className="bg-zinc-950/50 p-10 border border-white/10 relative backdrop-blur-sm"
+                        className="bg-zinc-950/50 p-10 border border-white/10 relative backdrop-blur-sm rounded-xl max-w-3xl mx-auto"
                     >
                         <div className="absolute -top-1 -right-1 w-4 h-4 border-t border-r border-white/30"></div>
                         <div className="absolute -bottom-1 -left-1 w-4 h-4 border-b border-l border-white/30"></div>

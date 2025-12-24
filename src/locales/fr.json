@@ -4,7 +4,7 @@
             "home": "Accueil",
             "services": "Services",
             "portfolio": "Portfolio",
-            "contact": "Contact",
+            "contact": "Devis",
             "quote": "Demander un devis"
         },
         "mobile": {
@@ -103,7 +103,7 @@
         }
     },
     "contact_page": {
-        "title": "CONTACT",
+        "title": "DEVIS",
         "description": "Prêt à repousser les limites ?\nDiscutons de votre prochain vol.",
         "labels": {
             "email": "Email",
