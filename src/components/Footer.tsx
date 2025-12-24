@@ -1,53 +1,55 @@
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
-
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="bg-slate-900 text-white pt-16 pb-8">
-            <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <footer className="bg-black text-white border-t border-white/10 pt-20 pb-10">
+            <div className="container mx-auto px-6">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                     {/* Brand Info */}
-                    <div>
-                        <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                            <span className="text-sky-500">fl360</span>
-                        </h3>
-                        <p className="text-slate-400 mb-4">
-                            Solutions d'aviation premium pour vos besoins professionnels et personnels.
-                            L'excellence à chaque vol.
+                    <div className="space-y-6">
+                        <h3 className="text-3xl font-bold font-mono tracking-tighter">fl360</h3>
+                        <p className="text-gray-400 font-light leading-relaxed">
+                            Une vision futuriste de l'aviation. <br />
+                            Excellence. Precision. Innovation.
                         </p>
                         <div className="flex gap-4">
-                            <a href="#" className="hover:text-sky-500 transition-colors"><Facebook size={20} /></a>
-                            <a href="#" className="hover:text-sky-500 transition-colors"><Twitter size={20} /></a>
-                            <a href="#" className="hover:text-sky-500 transition-colors"><Instagram size={20} /></a>
-                            <a href="#" className="hover:text-sky-500 transition-colors"><Linkedin size={20} /></a>
+                            {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
+                                <a key={i} href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                                    <Icon size={18} />
+                                </a>
+                            ))}
                         </div>
                     </div>
 
-                    {/* Quick Links */}
+                    {/* Navigation */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-4">Liens Rapides</h4>
-                        <ul className="space-y-2 text-slate-400">
-                            <li><a href="/" className="hover:text-sky-500 transition-colors">Accueil</a></li>
-                            <li><a href="/services" className="hover:text-sky-500 transition-colors">Nos Services</a></li>
-                            <li><a href="/portfolio" className="hover:text-sky-500 transition-colors">Portfolio</a></li>
-                            <li><a href="/contact" className="hover:text-sky-500 transition-colors">Contact</a></li>
+                        <h4 className="text-sm font-mono uppercase tracking-widest text-gray-500 mb-6">Exploration</h4>
+                        <ul className="space-y-4">
+                            {['Accueil', 'Services', 'Portfolio', 'Contact'].map((item) => (
+                                <li key={item}>
+                                    <a href={`/${item.toLowerCase() === 'accueil' ? '' : item.toLowerCase()}`} className="text-gray-300 hover:text-white flex items-center gap-2 group transition-colors">
+                                        <span className="w-1 h-1 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                                        {item}
+                                    </a>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
                     {/* Contact Info */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-4">Contact</h4>
-                        <ul className="space-y-4 text-slate-400">
-                            <li className="flex items-center gap-3">
-                                <MapPin size={20} className="text-sky-500" />
-                                <span>123 Avenue de l'Aviation, Paris</span>
+                        <h4 className="text-sm font-mono uppercase tracking-widest text-gray-500 mb-6">Coordonnées</h4>
+                        <ul className="space-y-4">
+                            <li className="flex items-start gap-4 text-gray-300">
+                                <MapPin size={20} className="mt-1 flex-shrink-0" />
+                                <span>123 Avenue de l'Avenir,<br />75000 Paris, France</span>
                             </li>
-                            <li className="flex items-center gap-3">
-                                <Phone size={20} className="text-sky-500" />
-                                <span>+33 1 23 45 67 89</span>
+                            <li className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors cursor-pointer">
+                                <Phone size={20} />
+                                <span>+33 1 00 00 00 00</span>
                             </li>
-                            <li className="flex items-center gap-3">
-                                <Mail size={20} className="text-sky-500" />
+                            <li className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors cursor-pointer">
+                                <Mail size={20} />
                                 <span>contact@fl360.com</span>
                             </li>
                         </ul>
@@ -55,26 +57,29 @@ const Footer = () => {
 
                     {/* Newsletter */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-4">Newsletter</h4>
-                        <p className="text-slate-400 mb-4 text-sm">Inscrivez-vous pour recevoir nos actualités.</p>
-                        <form className="flex flex-col gap-2" onSubmit={(e) => e.preventDefault()}>
-                            <input
-                                type="email"
-                                placeholder="Votre email"
-                                className="bg-slate-800 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-sky-500"
-                            />
-                            <button
-                                type="submit"
-                                className="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded transition-colors font-medium"
-                            >
-                                S'inscrire
-                            </button>
+                        <h4 className="text-sm font-mono uppercase tracking-widest text-gray-500 mb-6">Newsletter</h4>
+                        <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                            <div className="relative">
+                                <input
+                                    type="email"
+                                    placeholder="VOTRE EMAIL"
+                                    className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder-gray-600 focus:border-white outline-none transition-colors uppercase font-mono text-sm"
+                                />
+                                <button type="submit" className="absolute right-0 top-3 text-gray-400 hover:text-white">
+                                    <ArrowUpRight size={20} />
+                                </button>
+                            </div>
+                            <p className="text-xs text-gray-600">Rejoignez notre cercle exclusif.</p>
                         </form>
                     </div>
                 </div>
 
-                <div className="border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
-                    <p>&copy; {new Date().getFullYear()} fl360. Tous droits réservés.</p>
+                <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 font-mono uppercase tracking-wider">
+                    <p>&copy; 2025 FL360 AVIATION SYSTEMS.</p>
+                    <div className="flex gap-8 mt-4 md:mt-0">
+                        <a href="#" className="hover:text-white transition-colors">Politique de confidentialité</a>
+                        <a href="#" className="hover:text-white transition-colors">Mentions légales</a>
+                    </div>
                 </div>
             </div>
         </footer>
