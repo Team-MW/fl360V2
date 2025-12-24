@@ -6,8 +6,8 @@
 
 :root {
   font-family: 'Inter', system-ui, sans-serif;
-  background-color: #030712;
-  /* mono-950 */
+  background-color: #000000;
+  /* pure black */
   color: #f9fafb;
   /* mono-50 */
   scroll-behavior: smooth;
@@ -37,7 +37,7 @@ body::after {
 }
 
 ::-webkit-scrollbar-track {
-  background: #030712;
+  background: #000000;
 }
 
 ::-webkit-scrollbar-thumb {
