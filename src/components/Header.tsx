@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Plane, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from '../assets/logo360.webp';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -33,10 +34,8 @@ const Header = () => {
                 {/* Logo */}
                 <Link to="/" className="flex items-center gap-2 group">
                     <div className="relative">
-                        <Plane className="w-8 h-8 text-white rotate-[-45deg] transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                        <div className="absolute inset-0 bg-white/20 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <img src={logo} alt="fl360 Logo" className="w-12 h-12 object-contain transition-transform group-hover:scale-105" />
                     </div>
-                    <span className="text-2xl font-bold font-mono tracking-tighter">fl360</span>
                 </Link>
 
                 {/* Desktop Menu */}

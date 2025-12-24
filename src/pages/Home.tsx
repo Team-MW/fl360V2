@@ -4,6 +4,9 @@ import { ArrowRight, Shield, Clock, Award, ChevronDown } from 'lucide-react';
 
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import logo from '../assets/logo360.webp';
+
+import PartnersMarquee from '../components/PartnersMarquee';
 
 const Home = () => {
     return (
@@ -15,6 +18,7 @@ const Home = () => {
 
             {/* Hero Section */}
             <section className="relative h-screen flex items-center justify-center bg-black overflow-hidden">
+                {/* ... existing hero code ... */}
                 {/* Background Grid Animation */}
                 <div className="absolute inset-0 bg-grid-pattern bg-[size:40px_40px] opacity-[0.05]"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50"></div>
@@ -27,13 +31,12 @@ const Home = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.2 }}
+                        className="flex flex-col items-center"
                     >
-                        <h2 className="text-sm md:text-base font-mono uppercase tracking-[0.5em] text-gray-400 mb-6">
+                        <h2 className="text-sm md:text-base font-mono uppercase tracking-[0.5em] text-gray-400 mb-8">
                             Aviation Systems
                         </h2>
-                        <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white mb-8">
-                            FL360
-                        </h1>
+                        <img src={logo} alt="FL360" className="w-64 md:w-96 mb-8 drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]" />
                     </motion.div>
 
                     <motion.p
@@ -73,6 +76,9 @@ const Home = () => {
                     <ChevronDown size={32} />
                 </motion.div>
             </section>
+
+            {/* Partners Marquee */}
+            <PartnersMarquee />
 
             {/* Services Preview - Dark Gray Grid */}
             <section className="py-32 bg-zinc-950 border-t border-white/5">
