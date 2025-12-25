@@ -56,11 +56,19 @@ const Footer = () => {
                             </li>
                             <li className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors cursor-pointer">
                                 <Phone size={20} />
-                                <span>+33 1 00 00 00 00</span>
+                                <span>+33 6 82 27 49 16</span>
                             </li>
                             <li className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors cursor-pointer">
                                 <Mail size={20} />
-                                <span>contact@fl360.com</span>
+                                <span>nav@fl360aviation.com</span>
+                            </li>
+                            <li className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors cursor-pointer">
+                                <Phone size={20} />
+                                <span>+33 6 28 98 48 41</span>
+                            </li>
+                            <li className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors cursor-pointer">
+                                <Mail size={20} />
+                                <span>admin@fl360aviation.com</span>
                             </li>
                         </ul>
                     </div>
