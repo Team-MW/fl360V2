@@ -1,13 +1,15 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageTransition from '../components/PageTransition';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { AirportAutocomplete, type Airport } from '../components/AirportAutocomplete';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
     const { t } = useTranslation();
+    const form = useRef<HTMLFormElement>(null);
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -29,9 +31,25 @@ const Contact = () => {
             alert("Veuillez sélectionner les aéroports de départ et d'arrivée.");
             return;
         }
-        const payload = { ...formData, departure, arrival };
-        console.log("Submitting Payload:", payload);
-        alert("Demande envoyée avec succès (Simulation).");
+
+        if (form.current) {
+            emailjs.sendForm(
+                "service_8y69j7i",
+                "template_i97fokm",
+                form.current,
+                "ID4XIUPXgHORIScgQ"
+            )
+                .then(() => {
+                    alert("Message envoyé avec succès !");
+                    setFormData({ firstName: '', lastName: '', phone: '', email: '', comment: '' });
+                    setDeparture(null);
+                    setArrival(null);
+                })
+                .catch((error) => {
+                    console.error("EmailJS Error:", error);
+                    alert("Erreur lors de l'envoi : " + error.text);
+                });
+        }
     };
 
     return (
@@ -66,7 +84,14 @@ const Contact = () => {
                         <div className="absolute -top-1 -right-1 w-4 h-4 border-t border-r border-white/30"></div>
                         <div className="absolute -bottom-1 -left-1 w-4 h-4 border-b border-l border-white/30"></div>
 
-                        <form onSubmit={handleSubmit} className="space-y-8">
+                        <form ref={form} onSubmit={handleSubmit} className="space-y-8">
+                            {/* Hidden inputs for EmailJS template compatibility */}
+                            <input type="hidden" name="from_name" value={`${formData.firstName} ${formData.lastName}`} />
+                            <input type="hidden" name="reply_to" value={formData.email} />
+                            <input type="hidden" name="message" value={formData.comment} />
+                            <input type="hidden" name="departure" value={departure ? `${departure.name} (${departure.iata})` : ''} />
+                            <input type="hidden" name="arrival" value={arrival ? `${arrival.name} (${arrival.iata})` : ''} />
+
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2 group">
                                     <label className="text-xs font-mono text-gray-500 uppercase tracking-widest group-focus-within:text-white transition-colors">Prénom</label>

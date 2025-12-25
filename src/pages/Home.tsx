@@ -110,15 +110,15 @@ const Home = () => {
             {/* Partners Marquee */}
             <PartnersMarquee />
 
-            {/* Services Preview - Dark Gray Grid */}
-            <section className="py-32 bg-zinc-950 border-t border-white/5">
+            {/* Services Preview - Cloud White */}
+            <section className="py-32 bg-white text-black border-t border-gray-100">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-20">
                         <div>
-                            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">{t('home.services.title')}</h2>
-                            <div className="h-1 w-20 bg-white"></div>
+                            <h2 className="text-4xl md:text-5xl font-bold text-black mb-4 tracking-tight">{t('home.services.title')}</h2>
+                            <div className="h-1 w-20 bg-black"></div>
                         </div>
-                        <p className="text-gray-400 max-w-md text-right mt-6 md:mt-0 font-light">
+                        <p className="text-gray-600 max-w-md text-right mt-6 md:mt-0 font-light">
                             {t('home.services.subtitle')}
                         </p>
                     </div>
@@ -129,11 +129,11 @@ const Home = () => {
                             { icon: Clock, title: t('home.services.cards.timing.title'), desc: t('home.services.cards.timing.desc') },
                             { icon: Award, title: t('home.services.cards.quality.title'), desc: t('home.services.cards.quality.desc') }
                         ].map((service, idx) => (
-                            <div key={idx} className="group p-10 bg-black/50 border border-white/10 hover:border-white/50 transition-all duration-500 hover:-translate-y-2">
-                                <service.icon className="w-12 h-12 text-white mb-8 opacity-50 group-hover:opacity-100 transition-opacity" />
-                                <h3 className="text-2xl font-bold mb-4 text-white uppercase tracking-wider">{service.title}</h3>
-                                <p className="text-gray-400 font-light leading-relaxed">{service.desc}</p>
-                                <div className="mt-8 opacity-0 group-hover:opacity-100 transition-all transform translate-y-4 group-hover:translate-y-0 text-white text-sm font-mono flex items-center gap-2">
+                            <div key={idx} className="group p-10 bg-gray-50 border border-gray-200 hover:border-black/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-gray-200/50">
+                                <service.icon className="w-12 h-12 text-black mb-8 opacity-70 group-hover:opacity-100 transition-opacity" />
+                                <h3 className="text-2xl font-bold mb-4 text-black uppercase tracking-wider">{service.title}</h3>
+                                <p className="text-gray-600 font-light leading-relaxed">{service.desc}</p>
+                                <div className="mt-8 opacity-0 group-hover:opacity-100 transition-all transform translate-y-4 group-hover:translate-y-0 text-black text-sm font-mono flex items-center gap-2 font-bold uppercase tracking-widest">
                                     {t('home.services.more')} <ArrowRight size={14} />
                                 </div>
                             </div>
@@ -201,23 +201,21 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Testimonials - Stark Black */}
-            <section className="py-32 bg-black relative">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-800/20 via-black to-black"></div>
-
+            {/* Testimonials - Minimal White */}
+            <section className="py-32 bg-white relative border-t border-gray-100">
                 <div className="container mx-auto px-6 relative z-10">
-                    <h2 className="text-xs font-mono uppercase tracking-[0.3em] text-center text-gray-500 mb-24">{t('home.testimonials.title')}</h2>
+                    <h2 className="text-xs font-mono uppercase tracking-[0.3em] text-center text-gray-400 mb-24">{t('home.testimonials.title')}</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
                         {[
                             { text: t('home.testimonials.review1.text'), author: t('home.testimonials.review1.author'), role: t('home.testimonials.review1.role') },
                             { text: t('home.testimonials.review2.text'), author: t('home.testimonials.review2.author'), role: t('home.testimonials.review2.role') }
                         ].map((t, idx) => (
-                            <div key={idx} className="relative pl-8 border-l border-white/20">
-                                <div className="absolute -left-[5px] top-0 w-[9px] h-[9px] bg-white rounded-full"></div>
-                                <p className="text-2xl md:text-3xl text-white font-light italic mb-8 leading-relaxed">"{t.text}"</p>
+                            <div key={idx} className="relative pl-8 border-l border-black/10">
+                                <div className="absolute -left-[5px] top-0 w-[9px] h-[9px] bg-black rounded-full"></div>
+                                <p className="text-2xl md:text-3xl text-black font-light italic mb-8 leading-relaxed">"{t.text}"</p>
                                 <div>
-                                    <div className="font-bold text-white tracking-widest text-sm">{t.author}</div>
+                                    <div className="font-bold text-black tracking-widest text-sm">{t.author}</div>
                                     <div className="text-xs font-mono text-gray-500 mt-1">{t.role}</div>
                                 </div>
                             </div>
