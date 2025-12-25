@@ -21,6 +21,8 @@ const Contact = () => {
     const [departure, setDeparture] = useState<Airport | null>(null);
     const [arrival, setArrival] = useState<Airport | null>(null);
 
+    const [showSuccess, setShowSuccess] = useState(false);
+
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
@@ -41,10 +43,11 @@ const Contact = () => {
                 "ID4XIUPXgHORIScgQ"
             )
                 .then(() => {
-                    alert("Message envoyé avec succès !");
+                    setShowSuccess(true);
                     setFormData({ firstName: '', lastName: '', phone: '', email: '', comment: '' });
                     setDeparture(null);
                     setArrival(null);
+                    setTimeout(() => setShowSuccess(false), 5000);
                 })
                 .catch((error) => {
                     console.error("EmailJS Error:", error);
@@ -182,6 +185,33 @@ const Contact = () => {
                     </motion.div>
                 </div>
             </div>
+
+            {/* Success Modal */}
+            {showSuccess && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center px-6">
+                    <div className="absolute inset-0 bg-black/80 backdrop-blur-md" onClick={() => setShowSuccess(false)}></div>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        className="bg-black border border-white/10 p-8 md:p-12 max-w-lg w-full relative z-10 text-center shadow-2xl"
+                    >
+                        <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
+                            <ArrowRight className="text-black w-8 h-8 -rotate-45" />
+                        </div>
+                        <h3 className="text-2xl font-bold uppercase tracking-wider mb-4">Demande Envoyée</h3>
+                        <p className="text-gray-400 font-light leading-relaxed mb-8">
+                            Merci pour votre demande. Elle sera traitée dans les plus brefs délais par notre équipe.
+                        </p>
+                        <button
+                            onClick={() => setShowSuccess(false)}
+                            className="bg-white text-black px-8 py-3 text-sm font-bold uppercase tracking-widest hover:bg-gray-200 transition-colors w-full"
+                        >
+                            Fermer
+                        </button>
+                    </motion.div>
+                </div>
+            )}
         </PageTransition>
     );
 };
