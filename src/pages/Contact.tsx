@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { AirportAutocomplete, type Airport } from '../components/AirportAutocomplete';
 import emailjs from '@emailjs/browser';
+import Starfield from '../components/Starfield';
 
 const Contact = () => {
     const { t } = useTranslation();
@@ -61,8 +62,9 @@ const Contact = () => {
                 <meta property="og:description" content="Contactez fl360 Aviation Systems pour discuter de vos projets aéronautiques." />
                 <meta property="og:type" content="website" />
             </Helmet>
-            <div className="min-h-screen bg-black pt-40 pb-20 flex flex-col items-center justify-center text-white">
-                <div className="container mx-auto px-6 max-w-4xl">
+            <div className="min-h-screen bg-black pt-40 pb-20 flex flex-col items-center justify-center text-white relative overflow-hidden">
+                <Starfield />
+                <div className="container mx-auto px-6 max-w-4xl relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
