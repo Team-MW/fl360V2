@@ -94,7 +94,7 @@ const Contact = () => {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2 group">
-                                    <label className="text-xs font-mono text-gray-500 uppercase tracking-widest group-focus-within:text-white transition-colors">Prénom</label>
+                                    <label className="text-xs font-mono text-white uppercase tracking-widest">Prénom</label>
                                     <input
                                         type="text"
                                         name="firstName"
@@ -106,7 +106,7 @@ const Contact = () => {
                                     />
                                 </div>
                                 <div className="space-y-2 group">
-                                    <label className="text-xs font-mono text-gray-500 uppercase tracking-widest group-focus-within:text-white transition-colors">Nom</label>
+                                    <label className="text-xs font-mono text-white uppercase tracking-widest">Nom</label>
                                     <input
                                         type="text"
                                         name="lastName"
@@ -121,7 +121,7 @@ const Contact = () => {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2 group">
-                                    <label className="text-xs font-mono text-gray-500 uppercase tracking-widest group-focus-within:text-white transition-colors">{t('contact_page.labels.phone') || "Téléphone"}</label>
+                                    <label className="text-xs font-mono text-white uppercase tracking-widest">{t('contact_page.labels.phone') || "Téléphone"}</label>
                                     <input
                                         type="tel"
                                         name="phone"
@@ -133,7 +133,7 @@ const Contact = () => {
                                     />
                                 </div>
                                 <div className="space-y-2 group">
-                                    <label className="text-xs font-mono text-gray-500 uppercase tracking-widest group-focus-within:text-white transition-colors">{t('contact_page.labels.email')}</label>
+                                    <label className="text-xs font-mono text-white uppercase tracking-widest">{t('contact_page.labels.email')}</label>
                                     <input
                                         type="email"
                                         name="email"
@@ -147,7 +147,7 @@ const Contact = () => {
                             </div>
 
                             <div className="space-y-2 group">
-                                <label className="text-xs font-mono text-gray-500 uppercase tracking-widest group-focus-within:text-white transition-colors">Aéroport de Départ</label>
+                                <label className="text-xs font-mono text-white uppercase tracking-widest">Aéroport de Départ</label>
                                 <AirportAutocomplete
                                     onSelect={setDeparture}
                                     placeholder="Rechercher un aéroport..."
@@ -155,7 +155,7 @@ const Contact = () => {
                             </div>
 
                             <div className="space-y-2 group">
-                                <label className="text-xs font-mono text-gray-500 uppercase tracking-widest group-focus-within:text-white transition-colors">Aéroport d'Arrivée</label>
+                                <label className="text-xs font-mono text-white uppercase tracking-widest">Aéroport d'Arrivée</label>
                                 <AirportAutocomplete
                                     onSelect={setArrival}
                                     placeholder="Rechercher un aéroport..."
@@ -163,7 +163,7 @@ const Contact = () => {
                             </div>
 
                             <div className="space-y-2 group">
-                                <label className="text-xs font-mono text-gray-500 uppercase tracking-widest group-focus-within:text-white transition-colors">{t('contact_page.labels.message')}</label>
+                                <label className="text-xs font-mono text-white uppercase tracking-widest">{t('contact_page.labels.message')}</label>
                                 <textarea
                                     name="comment"
                                     value={formData.comment}
