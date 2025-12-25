@@ -9,6 +9,7 @@ import logo from '../assets/logo360.webp';
 
 import PartnersMarquee from '../components/PartnersMarquee';
 import { useTranslation } from 'react-i18next';
+import Starfield from '../components/Starfield';
 
 const Home = () => {
     const { t } = useTranslation();
@@ -36,9 +37,9 @@ const Home = () => {
 
             {/* Hero Section */}
             <section ref={heroRef} className="relative h-screen flex items-center justify-center bg-black overflow-hidden perspective-1000">
-                {/* Background Grid Animation */}
-                <div className="absolute inset-0 bg-grid-pattern bg-[size:40px_40px] opacity-[0.05]"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50"></div>
+                {/* Background Animation */}
+                <Starfield />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50 pointer-events-none"></div>
 
                 {/* Abstract Breathing Glow */}
                 <motion.div
