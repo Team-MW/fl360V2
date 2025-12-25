@@ -1,7 +1,12 @@
 import logo from '../assets/logo360.webp';
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
-    // ...
+    const { t } = useTranslation();
+    const currentYear = new Date().getFullYear();
+
     return (
         <footer className="bg-black text-white border-t border-white/10 pt-20 pb-10">
             <div className="container mx-auto px-6">
