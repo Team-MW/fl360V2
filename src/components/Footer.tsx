@@ -1,18 +1,14 @@
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import logo from '../assets/logo360.webp';
 
 const Footer = () => {
-    const { t } = useTranslation();
-    const currentYear = new Date().getFullYear();
-
+    // ...
     return (
         <footer className="bg-black text-white border-t border-white/10 pt-20 pb-10">
             <div className="container mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                     {/* Brand Info */}
                     <div className="space-y-6">
-                        <h3 className="text-3xl font-bold font-mono tracking-tighter">fl360</h3>
+                        <img src={logo} alt="fl360 Logo" className="w-[120px] h-auto grayscale brightness-200" />
                         <p className="text-gray-400 font-light leading-relaxed whitespace-pre-line">
                             {t('footer.tagline')}
                         </p>
