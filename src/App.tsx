@@ -11,6 +11,9 @@ const Portfolio = lazy(() => import('./pages/Portfolio'));
 const Contact = lazy(() => import('./pages/Contact'));
 const MentionsLegales = lazy(() => import('./pages/MentionsLegales'));
 const Formation = lazy(() => import('./pages/Formation'));
+const CaoCamo = lazy(() => import('./pages/CaoCamo'));
+const CapList = lazy(() => import('./pages/CapList'));
+const Mro = lazy(() => import('./pages/Mro'));
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -28,6 +31,9 @@ const AnimatedRoutes = () => {
             <Route path="services" element={<Services />} />
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="formation" element={<Formation />} />
+            <Route path="cao-camo" element={<CaoCamo />} />
+            <Route path="cap-list" element={<CapList />} />
+            <Route path="mro" element={<Mro />} />
             <Route path="contact" element={<Contact />} />
             <Route path="mentions-legales" element={<MentionsLegales />} />
           </Route>

@@ -1,30 +1,201 @@
 import { Helmet } from 'react-helmet-async';
 import PageTransition from '../components/PageTransition';
 import { motion } from 'framer-motion';
+import { Check, Download, Plane, Camera, Video, Megaphone } from 'lucide-react';
+import Starfield from '../components/Starfield';
 
 const Formation = () => {
+
+    const requirements = [
+        "Licence de pilote privé PPL (A) avec un minimum d'heures uniquement pour opérer sous NCO",
+        "Licence de pilote professionnel CPL (A) ou théorie ATPL (A) Frozen",
+        "Compétence linguistique en anglais FCL 055 pour l'étranger, certificat de niveau 4 de l'OACI au minimum",
+        "Certificat médical EASA de Classe 1 ou Classe 2 en vigueur"
+    ];
 
     return (
         <PageTransition>
             <Helmet>
-                <title>Formation - fl360</title>
-                <meta name="description" content="Découvrez nos programmes de formation aéronautique d'élite." />
+                <title>Formation Pilatus PC6 & Travaux Aériens - fl360</title>
+                <meta name="description" content="Formation Pilatus PC6 B2H4 et services aériens : surveillance, photographie, tournage et publicité." />
             </Helmet>
 
-            <div className="min-h-screen bg-black pt-32 pb-20 text-white">
-                <div className="container mx-auto px-6">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="max-w-4xl"
-                    >
-                        <h1 className="text-4xl md:text-6xl font-bold font-mono tracking-tighter mb-8">FORMATION</h1>
-                        <p className="text-xl text-gray-400 font-light leading-relaxed">
-                            Page en construction. Nos programmes de formation seront bientôt disponibles.
-                        </p>
-                    </motion.div>
+            <div className="min-h-screen bg-zinc-950 text-white font-sans selection:bg-indigo-500/30">
+                <Starfield />
+
+                {/* Hero Section */}
+                <div className="relative pt-40 pb-20 overflow-hidden">
+                    <div className="container mx-auto px-6 relative z-10 text-center">
+                        <motion.h1
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-widest mb-6"
+                        >
+                            Transformez vos rêves <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">en réalité</span>
+                        </motion.h1>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
+                            className="text-xl md:text-2xl text-gray-400 font-light max-w-3xl mx-auto"
+                        >
+                            Avec nos formations et qualifications de type sur avion <span className="font-semibold text-white">Pilatus PC6 B2H4</span>
+                        </motion.p>
+                    </div>
                 </div>
+
+                {/* ATO Section */}
+                <section className="py-20 bg-zinc-900/50 border-y border-white/5 relative">
+                    <div className="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+                        <h2 className="text-9xl font-black uppercase text-white tracking-tighter">ATO</h2>
+                    </div>
+
+                    <div className="container mx-auto px-6">
+                        <div className="grid md:grid-cols-2 gap-16 items-start">
+                            <motion.div
+                                initial={{ opacity: 0, x: -30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                            >
+                                <div className="inline-block px-4 py-2 border border-indigo-500/30 rounded-full bg-indigo-500/10 text-indigo-400 text-sm font-bold uppercase tracking-widest mb-6">
+                                    Agrément ATO
+                                </div>
+                                <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-wide mb-6">
+                                    À propos de la formation <br />ATO QT PILATUS PC6
+                                </h2>
+                                <p className="text-gray-400 leading-relaxed mb-6">
+                                    Vous rêvez de devenir un pilote compétent et qualifié pour piloter le robuste et polyvalent Pilatus PC6 ? Notre programme de formation est conçu pour vous offrir une expérience unique et enrichissante, vous permettant de maîtriser cet avion emblématique et de développer les compétences nécessaires pour évoluer dans le monde de l'aviation.
+                                </p>
+
+                                <div className="bg-zinc-800/50 p-6 border-l-4 border-indigo-500 rounded-r-lg mb-8">
+                                    <h3 className="text-xl font-bold uppercase tracking-wider mb-2 flex items-center gap-2">
+                                        <Plane className="text-indigo-400" /> Type Rating & Base Training
+                                    </h3>
+                                    <p className="text-sm text-gray-400">
+                                        Obtenez votre qualification de type PILATUS PC6, conformément aux exigences de l'Autorité aéronautique avec notre qualification de type PILATUS PC6 + formation de base théorique.
+                                    </p>
+                                    <p className="text-sm text-gray-400 mt-2 italic">
+                                        Dispense sous formes : Première Délivrance, Prorogation et Renouvellement.
+                                    </p>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                initial={{ opacity: 0, x: 30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                className="bg-zinc-950 p-8 border border-zinc-800 relative group hover:border-indigo-500/50 transition-colors"
+                            >
+                                <div className="absolute -top-3 -right-3">
+                                    <span className="relative flex h-6 w-6">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-6 w-6 bg-indigo-500"></span>
+                                    </span>
+                                </div>
+
+                                <h3 className="text-xl font-bold uppercase tracking-widest mb-6 border-b border-zinc-800 pb-4">
+                                    Pré-requis Pilotes (SEP / MEP)
+                                </h3>
+                                <ul className="space-y-4">
+                                    {requirements.map((req, idx) => (
+                                        <li key={idx} className="flex items-start gap-4">
+                                            <div className="mt-1 bg-indigo-500/20 p-1 rounded-full">
+                                                <Check size={14} className="text-indigo-400" />
+                                            </div>
+                                            <span className="text-gray-300 text-sm leading-relaxed">{req}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </motion.div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Travaux Aériens Section */}
+                <section className="py-20 bg-gradient-to-b from-zinc-900 to-zinc-800/50">
+                    <div className="container mx-auto px-6">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-widest mb-6 text-white drop-shadow-lg">Formation Travaux Aériens</h2>
+                            <p className="text-gray-300 max-w-2xl mx-auto text-lg">
+                                Notre expérience dans le monde de l'aviation nous permet d'offrir un large éventail de services aériens en s'adaptant aux besoins du client et aux demandes de l'administration publique.
+                            </p>
+                        </div>
+
+                        <div className="grid md:grid-cols-3 gap-8">
+                            {/* Card 1 */}
+                            <motion.div
+                                whileHover={{ y: -10 }}
+                                className="bg-zinc-800/60 backdrop-blur-sm border border-zinc-700/50 p-8 hover:border-indigo-500/50 transition-all group shadow-2xl hover:shadow-indigo-500/10"
+                            >
+                                <div className="bg-zinc-900/80 w-16 h-16 flex items-center justify-center rounded-2xl mb-6 group-hover:scale-110 transition-transform border border-zinc-700">
+                                    <Video className="w-8 h-8 text-indigo-300" />
+                                </div>
+                                <h3 className="text-xl font-bold uppercase tracking-widest mb-4 text-white">Surveillance & Observation</h3>
+                                <p className="text-base text-gray-300 leading-relaxed">
+                                    Approche stratégique pour la sécurité, la défense et la gestion environnementale. Utilisation de technologies avancées pour une perspective unique et la collecte de données précieuses.
+                                </p>
+                            </motion.div>
+
+                            {/* Card 2 */}
+                            <motion.div
+                                whileHover={{ y: -10 }}
+                                className="bg-zinc-800/60 backdrop-blur-sm border border-zinc-700/50 p-0 overflow-hidden hover:border-indigo-500/50 transition-all group relative min-h-[400px] shadow-2xl hover:shadow-indigo-500/10"
+                            >
+                                <img src="/helico4.avif" alt="Hélicoptère Formation" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/60 to-transparent p-8 flex flex-col justify-end">
+                                    <div className="bg-indigo-600 w-12 h-12 flex items-center justify-center rounded-xl mb-4 shadow-lg shadow-indigo-500/30">
+                                        <Camera className="w-6 h-6 text-white" />
+                                    </div>
+                                    <h3 className="text-xl font-bold uppercase tracking-widest mb-4 text-white">Photographie & Tournage</h3>
+                                    <p className="text-base text-gray-200 leading-relaxed font-medium">
+                                        Capturez des images spectaculaires et des vidéos cinématographiques grâce à nos aéronefs équipés pour la haute résolution.
+                                    </p>
+                                </div>
+                            </motion.div>
+
+                            {/* Card 3 */}
+                            <motion.div
+                                whileHover={{ y: -10 }}
+                                className="bg-zinc-800/60 backdrop-blur-sm border border-zinc-700/50 p-0 overflow-hidden hover:border-indigo-500/50 transition-all group relative min-h-[400px] shadow-2xl hover:shadow-indigo-500/10"
+                            >
+                                {/* Assuming a generic aerial image or reusing an asset if available, otherwise just text/gradient */}
+                                <div className="absolute inset-0 bg-indigo-900/10 group-hover:bg-indigo-900/20 transition-colors"></div>
+                                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-zinc-900/90 p-8 flex flex-col justify-end h-full">
+                                    <div className="mb-auto mt-6 bg-zinc-900/80 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform border border-zinc-700">
+                                        <Megaphone className="w-8 h-8 text-indigo-300" />
+                                    </div>
+                                    <h3 className="text-xl font-bold uppercase tracking-widest mb-4 text-white">Publicité Aérienne</h3>
+                                    <p className="text-base text-gray-300 leading-relaxed">
+                                        Vols promotionnels avec banderoles pour une diffusion massive et créative. Créez un affichage imposant et incontournable dans le ciel.
+                                    </p>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* SPO CTA Section */}
+                <section className="py-20 bg-indigo-600 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-[url('/helico4.avif')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/90 to-violet-900/90"></div>
+
+                    <div className="container mx-auto px-6 text-center relative z-10">
+                        <h2 className="text-3xl font-bold uppercase tracking-widest mb-8 text-white drop-shadow-xl">Documents Officiels</h2>
+
+                        <motion.a
+                            whileHover={{ scale: 1.05, backgroundColor: "#ffffff" }}
+                            whileTap={{ scale: 0.95 }}
+                            href="/Licence-Exploitation-Commercial.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-3 bg-white text-indigo-900 px-10 py-5 rounded-full font-black uppercase tracking-widest hover:text-indigo-700 transition-all shadow-2xl shadow-indigo-900/50 border-4 border-transparent hover:border-indigo-100"
+                        >
+                            <Download size={24} />
+                            <span>Télécharger Agrément SPO</span>
+                        </motion.a>
+                        <p className="mt-6 text-indigo-200 font-medium tracking-wide">Licence d'Exploitation Commerciale</p>
+                    </div>
+                </section>
             </div>
         </PageTransition>
     );

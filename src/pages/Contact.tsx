@@ -138,7 +138,7 @@ const Contact = () => {
             <div className="min-h-screen bg-zinc-950 pt-32 pb-20 flex flex-col items-center justify-center text-white relative overflow-hidden font-sans">
                 <Starfield />
 
-                <div className="container mx-auto px-4 max-w-5xl relative z-10">
+                <div className="container mx-auto px-4 max-w-7xl relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}

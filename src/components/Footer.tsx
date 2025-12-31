@@ -14,7 +14,7 @@ const Footer = () => {
                     {/* Brand Info */}
                     <div className="space-y-6">
                         <img src={logo} alt="fl360 Logo" className="w-[120px] h-auto grayscale brightness-200" />
-                        <p className="text-gray-400 font-light leading-relaxed whitespace-pre-line">
+                        <p className="text-white font-light leading-relaxed whitespace-pre-line">
                             {t('footer.tagline')}
                         </p>
                         <div className="flex gap-4">
@@ -28,7 +28,7 @@ const Footer = () => {
 
                     {/* Navigation */}
                     <div>
-                        <h4 className="text-sm font-mono uppercase tracking-widest text-gray-500 mb-6">{t('footer.links')}</h4>
+                        <h4 className="text-sm font-mono uppercase tracking-widest text-white mb-6">{t('footer.links')}</h4>
                         <ul className="space-y-4">
                             {[
                                 { name: t('header.nav.home'), path: '/' },
@@ -37,7 +37,7 @@ const Footer = () => {
                                 { name: t('header.nav.contact'), path: '/contact' }
                             ].map((item) => (
                                 <li key={item.name}>
-                                    <a href={item.path} className="text-gray-300 hover:text-white flex items-center gap-2 group transition-colors">
+                                    <a href={item.path} className="text-white hover:text-gray-300 flex items-center gap-2 group transition-colors">
                                         <span className="w-1 h-1 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
                                         {item.name}
                                     </a>
@@ -48,25 +48,25 @@ const Footer = () => {
 
                     {/* Contact Info */}
                     <div>
-                        <h4 className="text-sm font-mono uppercase tracking-widest text-gray-500 mb-6">{t('footer.contact')}</h4>
+                        <h4 className="text-sm font-mono uppercase tracking-widest text-white mb-6">{t('footer.contact')}</h4>
                         <ul className="space-y-4">
-                            <li className="flex items-start gap-4 text-gray-300">
+                            <li className="flex items-start gap-4 text-white">
                                 <MapPin size={20} className="mt-1 flex-shrink-0" />
                                 <span>123 Avenue de l'Avenir,<br />75000 Paris, France</span>
                             </li>
-                            <li className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors cursor-pointer">
+                            <li className="flex items-center gap-4 text-white hover:text-gray-300 transition-colors cursor-pointer">
                                 <Phone size={20} />
                                 <span>+33 6 82 27 49 16</span>
                             </li>
-                            <li className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors cursor-pointer">
+                            <li className="flex items-center gap-4 text-white hover:text-gray-300 transition-colors cursor-pointer">
                                 <Mail size={20} />
                                 <span>nav@fl360aviation.com</span>
                             </li>
-                            <li className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors cursor-pointer">
+                            <li className="flex items-center gap-4 text-white hover:text-gray-300 transition-colors cursor-pointer">
                                 <Phone size={20} />
                                 <span>+33 6 28 98 48 41</span>
                             </li>
-                            <li className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors cursor-pointer">
+                            <li className="flex items-center gap-4 text-white hover:text-gray-300 transition-colors cursor-pointer">
                                 <Mail size={20} />
                                 <span>admin@fl360aviation.com</span>
                             </li>
@@ -75,7 +75,7 @@ const Footer = () => {
 
                     {/* Newsletter */}
                     <div>
-                        <h4 className="text-sm font-mono uppercase tracking-widest text-gray-500 mb-6">{t('footer.newsletter.title')}</h4>
+                        <h4 className="text-sm font-mono uppercase tracking-widest text-white mb-6">{t('footer.newsletter.title')}</h4>
                         <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                             <div className="relative">
                                 <input
@@ -87,15 +87,15 @@ const Footer = () => {
                                     <ArrowUpRight size={20} />
                                 </button>
                             </div>
-                            <p className="text-xs text-gray-600">{t('footer.newsletter.sub')}</p>
+                            <p className="text-xs text-gray-400">{t('footer.newsletter.sub')}</p>
                         </form>
                     </div>
                 </div>
 
-                <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 font-mono uppercase tracking-wider">
+                <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 font-mono uppercase tracking-wider">
                     <div className="flex flex-col md:flex-row items-center gap-4">
                         <p>{t('footer.rights', { year: currentYear })}</p>
-                        <span className="hidden md:block text-gray-800">|</span>
+                        <span className="hidden md:block text-gray-600">|</span>
                         <a href="https://microdidact.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                             Réalisé par Microdidact
                         </a>

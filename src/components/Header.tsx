@@ -23,10 +23,10 @@ const Header = () => {
 
     const links = [
         { name: t('header.nav.home'), path: '/' },
-        { name: t('header.nav.services'), path: '/services' },
-        { name: t('header.nav.portfolio'), path: '/portfolio' },
         { name: t('header.nav.formation'), path: '/formation' },
-        { name: t('header.nav.contact'), path: '/contact' },
+        { name: 'CAO / CAMO', path: '/cao-camo' },
+        { name: 'CAP LIST', path: '/cap-list' },
+        { name: 'MRO', path: '/mro' },
     ];
 
     return (
