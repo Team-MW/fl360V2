@@ -1,11 +1,8 @@
-import { useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageTransition from '../components/PageTransition';
-import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
 const Formation = () => {
-    const { t } = useTranslation();
 
     return (
         <PageTransition>

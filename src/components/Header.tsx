@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, User } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/logo360.webp';
 import { useTranslation } from 'react-i18next';
@@ -62,6 +62,15 @@ const Header = () => {
                         >
                             {t('header.nav.quote')} <ArrowRight size={14} />
                         </Link>
+                        <a
+                            href="https://gestion.progdigital.fr/login"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-10 h-10 rounded-full border border-white/20 hover:border-white hover:bg-white hover:text-black flex items-center justify-center transition-all"
+                            title="Accès Clients"
+                        >
+                            <User size={18} />
+                        </a>
                     </div>
                 </nav>
 
@@ -117,6 +126,16 @@ const Header = () => {
                                             {link.name}
                                         </Link>
                                     ))}
+                                    <a
+                                        href="https://gestion.progdigital.fr/login"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={toggleMenu}
+                                        className="text-3xl font-thin tracking-wide text-gray-400 hover:text-white hover:pl-4 transition-all flex items-center gap-4"
+                                    >
+                                        <span className="text-xs font-mono text-gray-600 mr-4">06</span>
+                                        Accès Clients <User size={24} />
+                                    </a>
                                     <Link
                                         to="/contact"
                                         onClick={toggleMenu}
