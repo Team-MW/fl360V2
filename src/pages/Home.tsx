@@ -204,25 +204,56 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Testimonials - Minimal White */}
-            <section className="py-32 bg-white relative border-t border-gray-100">
+            {/* Testimonials - Draggable Slider */}
+            <section className="py-32 bg-white relative border-t border-gray-100 overflow-hidden">
                 <div className="container mx-auto px-6 relative z-10">
-                    <h2 className="text-xs font-mono uppercase tracking-[0.3em] text-center text-gray-400 mb-24">{t('home.testimonials.title')}</h2>
+                    <h2 className="text-xs font-mono uppercase tracking-[0.3em] text-center text-violet-500 mb-24">{t('home.testimonials.title')}</h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                        {[
-                            { text: t('home.testimonials.review1.text'), author: t('home.testimonials.review1.author'), role: t('home.testimonials.review1.role') },
-                            { text: t('home.testimonials.review2.text'), author: t('home.testimonials.review2.author'), role: t('home.testimonials.review2.role') }
-                        ].map((t, idx) => (
-                            <div key={idx} className="relative pl-8 border-l border-black/10">
-                                <div className="absolute -left-[5px] top-0 w-[9px] h-[9px] bg-black rounded-full"></div>
-                                <p className="text-2xl md:text-3xl text-black font-light italic mb-8 leading-relaxed">"{t.text}"</p>
-                                <div>
-                                    <div className="font-bold text-black tracking-widest text-sm">{t.author}</div>
-                                    <div className="text-xs font-mono text-gray-500 mt-1">{t.role}</div>
-                                </div>
-                            </div>
-                        ))}
+                    <motion.div
+                        className="cursor-grab active:cursor-grabbing"
+                    >
+                        <motion.div
+                            className="flex gap-12"
+                            drag="x"
+                            dragConstraints={{ right: 0, left: -1000 }} // Adjusted constraints based on content width
+                            whileTap={{ cursor: "grabbing" }}
+                        >
+                            {[
+                                { text: t('home.testimonials.review1.text'), author: t('home.testimonials.review1.author'), role: t('home.testimonials.review1.role') },
+                                { text: t('home.testimonials.review2.text'), author: t('home.testimonials.review2.author'), role: t('home.testimonials.review2.role') },
+                                {
+                                    text: "FL360 a transformé notre gestion de navigabilité. Une efficacité redoutable qui nous permet de nous concentrer sur l'essentiel : voler.",
+                                    author: "Thomas Anderson",
+                                    role: "Chief Pilot, Horizon Jets"
+                                },
+                                {
+                                    text: "Leur expertise CAMO nous a permis de réduire nos temps d'immobilisation de 30%. Un partenaire stratégique indispensable.",
+                                    author: "Sophie Dubois",
+                                    role: "Fleet Manager, AeroServices"
+                                },
+                                {
+                                    text: "Un service clé en main qui dépasse toutes les attentes. La tranquillité d'esprit absolue pour nos opérations.",
+                                    author: "Marc Weber",
+                                    role: "Owner, Private Jet"
+                                }
+                            ].map((t, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    className="min-w-[400px] md:min-w-[600px] relative pl-8 border-l border-black/10 select-none"
+                                >
+                                    <div className="absolute -left-[5px] top-0 w-[9px] h-[9px] bg-violet-500 rounded-full"></div>
+                                    <p className="text-2xl md:text-3xl text-black font-light italic mb-8 leading-relaxed">"{t.text}"</p>
+                                    <div>
+                                        <div className="font-bold text-black tracking-widest text-sm">{t.author}</div>
+                                        <div className="text-xs font-mono text-gray-500 mt-1">{t.role}</div>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                    </motion.div>
+
+                    <div className="text-center mt-12 text-gray-400 text-sm font-mono flex items-center justify-center gap-2">
+                        <ArrowRight className="w-4 h-4" /> GLISSEZ POUR EN VOIR PLUS
                     </div>
                 </div>
             </section>
