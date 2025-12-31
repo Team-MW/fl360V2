@@ -6,13 +6,18 @@ import logo from '../assets/logo360.webp';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
 
-const Header = () => {
-    const [isOpen, setIsOpen] = useState(false);
+interface HeaderProps {
+    isMobileMenuOpen: boolean;
+    setIsMobileMenuOpen: (isOpen: boolean) => void;
+}
+
+const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
+    // const [isOpen, setIsOpen] = useState(false); // Validated removal
     const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
     const { t } = useTranslation();
 
-    const toggleMenu = () => setIsOpen(!isOpen);
+    const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
     // Handle scroll effect
     useEffect(() => {
@@ -82,13 +87,13 @@ const Header = () => {
                         className="text-white hover:text-gray-300 transition-colors"
                         aria-label="Toggle menu"
                     >
-                        {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+                        {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
                     </button>
                 </div>
 
                 {/* Mobile Side Panel */}
                 <AnimatePresence>
-                    {isOpen && (
+                    {isMobileMenuOpen && (
                         <>
                             {/* Backdrop */}
                             <motion.div
@@ -96,7 +101,7 @@ const Header = () => {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                                 onClick={toggleMenu}
-                                className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 md:hidden"
+                                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
                             />
 
                             {/* Slide-in Panel */}
@@ -104,12 +109,14 @@ const Header = () => {
                                 initial={{ x: '100%' }}
                                 animate={{ x: 0 }}
                                 exit={{ x: '100%' }}
-                                transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                                className="fixed inset-y-0 right-0 w-full sm:w-80 bg-black border-l border-white/10 z-50 md:hidden flex flex-col p-8"
+                                transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+                                className="fixed inset-y-0 right-0 w-full md:w-[500px] bg-zinc-950 border-l border-white/10 z-[60] md:hidden flex flex-col p-8 sm:p-12 overflow-y-auto"
                             >
-                                <div className="flex justify-between items-center mb-12">
-                                    <span className="text-xl font-bold font-mono">{t('header.mobile.menu')}</span>
-                                    <button onClick={toggleMenu} className="text-gray-400 hover:text-white">
+                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-600 to-indigo-600"></div>
+
+                                <div className="flex justify-between items-center mb-16">
+                                    <span className="text-sm font-bold font-mono tracking-widest text-violet-400">MENU</span>
+                                    <button onClick={toggleMenu} className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full">
                                         <X className="w-8 h-8" />
                                     </button>
                                 </div>
@@ -139,9 +146,9 @@ const Header = () => {
                                     <Link
                                         to="/contact"
                                         onClick={toggleMenu}
-                                        className="mt-8 w-full border border-white text-white text-center py-4 rounded-none uppercase tracking-widest hover:bg-white hover:text-black transition-colors"
+                                        className="mt-8 w-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-center py-5 rounded-xl font-bold uppercase tracking-widest hover:from-violet-500 hover:to-indigo-500 transition-all shadow-lg hover:shadow-indigo-500/25 flex items-center justify-center gap-3"
                                     >
-                                        {t('header.mobile.quote')}
+                                        {t('header.mobile.quote')} <ArrowRight size={18} />
                                     </Link>
                                 </nav>
 

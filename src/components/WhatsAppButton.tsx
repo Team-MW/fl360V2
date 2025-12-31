@@ -2,7 +2,11 @@ import { MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
-const WhatsAppButton = () => {
+interface WhatsAppButtonProps {
+    isMobileMenuOpen?: boolean;
+}
+
+const WhatsAppButton = ({ isMobileMenuOpen = false }: WhatsAppButtonProps) => {
     const phoneNumber = "+33660061623"; // Updated number per user request
     const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}`;
     const [isVisible, setIsVisible] = useState(true);
@@ -14,7 +18,7 @@ const WhatsAppButton = () => {
             const scrollPosition = window.scrollY + window.innerHeight;
             const footerThreshold = 400; // Approximate footer height triggering point
 
-            if (scaffoldHeight - scrollPosition < footerThreshold) {
+            if (scaffoldHeight - scrollPosition < footerThreshold || isMobileMenuOpen) {
                 setIsVisible(false);
             } else {
                 setIsVisible(true);
@@ -22,8 +26,11 @@ const WhatsAppButton = () => {
         };
 
         window.addEventListener('scroll', toggleVisibility);
+        // Also run toggle logic when isMobileMenuOpen changes
+        toggleVisibility();
+
         return () => window.removeEventListener('scroll', toggleVisibility);
-    }, []);
+    }, [isMobileMenuOpen]);
 
     return (
         <AnimatePresence>
