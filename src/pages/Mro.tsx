@@ -3,31 +3,24 @@ import PageTransition from '../components/PageTransition';
 import { motion } from 'framer-motion';
 import Starfield from '../components/Starfield';
 import { Zap, Link, Battery, Disc, Settings, Package, Check } from 'lucide-react';
-// import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 const Mro = () => {
-    // using translation hook if we wanted, but content is hardcoded for now as per request
-    // const { t } = useTranslation();
+    const { t } = useTranslation();
 
     const categories = [
         {
-            title: "Bougies",
+            title: t('mro.categories.spark_plugs'),
             icon: Zap,
             items: ["Champion"]
         },
         {
-            title: "Raccords et autres flexibles",
+            title: t('mro.categories.fittings'),
             icon: Link,
-            items: [
-                "Accouplements",
-                "Déconnexions rapides",
-                "Vannes de sécurité",
-                "Articulations pivotantes",
-                "Tous flexibles hydrauliques"
-            ]
+            items: t('mro.items.fittings', { returnObjects: true }) as string[]
         },
         {
-            title: "Batteries",
+            title: t('mro.categories.batteries'),
             icon: Battery,
             items: [
                 "Gill",
@@ -36,7 +29,7 @@ const Mro = () => {
             ]
         },
         {
-            title: "Pneus",
+            title: t('mro.categories.tires'),
             icon: Disc,
             items: [
                 "Aero Classic",
@@ -47,7 +40,7 @@ const Mro = () => {
             ]
         },
         {
-            title: "Magnéto et Pièces",
+            title: t('mro.categories.magneto'),
             icon: Settings,
             items: [
                 "Bendix",
@@ -55,26 +48,17 @@ const Mro = () => {
             ]
         },
         {
-            title: "Autres pièces à dispositions",
+            title: t('mro.categories.others'),
             icon: Package,
-            items: [
-                "Assemblages de flexibles",
-                "Train d'atterrissage",
-                "Moteurs pistons et turbines",
-                "Systèmes hydrauliques",
-                "Systèmes électriques",
-                "Huile de lubrification",
-                "Circuit de carburant",
-                "Liquide de refroidissement"
-            ]
+            items: t('mro.items.others', { returnObjects: true }) as string[]
         }
     ];
 
     return (
         <PageTransition>
             <Helmet>
-                <title>MRO - Maintenance & Pièces - fl360</title>
-                <meta name="description" content="Services de maintenance, réparation et pièces détachées pour aéronefs." />
+                <title>{t('mro.title')}</title>
+                <meta name="description" content={t('mro.meta_desc')} />
             </Helmet>
 
             <div className="min-h-screen bg-zinc-950 text-white font-sans pt-32 pb-20">
@@ -87,7 +71,7 @@ const Mro = () => {
                             animate={{ opacity: 1, y: 0 }}
                             className="text-3xl md:text-5xl lg:text-6xl font-black uppercase tracking-widest mb-6 leading-tight"
                         >
-                            Entretenez votre <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-indigo-500">Aéronef</span> de manière intelligente
+                            {t('mro.hero.title_prefix')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-indigo-500">{t('mro.hero.title_highlight')}</span> {t('mro.hero.title_suffix')}
                         </motion.h1>
                         <motion.p
                             initial={{ opacity: 0 }}
@@ -95,7 +79,7 @@ const Mro = () => {
                             transition={{ delay: 0.2 }}
                             className="text-xl md:text-2xl text-gray-400 font-light tracking-wide uppercase border-b border-white/10 pb-8 inline-block"
                         >
-                            Maintenance • Réparation • Pièces Détachées
+                            {t('mro.hero.subtitle')}
                         </motion.p>
                     </div>
 
@@ -133,7 +117,7 @@ const Mro = () => {
                         className="text-center bg-indigo-900/10 border border-indigo-500/20 p-8 rounded-lg max-w-2xl mx-auto"
                     >
                         <p className="text-indigo-200 font-medium tracking-wide">
-                            D'autres pièces de maintenance peuvent être disponibles sur demande.
+                            {t('mro.more_info')}
                         </p>
                     </motion.div>
                 </div>

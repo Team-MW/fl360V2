@@ -51,6 +51,21 @@
                 "text": "The minimalist and efficient approach of their operations is simply revolutionary.",
                 "author": "MARIE MARTIN",
                 "role": "Director, Luxury Travel"
+            },
+            "review3": {
+                "text": "FL360 transformed our airworthiness management. Fearsome efficiency allowing us to focus on the essential: flying.",
+                "author": "Thomas Anderson",
+                "role": "Chief Pilot, Horizon Jets"
+            },
+            "review4": {
+                "text": "Their CAMO expertise allowed us to reduce downtime by 30%. An indispensable strategic partner.",
+                "author": "Sophie Dubois",
+                "role": "Fleet Manager, AeroServices"
+            },
+            "review5": {
+                "text": "A turnkey service that exceeds all expectations. Absolute peace of mind for our operations.",
+                "author": "Marc Weber",
+                "role": "Owner, Private Jet"
             }
         },
         "cta": {
@@ -117,6 +132,138 @@
             "message": "YOUR MESSAGE..."
         },
         "button": "Send Message"
+    },
+    "cao_camo": {
+        "title": "CAO / CAMO - Airworthiness Management - fl360",
+        "meta_desc": "Continuing Airworthiness Management Organization (CAO / CAMO) services for aircraft.",
+        "hero": {
+            "title_prefix": "Maintain your",
+            "title_highlight": "Aircraft",
+            "title_suffix": "intelligently",
+            "subtitle_line1": "Continuing Airworthiness Management Organization (CAO / CAMO)",
+            "subtitle_line2": "A perfect approach to airworthiness management"
+        },
+        "about": {
+            "title": "About",
+            "p1": "We provide customized solutions for the continuing airworthiness management of your aircraft. FL 360 Aviation perfectly meets your needs.",
+            "p2": "Our CAO / CAMO service aims to maintain the airworthiness of your aircraft, maximizing fleet availability for our clients."
+        },
+        "benefits": {
+            "title": "Benefits",
+            "desc": "Our CAO / CAMO service is specifically adapted to your needs, allowing us to offer personalized solutions with great flexibility meeting civil aviation standards.",
+            "compliance": "OSAC compliance guaranteed"
+        },
+        "services_list": {
+            "title": "Complete Oversight & Management",
+            "items": [
+                "Development, revision and control of a maintenance program",
+                "Planning and coordination of all scheduled maintenance activities",
+                "Evaluation of Airworthiness Directives (AD) and Service Bulletins (SB)",
+                "Management of aircraft technical logs and records",
+                "Management of modifications and repairs",
+                "Coordination of aircraft defects and AOG situations",
+                "Reliability monitoring",
+                "Pre-purchase inspections (PREBUY)",
+                "Registration of your aircraft",
+                "Import / Export of aircraft"
+            ]
+        },
+        "navigability": {
+            "title": "Airworthiness Management",
+            "needs": {
+                "title": "Your needs",
+                "desc": "Whether you are an owner, operator, or flying club, you need rigorous and flawless monitoring of your fleet in compliance with regulations and perfect control of technical status."
+            },
+            "offer": {
+                "title": "Our offer",
+                "desc1": "After a thorough preliminary inspection, we initialize your fleet in our information system to trace a complete history.",
+                "desc2": "We ensure regulatory monitoring, determine maintenance deadlines, and provide required reports for airworthiness reviews."
+            }
+        },
+        "prebuy": {
+            "title": "Prebuy / Inspection",
+            "needs": {
+                "title": "Your needs",
+                "desc": "You have just bought or sold an aircraft. Before its acceptance / delivery, you must be sure of its physical integrity and the completeness of technical data."
+            },
+            "offer": {
+                "title": "Our offer",
+                "desc1": "We support you for integration and start of operations by conducting an in-depth technical study and physical inspection of the aircraft.",
+                "desc2": "At the end of operations, FL360 Aviation assists you with the sale of the aircraft or its return to the lessor."
+            }
+        },
+        "maintenance_program": {
+            "title": "Maintenance Program",
+            "desc": "For several years, we have provided personalized Maintenance Programs meeting Part M requirements under M.A.302. We also hold \"Indirect Approval\" authorization allowing us to provide an MP APPROVED by our Airworthiness Manager, avoiding submissions to OSAC."
+        },
+        "progdigital": {
+            "title": "ProgDigital",
+            "subtitle": "Our indispensable tool dedicated to airworthiness tracking management.",
+            "desc": "This software offers assistance in tracking aircraft maintenance operations for optimal airworthiness status. Designed for Part M subpart G organizations managing aircraft fleets.",
+            "features": [
+                "User-friendly interface and quick learning curve",
+                "Considerable time saving",
+                "Regular updates",
+                "Security, transparency and regulatory compliance",
+                "Print all necessary documents in a few clicks",
+                "Ease of use",
+                "Compatible with all Windows operating systems"
+            ],
+            "interface_title": "ProgDigital Interface",
+            "interface_desc": "Software interface screenshot"
+        },
+        "cta": "Contact Us"
+    },
+    "mro": {
+        "title": "MRO - Maintenance & Parts - fl360",
+        "meta_desc": "Maintenance, repair, and spare parts services for aircraft.",
+        "hero": {
+            "title_prefix": "Maintain your",
+            "title_highlight": "Aircraft",
+            "title_suffix": "intelligently",
+            "subtitle": "Maintenance • Repair • Spare Parts"
+        },
+        "categories": {
+            "spark_plugs": "Spark Plugs",
+            "fittings": "Fittings and Hoses",
+            "batteries": "Batteries",
+            "tires": "Tires",
+            "magneto": "Magneto and Parts",
+            "others": "Other Parts Available"
+        },
+        "items": {
+            "fittings": [
+                "Couplings",
+                "Quick disconnects",
+                "Safety valves",
+                "Swivel joints",
+                "All hydraulic hoses"
+            ],
+            "others": [
+                "Hose assemblies",
+                "Landing gear",
+                "Pistons and turbine engines",
+                "Hydraulic systems",
+                "Electrical systems",
+                "Lubricating oil",
+                "Fuel system",
+                "Coolant"
+            ]
+        },
+        "more_info": "Other maintenance parts may be available upon request."
+    },
+    "cap_list": {
+        "title": "CAO / CAMO Certification - fl360",
+        "meta_desc": "List of aircraft managed under CAO / CAMO.",
+        "hero": {
+            "title": "Capability List",
+            "subtitle": "Aircraft under CAO / CAMO airworthiness management"
+        },
+        "table": {
+            "col1": "Aircraft Types/Series/Groups",
+            "col2": "Authorized Airworthiness Reviews",
+            "col2_mobile": "Authorized"
+        }
     },
     "footer": {
         "tagline": "A futuristic vision of aviation.\nExcellence. Precision. Innovation.",

@@ -221,21 +221,9 @@ const Home = () => {
                             {[
                                 { text: t('home.testimonials.review1.text'), author: t('home.testimonials.review1.author'), role: t('home.testimonials.review1.role') },
                                 { text: t('home.testimonials.review2.text'), author: t('home.testimonials.review2.author'), role: t('home.testimonials.review2.role') },
-                                {
-                                    text: "FL360 a transformé notre gestion de navigabilité. Une efficacité redoutable qui nous permet de nous concentrer sur l'essentiel : voler.",
-                                    author: "Thomas Anderson",
-                                    role: "Chief Pilot, Horizon Jets"
-                                },
-                                {
-                                    text: "Leur expertise CAMO nous a permis de réduire nos temps d'immobilisation de 30%. Un partenaire stratégique indispensable.",
-                                    author: "Sophie Dubois",
-                                    role: "Fleet Manager, AeroServices"
-                                },
-                                {
-                                    text: "Un service clé en main qui dépasse toutes les attentes. La tranquillité d'esprit absolue pour nos opérations.",
-                                    author: "Marc Weber",
-                                    role: "Owner, Private Jet"
-                                }
+                                { text: t('home.testimonials.review3.text'), author: t('home.testimonials.review3.author'), role: t('home.testimonials.review3.role') },
+                                { text: t('home.testimonials.review4.text'), author: t('home.testimonials.review4.author'), role: t('home.testimonials.review4.role') },
+                                { text: t('home.testimonials.review5.text'), author: t('home.testimonials.review5.author'), role: t('home.testimonials.review5.role') }
                             ].map((t, idx) => (
                                 <motion.div
                                     key={idx}

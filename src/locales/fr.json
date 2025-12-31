@@ -52,6 +52,21 @@
                 "text": "L'approche minimaliste et efficace de leurs opérations est tout simplement révolutionnaire.",
                 "author": "MARIE MARTIN",
                 "role": "Director, Luxury Travel"
+            },
+            "review3": {
+                "text": "FL360 a transformé notre gestion de navigabilité. Une efficacité redoutable qui nous permet de nous concentrer sur l'essentiel : voler.",
+                "author": "Thomas Anderson",
+                "role": "Chief Pilot, Horizon Jets"
+            },
+            "review4": {
+                "text": "Leur expertise CAMO nous a permis de réduire nos temps d'immobilisation de 30%. Un partenaire stratégique indispensable.",
+                "author": "Sophie Dubois",
+                "role": "Fleet Manager, AeroServices"
+            },
+            "review5": {
+                "text": "Un service clé en main qui dépasse toutes les attentes. La tranquillité d'esprit absolue pour nos opérations.",
+                "author": "Marc Weber",
+                "role": "Owner, Private Jet"
             }
         },
         "cta": {
@@ -139,6 +154,138 @@
             "message": "VOTRE MESSAGE..."
         },
         "button": "Envoyer"
+    },
+    "cao_camo": {
+        "title": "CAO / CAMO - Gestion de Navigabilité - fl360",
+        "meta_desc": "Services de gestion du maintien de la navigabilité (CAO / CAMO) pour aéronefs.",
+        "hero": {
+            "title_prefix": "Entretenez votre",
+            "title_highlight": "Aéronef",
+            "title_suffix": "de manière intelligente",
+            "subtitle_line1": "L’Organisme de Gestion du Maintien de la Navigabilité (CAO / CAMO)",
+            "subtitle_line2": "Une approche parfaite pour la gestion de la navigabilité"
+        },
+        "about": {
+            "title": "À propos",
+            "p1": "Nous fournissons des solutions personnalisées pour la gestion du maintien de la navigabilité de votre aéronef. FL 360 Aviation répond parfaitement à vos besoins.",
+            "p2": "Notre service CAO / CAMO vise à maintenir la navigabilité de vos aéronefs, en maximisant la disponibilité des avions de nos clients."
+        },
+        "benefits": {
+            "title": "Avantages",
+            "desc": "Notre service CAO / CAMO est spécifiquement adapté à vos besoins, ce qui nous permet de vous proposer des solutions personnalisées, avec une grande souplesse répondant aux normes de l'aviation civile.",
+            "compliance": "Conformité OSAC garantie"
+        },
+        "services_list": {
+            "title": "Surveillance & Gestion Complète",
+            "items": [
+                "Développement, révision et contrôle d’un programme de maintenance",
+                "Planification et coordination de toutes les activités de maintenance programmée",
+                "Évaluation des consignes de navigabilité (AD) et du bulletin de service (SB)",
+                "Gestion des registres techniques des aéronefs et dossiers techniques",
+                "Gestion des modifications et des réparations",
+                "Coordination des défauts d’aéronefs et situations AOG",
+                "Surveillance de la fiabilité",
+                "Inspections avant achat (PREBUY)",
+                "Immatriculation de votre aéronef",
+                "Import / Export d'aéronefs"
+            ]
+        },
+        "navigability": {
+            "title": "Gestion de la Navigabilité",
+            "needs": {
+                "title": "Vos besoins",
+                "desc": "Que vous soyez propriétaire, exploitant ou aéroclub, vous avez besoin d’un suivi rigoureux et irréprochable de votre flotte conformément à la réglementation et d’un contrôle parfait des statuts techniques."
+            },
+            "offer": {
+                "title": "Notre offre",
+                "desc1": "Après une minutieuse inspection préliminaire, nous initialisons votre flotte dans notre système d’information afin d’y tracer un historique complet.",
+                "desc2": "Nous assurons le suivi réglementaire, déterminons les butées de maintenance et fournissons les rapports requis pour les revues de navigabilité."
+            }
+        },
+        "prebuy": {
+            "title": "Prebuy / Inspection",
+            "needs": {
+                "title": "Vos besoins",
+                "desc": "Vous venez d’acheter ou de vendre un avion. Avant sa réception / livraison, vous devez être sûr de son intégrité physique et de l'exhaustivité des données techniques."
+            },
+            "offer": {
+                "title": "Notre offre",
+                "desc1": "Nous vous accompagnons pour l’intégration et le début d’exploitation en procédant à une étude technique approfondie et une inspection physique de l’avion.",
+                "desc2": "En fin d’exploitation, FL360 Aviation vous accompagne pour la vente de l’avion ou son retour au bailleur."
+            }
+        },
+        "maintenance_program": {
+            "title": "Programme d'entretien",
+            "desc": "Depuis plusieurs années, nous fournissons des Programmes d'entretien personnalisés qui répondent aux exigences de la Part M selon le M.A.302. Nous avons de même l’autorisation \"Approbation Indirecte\" qui nous permet de vous fournir un PE APPROUVÉ par notre Responsable de la Navigabilité, évitant ainsi toute dépose auprès de l’OSAC."
+        },
+        "progdigital": {
+            "title": "ProgDigital",
+            "subtitle": "Notre outil de travail indispensable dédié à la gestion du suivi de navigabilité.",
+            "desc": "Ce logiciel offre une aide au suivi des opérations d’entretien des aéronefs pour un état de navigabilité optimal. Conçu pour les organismes Part M sous Part G gérant un parc d’avions.",
+            "features": [
+                "Interface agréable et prise en main rapide",
+                "Gain de temps considérable",
+                "Mise à jour régulière",
+                "Sécurité, transparence et conformité à la réglementation",
+                "Impression de tous les documents nécessaires en quelques clics",
+                "Facilité d’utilisation",
+                "Compatible avec tous les systemes d’exploitation Windows"
+            ],
+            "interface_title": "Interface ProgDigital",
+            "interface_desc": "Capture d'écran de l'interface logicielle"
+        },
+        "cta": "Nous contacter"
+    },
+    "mro": {
+        "title": "MRO - Maintenance & Pièces - fl360",
+        "meta_desc": "Services de maintenance, réparation et pièces détachées pour aéronefs.",
+        "hero": {
+            "title_prefix": "Entretenez votre",
+            "title_highlight": "Aéronef",
+            "title_suffix": "de manière intelligente",
+            "subtitle": "Maintenance • Réparation • Pièces Détachées"
+        },
+        "categories": {
+            "spark_plugs": "Bougies",
+            "fittings": "Raccords et autres flexibles",
+            "batteries": "Batteries",
+            "tires": "Pneus",
+            "magneto": "Magnéto et Pièces",
+            "others": "Autres pièces à dispositions"
+        },
+        "items": {
+            "fittings": [
+                "Accouplements",
+                "Déconnexions rapides",
+                "Vannes de sécurité",
+                "Articulations pivotantes",
+                "Tous flexibles hydrauliques"
+            ],
+            "others": [
+                "Assemblages de flexibles",
+                "Train d'atterrissage",
+                "Moteurs pistons et turbines",
+                "Systèmes hydrauliques",
+                "Systèmes électriques",
+                "Huile de lubrification",
+                "Circuit de carburant",
+                "Liquide de refroidissement"
+            ]
+        },
+        "more_info": "D'autres pièces de maintenance peuvent être disponibles sur demande."
+    },
+    "cap_list": {
+        "title": "Certification CAO / CAMO - fl360",
+        "meta_desc": "Liste des aéronefs gérés en CAO / CAMO.",
+        "hero": {
+            "title": "Capability List",
+            "subtitle": "Aéronefs au sein de la gestion de navigabilité CAO / CAMO"
+        },
+        "table": {
+            "col1": "Types/Séries/Groupes d'aéronefs",
+            "col2": "Examens de navigabilité autorisée",
+            "col2_mobile": "Autorisé"
+        }
     },
     "footer": {
         "tagline": "Une vision futuriste de l'aviation.\nExcellence. Precision. Innovation.",

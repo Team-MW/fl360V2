@@ -92,14 +92,17 @@ const aircraftData = {
     ]
 };
 
+import { useTranslation } from 'react-i18next';
+
 const CapList = () => {
+    const { t } = useTranslation();
     const [activeTab, setActiveTab] = useState("BEECH");
 
     return (
         <PageTransition>
             <Helmet>
-                <title>Capability List - fl360</title>
-                <meta name="description" content="Liste des aéronefs gérés en CAO / CAMO." />
+                <title>{t('cap_list.title')}</title>
+                <meta name="description" content={t('cap_list.meta_desc')} />
             </Helmet>
 
             <div className="min-h-screen bg-zinc-950 text-white font-sans pt-32 pb-20">
@@ -111,7 +114,7 @@ const CapList = () => {
                             animate={{ opacity: 1, y: 0 }}
                             className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-widest mb-4"
                         >
-                            Capability List
+                            {t('cap_list.hero.title')}
                         </motion.h1>
                         <motion.p
                             initial={{ opacity: 0 }}
@@ -119,7 +122,7 @@ const CapList = () => {
                             transition={{ delay: 0.2 }}
                             className="text-lg md:text-xl text-gray-400 font-light"
                         >
-                            Aéronefs au sein de la gestion de navigabilité CAO / CAMO
+                            {t('cap_list.hero.subtitle')}
                         </motion.p>
                     </div>
 
@@ -149,9 +152,9 @@ const CapList = () => {
                     >
                         {/* Table Header */}
                         <div className="grid grid-cols-[1fr,auto] gap-4 p-6 border-b border-white/10 bg-white/5">
-                            <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400">Types/Séries/Groupes d'aéronefs</h3>
-                            <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 text-right hidden md:block">Examens de navigabilité autorisée</h3>
-                            <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 text-right md:hidden">Autorisé</h3>
+                            <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400">{t('cap_list.table.col1')}</h3>
+                            <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 text-right hidden md:block">{t('cap_list.table.col2')}</h3>
+                            <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 text-right md:hidden">{t('cap_list.table.col2_mobile')}</h3>
                         </div>
 
                         {/* Table Body */}
