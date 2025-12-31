@@ -220,224 +220,225 @@
             "title": "Documents Officiels",
             "button": "Télécharger Agrément SPO",
             "sub": "Licence d'Exploitation Commerciale"
-        },
-        "contact_page": {
-            "title": "DEVIS",
-            "description": "Prêt à repousser les limites ?\nDiscutons de votre prochain vol.",
-            "labels": {
-                "email": "Email",
-                "phone": "Téléphone",
-                "name": "Nom",
-                "message": "Message"
-            },
-            "placeholders": {
-                "name": "VOTRE NOM",
-                "email": "VOTRE EMAIL",
-                "message": "VOTRE MESSAGE..."
-            },
-            "button": "Envoyer",
-            "steps": {
-                "flight_details": "Détails du Vol",
-                "cargo_details": "Détails Cargo",
-                "contact_info": "Informations de Contact",
-                "step1": "VOL",
-                "step2": "DETAILS",
-                "step3": "CONTACT"
-            },
-            "form": {
-                "aircraft_type": "Type d'appareil",
-                "passenger": "Passager",
-                "cargo": "Cargo",
-                "departure": "Départ",
-                "arrival": "Arrivée",
-                "departure_date": "Date de départ",
-                "time": "Heure",
-                "indifferent": "Indifférent",
-                "morning": "Matin (06:00 - 12:00)",
-                "afternoon": "Après-midi (12:00 - 18:00)",
-                "evening": "Soir (18:00 - 00:00)",
-                "passengers": "Passagers",
-                "return_date": "Date de retour",
-                "additional_info": "Informations supplémentaires (Optionnel)",
-                "additional_info_placeholder": "Besoin particulier, animaux, bagages volumineux...",
-                "cargo_weight": "Poids Total (kg/t)",
-                "cargo_volume": "Volume Total (m3/ft3)",
-                "cargo_size": "Plus grande taille (m/ft)",
-                "cargo_dims": "Dimensions (m/ft)",
-                "cargo_desc_placeholder": "Description de la marchandise, instructions spéciales...",
-                "name": "Nom",
-                "firstname": "Prénom",
-                "lastname": "Nom",
-                "email": "Email",
-                "company": "Entreprise",
-                "phone": "Téléphone",
-                "mobile": "Mobile",
-                "country": "Pays",
-                "company_placeholder": "Nom de l'entreprise",
-                "phone_placeholder": "1 23 45 67 89",
-                "mobile_placeholder": "6 12 34 56 78",
-                "name_placeholder": "Votre nom",
-                "consent_contact": "J'autorise Air Charter Service à utiliser mes informations pour me contacter par téléphone et par email au sujet de ma demande de renseignements et/ou de produits et services équivalents.",
-                "consent_terms": "J'accepte les termes et conditions, <1>la politique de confidentialité</1> et de cookies.",
-                "submit": "Soumettre",
-                "next": "Suivant",
-                "back": "Retour"
-            },
-            "success": {
-                "title": "Demande Envoyée",
-                "message": "Merci pour votre demande. Elle sera traitée dans les plus brefs délais par notre équipe.",
-                "close": "Fermer"
-            },
-            "alerts": {
-                "airports": "Veuillez sélectionner les aéroports de départ et d'arrivée.",
-                "date": "Veuillez sélectionner une date de départ.",
-                "terms": "Veuillez accepter les termes et conditions.",
-                "error": "Erreur lors de l'envoi : "
-            }
-        },
-        "cao_camo": {
-            "title": "CAO / CAMO - Gestion de Navigabilité - fl360",
-            "meta_desc": "Services de gestion du maintien de la navigabilité (CAO / CAMO) pour aéronefs.",
-            "hero": {
-                "title_prefix": "Entretenez votre",
-                "title_highlight": "Aéronef",
-                "title_suffix": "de manière intelligente",
-                "subtitle_line1": "L’Organisme de Gestion du Maintien de la Navigabilité (CAO / CAMO)",
-                "subtitle_line2": "Une approche parfaite pour la gestion de la navigabilité"
-            },
-            "about": {
-                "title": "À propos",
-                "p1": "Nous fournissons des solutions personnalisées pour la gestion du maintien de la navigabilité de votre aéronef. FL 360 Aviation répond parfaitement à vos besoins.",
-                "p2": "Notre service CAO / CAMO vise à maintenir la navigabilité de vos aéronefs, en maximisant la disponibilité des avions de nos clients."
-            },
-            "benefits": {
-                "title": "Avantages",
-                "desc": "Notre service CAO / CAMO est spécifiquement adapté à vos besoins, ce qui nous permet de vous proposer des solutions personnalisées, avec une grande souplesse répondant aux normes de l'aviation civile.",
-                "compliance": "Conformité OSAC garantie"
-            },
-            "services_list": {
-                "title": "Surveillance & Gestion Complète",
-                "items": [
-                    "Développement, révision et contrôle d’un programme de maintenance",
-                    "Planification et coordination de toutes les activités de maintenance programmée",
-                    "Évaluation des consignes de navigabilité (AD) et du bulletin de service (SB)",
-                    "Gestion des registres techniques des aéronefs et dossiers techniques",
-                    "Gestion des modifications et des réparations",
-                    "Coordination des défauts d’aéronefs et situations AOG",
-                    "Surveillance de la fiabilité",
-                    "Inspections avant achat (PREBUY)",
-                    "Immatriculation de votre aéronef",
-                    "Import / Export d'aéronefs"
-                ]
-            },
-            "navigability": {
-                "title": "Gestion de la Navigabilité",
-                "needs": {
-                    "title": "Vos besoins",
-                    "desc": "Que vous soyez propriétaire, exploitant ou aéroclub, vous avez besoin d’un suivi rigoureux et irréprochable de votre flotte conformément à la réglementation et d’un contrôle parfait des statuts techniques."
-                },
-                "offer": {
-                    "title": "Notre offre",
-                    "desc1": "Après une minutieuse inspection préliminaire, nous initialisons votre flotte dans notre système d’information afin d’y tracer un historique complet.",
-                    "desc2": "Nous assurons le suivi réglementaire, déterminons les butées de maintenance et fournissons les rapports requis pour les revues de navigabilité."
-                }
-            },
-            "prebuy": {
-                "title": "Prebuy / Inspection",
-                "needs": {
-                    "title": "Vos besoins",
-                    "desc": "Vous venez d’acheter ou de vendre un avion. Avant sa réception / livraison, vous devez être sûr de son intégrité physique et de l'exhaustivité des données techniques."
-                },
-                "offer": {
-                    "title": "Notre offre",
-                    "desc1": "Nous vous accompagnons pour l’intégration et le début d’exploitation en procédant à une étude technique approfondie et une inspection physique de l’avion.",
-                    "desc2": "En fin d’exploitation, FL360 Aviation vous accompagne pour la vente de l’avion ou son retour au bailleur."
-                }
-            },
-            "maintenance_program": {
-                "title": "Programme d'entretien",
-                "desc": "Depuis plusieurs années, nous fournissons des Programmes d'entretien personnalisés qui répondent aux exigences de la Part M selon le M.A.302. Nous avons de même l’autorisation \"Approbation Indirecte\" qui nous permet de vous fournir un PE APPROUVÉ par notre Responsable de la Navigabilité, évitant ainsi toute dépose auprès de l’OSAC."
-            },
-            "progdigital": {
-                "title": "ProgDigital",
-                "subtitle": "Notre outil de travail indispensable dédié à la gestion du suivi de navigabilité.",
-                "desc": "Ce logiciel offre une aide au suivi des opérations d’entretien des aéronefs pour un état de navigabilité optimal. Conçu pour les organismes Part M sous Part G gérant un parc d’avions.",
-                "features": [
-                    "Interface agréable et prise en main rapide",
-                    "Gain de temps considérable",
-                    "Mise à jour régulière",
-                    "Sécurité, transparence et conformité à la réglementation",
-                    "Impression de tous les documents nécessaires en quelques clics",
-                    "Facilité d’utilisation",
-                    "Compatible avec tous les systemes d’exploitation Windows"
-                ],
-                "interface_title": "Interface ProgDigital",
-                "interface_desc": "Capture d'écran de l'interface logicielle"
-            },
-            "cta": "Nous contacter"
-        },
-        "mro": {
-            "title": "MRO - Maintenance & Pièces - fl360",
-            "meta_desc": "Services de maintenance, réparation et pièces détachées pour aéronefs.",
-            "hero": {
-                "title_prefix": "Entretenez votre",
-                "title_highlight": "Aéronef",
-                "title_suffix": "de manière intelligente",
-                "subtitle": "Maintenance • Réparation • Pièces Détachées"
-            },
-            "categories": {
-                "spark_plugs": "Bougies",
-                "fittings": "Raccords et autres flexibles",
-                "batteries": "Batteries",
-                "tires": "Pneus",
-                "magneto": "Magnéto et Pièces",
-                "others": "Autres pièces à dispositions"
-            },
-            "items": {
-                "fittings": [
-                    "Accouplements",
-                    "Déconnexions rapides",
-                    "Vannes de sécurité",
-                    "Articulations pivotantes",
-                    "Tous flexibles hydrauliques"
-                ],
-                "others": [
-                    "Assemblages de flexibles",
-                    "Train d'atterrissage",
-                    "Moteurs pistons et turbines",
-                    "Systèmes hydrauliques",
-                    "Systèmes électriques",
-                    "Huile de lubrification",
-                    "Circuit de carburant",
-                    "Liquide de refroidissement"
-                ]
-            },
-            "more_info": "D'autres pièces de maintenance peuvent être disponibles sur demande."
-        },
-        "cap_list": {
-            "title": "Certification CAO / CAMO - fl360",
-            "meta_desc": "Liste des aéronefs gérés en CAO / CAMO.",
-            "hero": {
-                "title": "Capability List",
-                "subtitle": "Aéronefs au sein de la gestion de navigabilité CAO / CAMO"
-            },
-            "table": {
-                "col1": "Types/Séries/Groupes d'aéronefs",
-                "col2": "Examens de navigabilité autorisée",
-                "col2_mobile": "Autorisé"
-            }
-        },
-        "footer": {
-            "tagline": "Une vision futuriste de l'aviation.\nExcellence. Precision. Innovation.",
-            "links": "Exploration",
-            "contact": "Coordonnées",
-            "newsletter": {
-                "title": "Newsletter",
-                "placeholder": "VOTRE EMAIL",
-                "sub": "Rejoignez notre cercle exclusif."
-            },
-            "rights": "© {{year}} FL360 AVIATION SYSTEMS.",
-            "privacy": "Politique de confidentialité",
-            "legal": "Mentions légales"
         }
+    },
+    "contact_page": {
+        "title": "DEVIS",
+        "description": "Prêt à repousser les limites ?\nDiscutons de votre prochain vol.",
+        "labels": {
+            "email": "Email",
+            "phone": "Téléphone",
+            "name": "Nom",
+            "message": "Message"
+        },
+        "placeholders": {
+            "name": "VOTRE NOM",
+            "email": "VOTRE EMAIL",
+            "message": "VOTRE MESSAGE..."
+        },
+        "button": "Envoyer",
+        "steps": {
+            "flight_details": "Détails du Vol",
+            "cargo_details": "Détails Cargo",
+            "contact_info": "Informations de Contact",
+            "step1": "VOL",
+            "step2": "DETAILS",
+            "step3": "CONTACT"
+        },
+        "form": {
+            "aircraft_type": "Type d'appareil",
+            "passenger": "Passager",
+            "cargo": "Cargo",
+            "departure": "Départ",
+            "arrival": "Arrivée",
+            "departure_date": "Date de départ",
+            "time": "Heure",
+            "indifferent": "Indifférent",
+            "morning": "Matin (06:00 - 12:00)",
+            "afternoon": "Après-midi (12:00 - 18:00)",
+            "evening": "Soir (18:00 - 00:00)",
+            "passengers": "Passagers",
+            "return_date": "Date de retour",
+            "additional_info": "Informations supplémentaires (Optionnel)",
+            "additional_info_placeholder": "Besoin particulier, animaux, bagages volumineux...",
+            "cargo_weight": "Poids Total (kg/t)",
+            "cargo_volume": "Volume Total (m3/ft3)",
+            "cargo_size": "Plus grande taille (m/ft)",
+            "cargo_dims": "Dimensions (m/ft)",
+            "cargo_desc_placeholder": "Description de la marchandise, instructions spéciales...",
+            "name": "Nom",
+            "firstname": "Prénom",
+            "lastname": "Nom",
+            "email": "Email",
+            "company": "Entreprise",
+            "phone": "Téléphone",
+            "mobile": "Mobile",
+            "country": "Pays",
+            "company_placeholder": "Nom de l'entreprise",
+            "phone_placeholder": "1 23 45 67 89",
+            "mobile_placeholder": "6 12 34 56 78",
+            "name_placeholder": "Votre nom",
+            "consent_contact": "J'autorise Air Charter Service à utiliser mes informations pour me contacter par téléphone et par email au sujet de ma demande de renseignements et/ou de produits et services équivalents.",
+            "consent_terms": "J'accepte les termes et conditions, <1>la politique de confidentialité</1> et de cookies.",
+            "submit": "Soumettre",
+            "next": "Suivant",
+            "back": "Retour"
+        },
+        "success": {
+            "title": "Demande Envoyée",
+            "message": "Merci pour votre demande. Elle sera traitée dans les plus brefs délais par notre équipe.",
+            "close": "Fermer"
+        },
+        "alerts": {
+            "airports": "Veuillez sélectionner les aéroports de départ et d'arrivée.",
+            "date": "Veuillez sélectionner une date de départ.",
+            "terms": "Veuillez accepter les termes et conditions.",
+            "error": "Erreur lors de l'envoi : "
+        }
+    },
+    "cao_camo": {
+        "title": "CAO / CAMO - Gestion de Navigabilité - fl360",
+        "meta_desc": "Services de gestion du maintien de la navigabilité (CAO / CAMO) pour aéronefs.",
+        "hero": {
+            "title_prefix": "Entretenez votre",
+            "title_highlight": "Aéronef",
+            "title_suffix": "de manière intelligente",
+            "subtitle_line1": "L’Organisme de Gestion du Maintien de la Navigabilité (CAO / CAMO)",
+            "subtitle_line2": "Une approche parfaite pour la gestion de la navigabilité"
+        },
+        "about": {
+            "title": "À propos",
+            "p1": "Nous fournissons des solutions personnalisées pour la gestion du maintien de la navigabilité de votre aéronef. FL 360 Aviation répond parfaitement à vos besoins.",
+            "p2": "Notre service CAO / CAMO vise à maintenir la navigabilité de vos aéronefs, en maximisant la disponibilité des avions de nos clients."
+        },
+        "benefits": {
+            "title": "Avantages",
+            "desc": "Notre service CAO / CAMO est spécifiquement adapté à vos besoins, ce qui nous permet de vous proposer des solutions personnalisées, avec une grande souplesse répondant aux normes de l'aviation civile.",
+            "compliance": "Conformité OSAC garantie"
+        },
+        "services_list": {
+            "title": "Surveillance & Gestion Complète",
+            "items": [
+                "Développement, révision et contrôle d’un programme de maintenance",
+                "Planification et coordination de toutes les activités de maintenance programmée",
+                "Évaluation des consignes de navigabilité (AD) et du bulletin de service (SB)",
+                "Gestion des registres techniques des aéronefs et dossiers techniques",
+                "Gestion des modifications et des réparations",
+                "Coordination des défauts d’aéronefs et situations AOG",
+                "Surveillance de la fiabilité",
+                "Inspections avant achat (PREBUY)",
+                "Immatriculation de votre aéronef",
+                "Import / Export d'aéronefs"
+            ]
+        },
+        "navigability": {
+            "title": "Gestion de la Navigabilité",
+            "needs": {
+                "title": "Vos besoins",
+                "desc": "Que vous soyez propriétaire, exploitant ou aéroclub, vous avez besoin d’un suivi rigoureux et irréprochable de votre flotte conformément à la réglementation et d’un contrôle parfait des statuts techniques."
+            },
+            "offer": {
+                "title": "Notre offre",
+                "desc1": "Après une minutieuse inspection préliminaire, nous initialisons votre flotte dans notre système d’information afin d’y tracer un historique complet.",
+                "desc2": "Nous assurons le suivi réglementaire, déterminons les butées de maintenance et fournissons les rapports requis pour les revues de navigabilité."
+            }
+        },
+        "prebuy": {
+            "title": "Prebuy / Inspection",
+            "needs": {
+                "title": "Vos besoins",
+                "desc": "Vous venez d’acheter ou de vendre un avion. Avant sa réception / livraison, vous devez être sûr de son intégrité physique et de l'exhaustivité des données techniques."
+            },
+            "offer": {
+                "title": "Notre offre",
+                "desc1": "Nous vous accompagnons pour l’intégration et le début d’exploitation en procédant à une étude technique approfondie et une inspection physique de l’avion.",
+                "desc2": "En fin d’exploitation, FL360 Aviation vous accompagne pour la vente de l’avion ou son retour au bailleur."
+            }
+        },
+        "maintenance_program": {
+            "title": "Programme d'entretien",
+            "desc": "Depuis plusieurs années, nous fournissons des Programmes d'entretien personnalisés qui répondent aux exigences de la Part M selon le M.A.302. Nous avons de même l’autorisation \"Approbation Indirecte\" qui nous permet de vous fournir un PE APPROUVÉ par notre Responsable de la Navigabilité, évitant ainsi toute dépose auprès de l’OSAC."
+        },
+        "progdigital": {
+            "title": "ProgDigital",
+            "subtitle": "Notre outil de travail indispensable dédié à la gestion du suivi de navigabilité.",
+            "desc": "Ce logiciel offre une aide au suivi des opérations d’entretien des aéronefs pour un état de navigabilité optimal. Conçu pour les organismes Part M sous Part G gérant un parc d’avions.",
+            "features": [
+                "Interface agréable et prise en main rapide",
+                "Gain de temps considérable",
+                "Mise à jour régulière",
+                "Sécurité, transparence et conformité à la réglementation",
+                "Impression de tous les documents nécessaires en quelques clics",
+                "Facilité d’utilisation",
+                "Compatible avec tous les systemes d’exploitation Windows"
+            ],
+            "interface_title": "Interface ProgDigital",
+            "interface_desc": "Capture d'écran de l'interface logicielle"
+        },
+        "cta": "Nous contacter"
+    },
+    "mro": {
+        "title": "MRO - Maintenance & Pièces - fl360",
+        "meta_desc": "Services de maintenance, réparation et pièces détachées pour aéronefs.",
+        "hero": {
+            "title_prefix": "Entretenez votre",
+            "title_highlight": "Aéronef",
+            "title_suffix": "de manière intelligente",
+            "subtitle": "Maintenance • Réparation • Pièces Détachées"
+        },
+        "categories": {
+            "spark_plugs": "Bougies",
+            "fittings": "Raccords et autres flexibles",
+            "batteries": "Batteries",
+            "tires": "Pneus",
+            "magneto": "Magnéto et Pièces",
+            "others": "Autres pièces à dispositions"
+        },
+        "items": {
+            "fittings": [
+                "Accouplements",
+                "Déconnexions rapides",
+                "Vannes de sécurité",
+                "Articulations pivotantes",
+                "Tous flexibles hydrauliques"
+            ],
+            "others": [
+                "Assemblages de flexibles",
+                "Train d'atterrissage",
+                "Moteurs pistons et turbines",
+                "Systèmes hydrauliques",
+                "Systèmes électriques",
+                "Huile de lubrification",
+                "Circuit de carburant",
+                "Liquide de refroidissement"
+            ]
+        },
+        "more_info": "D'autres pièces de maintenance peuvent être disponibles sur demande."
+    },
+    "cap_list": {
+        "title": "Certification CAO / CAMO - fl360",
+        "meta_desc": "Liste des aéronefs gérés en CAO / CAMO.",
+        "hero": {
+            "title": "Capability List",
+            "subtitle": "Aéronefs au sein de la gestion de navigabilité CAO / CAMO"
+        },
+        "table": {
+            "col1": "Types/Séries/Groupes d'aéronefs",
+            "col2": "Examens de navigabilité autorisée",
+            "col2_mobile": "Autorisé"
+        }
+    },
+    "footer": {
+        "tagline": "Une vision futuriste de l'aviation.\nExcellence. Precision. Innovation.",
+        "links": "Exploration",
+        "contact": "Coordonnées",
+        "newsletter": {
+            "title": "Newsletter",
+            "placeholder": "VOTRE EMAIL",
+            "sub": "Rejoignez notre cercle exclusif."
+        },
+        "rights": "© {{year}} FL360 AVIATION SYSTEMS.",
+        "privacy": "Politique de confidentialité",
+        "legal": "Mentions légales"
     }
+}
