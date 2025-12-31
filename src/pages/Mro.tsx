@@ -3,11 +3,11 @@ import PageTransition from '../components/PageTransition';
 import { motion } from 'framer-motion';
 import Starfield from '../components/Starfield';
 import { Zap, Link, Battery, Disc, Settings, Package, Check } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 
 const Mro = () => {
     // using translation hook if we wanted, but content is hardcoded for now as per request
-    const { t } = useTranslation();
+    // const { t } = useTranslation();
 
     const categories = [
         {

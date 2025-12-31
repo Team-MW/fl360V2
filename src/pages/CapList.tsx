@@ -171,7 +171,6 @@ const CapList = () => {
                                             initial={{ opacity: 0, y: 10 }}
                                             animate={{ opacity: 1, y: 0 }}
                                             transition={{ delay: index * 0.05 }}
-                                            transition={{ delay: index * 0.05 }}
                                             className="grid grid-cols-[1fr,auto] gap-4 p-6 hover:bg-indigo-900/10 transition-colors items-center group"
                                         >
                                             <span className="text-base md:text-lg font-medium text-gray-200 group-hover:text-indigo-200 transition-colors">{aircraft}</span>

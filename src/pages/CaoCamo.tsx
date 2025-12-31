@@ -2,11 +2,11 @@ import { Helmet } from 'react-helmet-async';
 import PageTransition from '../components/PageTransition';
 import { motion } from 'framer-motion';
 import Starfield from '../components/Starfield';
-import { Check, Plane, FileText, Settings, Shield, Monitor, Search, RefreshCw } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { Check, FileText, Settings, Shield, Monitor, Search } from 'lucide-react';
+// import { useTranslation } from 'react-i18next';
 
 const CaoCamo = () => {
-    const { t } = useTranslation();
+    // const { t } = useTranslation();
 
     const services = [
         "Développement, révision et contrôle d’un programme de maintenance",
