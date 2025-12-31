@@ -43,11 +43,11 @@ const Contact = () => {
 
     const nextStep = () => {
         if (!departure || !arrival) {
-            alert("Veuillez sélectionner les aéroports de départ et d'arrivée.");
+            alert(t('contact_page.alerts.airports'));
             return;
         }
         if (!formData.departureDate) {
-            alert("Veuillez sélectionner une date de départ.");
+            alert(t('contact_page.alerts.date'));
             return;
         }
 
@@ -88,13 +88,13 @@ const Contact = () => {
 
         if (isFinalStep) {
             if (!formData.consentTerms) {
-                alert("Veuillez accepter les termes et conditions.");
+                alert(t('contact_page.alerts.terms'));
                 return;
             }
         }
 
         if (!departure || !arrival) {
-            alert("Veuillez sélectionner les aéroports de départ et d'arrivée.");
+            alert(t('contact_page.alerts.airports'));
             return;
         }
 
@@ -121,7 +121,7 @@ const Contact = () => {
                 })
                 .catch((error) => {
                     console.error("EmailJS Error:", error);
-                    alert("Erreur lors de l'envoi : " + error.text);
+                    alert(t('contact_page.alerts.error') + error.text);
                 });
         }
     };
@@ -130,9 +130,9 @@ const Contact = () => {
         <PageTransition>
             <Helmet>
                 <title>{t('contact_page.title')} - fl360</title>
-                <meta name="description" content="Demandez un devis ou contactez nos experts pour vos besoins en aviation. Assistance rapide et professionnelle." />
+                <meta name="description" content={t('contact_page.description')} />
                 <meta property="og:title" content={`${t('contact_page.title')} - fl360`} />
-                <meta property="og:description" content="Contactez fl360 Aviation Systems pour discuter de vos projets aéronautiques." />
+                <meta property="og:description" content={t('contact_page.description')} />
                 <meta property="og:type" content="website" />
             </Helmet>
             <div className="min-h-screen bg-zinc-950 pt-32 pb-20 flex flex-col items-center justify-center text-white relative overflow-hidden font-sans">
@@ -146,22 +146,22 @@ const Contact = () => {
                         className="text-center mb-12"
                     >
                         <h1 className="text-3xl md:text-5xl font-bold uppercase tracking-widest mb-4">
-                            {step === 1 ? "Détails du Vol" :
-                                (step === 2 && formData.flightType === 'CARGO') ? "Détails Cargo" :
-                                    "Informations de Contact"}
+                            {step === 1 ? t('contact_page.steps.flight_details') :
+                                (step === 2 && formData.flightType === 'CARGO') ? t('contact_page.steps.cargo_details') :
+                                    t('contact_page.steps.contact_info')}
                         </h1>
                         <div className="flex items-center justify-center gap-4 text-xs font-mono tracking-[0.2em] text-gray-500 mb-8">
-                            <span className={step === 1 ? "text-cyan-400" : ""}>01. VOL</span>
+                            <span className={step === 1 ? "text-cyan-400" : ""}>01. {t('contact_page.steps.step1')}</span>
                             <span>&gt;</span>
                             {formData.flightType === 'CARGO' && (
                                 <>
-                                    <span className={step === 2 ? "text-cyan-400" : ""}>02. DETAILS</span>
+                                    <span className={step === 2 ? "text-cyan-400" : ""}>02. {t('contact_page.steps.step2')}</span>
                                     <span>&gt;</span>
-                                    <span className={step === 3 ? "text-cyan-400" : ""}>03. CONTACT</span>
+                                    <span className={step === 3 ? "text-cyan-400" : ""}>03. {t('contact_page.steps.step3')}</span>
                                 </>
                             )}
                             {formData.flightType === 'PASSENGER' && (
-                                <span className={step === 2 ? "text-cyan-400" : ""}>02. CONTACT</span>
+                                <span className={step === 2 ? "text-cyan-400" : ""}>02. {t('contact_page.steps.step3')}</span>
                             )}
                         </div>
                     </motion.div>
@@ -220,7 +220,7 @@ const Contact = () => {
                                 >
                                     {/* Flight Type Selection */}
                                     <div className="space-y-2">
-                                        <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-2">Type d'appareil <span className="text-indigo-500">*</span></label>
+                                        <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-2">{t('contact_page.form.aircraft_type')} <span className="text-indigo-500">*</span></label>
                                         <div className="flex gap-0">
                                             <button
                                                 type="button"
@@ -230,7 +230,7 @@ const Contact = () => {
                                                     : 'bg-transparent text-gray-500 border-zinc-700 hover:border-zinc-500'
                                                     }`}
                                             >
-                                                Passager
+                                                {t('contact_page.form.passenger')}
                                             </button>
                                             <button
                                                 type="button"
@@ -240,7 +240,7 @@ const Contact = () => {
                                                     : 'bg-transparent text-gray-500 border-zinc-700 hover:border-zinc-500'
                                                     }`}
                                             >
-                                                Cargo
+                                                {t('contact_page.form.cargo')}
                                             </button>
                                         </div>
                                     </div>
@@ -248,10 +248,10 @@ const Contact = () => {
                                     {/* Airport Selection */}
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div className="space-y-2">
-                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Départ <span className="text-indigo-500">*</span></label>
+                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.departure')} <span className="text-indigo-500">*</span></label>
                                             <AirportAutocomplete
                                                 onSelect={setDeparture}
-                                                placeholder="Départ (Ville ou Code)"
+                                                placeholder={t('contact_page.form.departure')}
                                                 customStyles={{
                                                     input: { backgroundColor: '#18181b', border: '1px solid #3f3f46', padding: '1rem', fontSize: '1rem', borderRadius: 0 },
                                                     inputFocus: { borderColor: '#6366f1' }
@@ -259,10 +259,10 @@ const Contact = () => {
                                             />
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Destination <span className="text-indigo-500">*</span></label>
+                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.arrival')} <span className="text-indigo-500">*</span></label>
                                             <AirportAutocomplete
                                                 onSelect={setArrival}
-                                                placeholder="Arrivée (Ville ou Code)"
+                                                placeholder={t('contact_page.form.arrival')}
                                                 customStyles={{
                                                     input: { backgroundColor: '#18181b', border: '1px solid #3f3f46', padding: '1rem', fontSize: '1rem', borderRadius: 0 },
                                                     inputFocus: { borderColor: '#6366f1' }
@@ -275,7 +275,7 @@ const Contact = () => {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div className="grid grid-cols-2 gap-4">
                                             <div className="space-y-2">
-                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Date de départ <span className="text-indigo-500">*</span></label>
+                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.departure_date')} <span className="text-indigo-500">*</span></label>
                                                 <input
                                                     type="date"
                                                     name="departureDate"
@@ -286,17 +286,17 @@ const Contact = () => {
                                                 />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Heure</label>
+                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.time')}</label>
                                                 <select
                                                     name="departureTime"
                                                     value={formData.departureTime}
                                                     onChange={handleInputChange}
                                                     className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-indigo-500 outline-none transition-all uppercase appearance-none"
                                                 >
-                                                    <option>Indifférent</option>
-                                                    <option>Matin (06:00 - 12:00)</option>
-                                                    <option>Après-midi (12:00 - 18:00)</option>
-                                                    <option>Soir (18:00 - 00:00)</option>
+                                                    <option>{t('contact_page.form.indifferent')}</option>
+                                                    <option>{t('contact_page.form.morning')}</option>
+                                                    <option>{t('contact_page.form.afternoon')}</option>
+                                                    <option>{t('contact_page.form.evening')}</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -304,7 +304,7 @@ const Contact = () => {
                                         {/* Pax Count or Empty for Balance */}
                                         {formData.flightType === 'PASSENGER' && (
                                             <div className="space-y-2">
-                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Passagers <span className="text-indigo-500">*</span></label>
+                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.passengers')} <span className="text-indigo-500">*</span></label>
                                                 <input
                                                     type="number"
                                                     name="paxCount"
@@ -321,7 +321,7 @@ const Contact = () => {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 border-t border-zinc-800">
                                         <div className="grid grid-cols-2 gap-4">
                                             <div className="space-y-2">
-                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Date de retour</label>
+                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.return_date')}</label>
                                                 <input
                                                     type="date"
                                                     name="returnDate"
@@ -331,17 +331,17 @@ const Contact = () => {
                                                 />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Heure</label>
+                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.time')}</label>
                                                 <select
                                                     name="returnTime"
                                                     value={formData.returnTime}
                                                     onChange={handleInputChange}
                                                     className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-indigo-500 outline-none transition-all uppercase appearance-none text-gray-400 focus:text-white"
                                                 >
-                                                    <option>Indifférent</option>
-                                                    <option>Matin (06:00 - 12:00)</option>
-                                                    <option>Après-midi (12:00 - 18:00)</option>
-                                                    <option>Soir (18:00 - 00:00)</option>
+                                                    <option>{t('contact_page.form.indifferent')}</option>
+                                                    <option>{t('contact_page.form.morning')}</option>
+                                                    <option>{t('contact_page.form.afternoon')}</option>
+                                                    <option>{t('contact_page.form.evening')}</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -350,13 +350,13 @@ const Contact = () => {
                                     <div className="space-y-2 pt-4 border-t border-zinc-800">
                                         {formData.flightType === 'PASSENGER' && (
                                             <>
-                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Informations supplémentaires (Optionnel)</label>
+                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.additional_info')}</label>
                                                 <textarea
                                                     name="comment"
                                                     value={formData.comment}
                                                     onChange={handleInputChange}
                                                     className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-indigo-500 outline-none h-32 resize-none transition-all placeholder-gray-600"
-                                                    placeholder="Besoin particulier, animaux, bagages volumineux..."
+                                                    placeholder={t('contact_page.form.additional_info_placeholder')}
                                                 ></textarea>
                                             </>
                                         )}
@@ -368,7 +368,7 @@ const Contact = () => {
                                             onClick={nextStep}
                                             className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-10 py-4 font-bold uppercase tracking-widest hover:from-violet-500 hover:to-indigo-500 transition-all shadow-[0_0_20px_rgba(99,102,241,0.5)] hover:shadow-[0_0_30px_rgba(99,102,241,0.7)] flex items-center gap-2"
                                         >
-                                            Suivant <ArrowRight className="w-5 h-5" />
+                                            {t('contact_page.form.next')} <ArrowRight className="w-5 h-5" />
                                         </button>
                                     </div>
                                 </motion.div>
@@ -386,7 +386,7 @@ const Contact = () => {
                                         {/* Left Column: Inputs */}
                                         <div className="space-y-6">
                                             <div className="space-y-2">
-                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Poids Total (kg/t) <span className="text-indigo-500">*</span></label>
+                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.cargo_weight')} <span className="text-indigo-500">*</span></label>
                                                 <input
                                                     type="text"
                                                     name="cargoWeight"
@@ -397,7 +397,7 @@ const Contact = () => {
                                                 />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Volume Total (m3/ft3)</label>
+                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.cargo_volume')}</label>
                                                 <input
                                                     type="text"
                                                     name="cargoVolume"
@@ -407,7 +407,7 @@ const Contact = () => {
                                                 />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Plus grande taille (m/ft)</label>
+                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.cargo_size')}</label>
                                                 <input
                                                     type="text"
                                                     name="cargoLargestSize"
@@ -417,7 +417,7 @@ const Contact = () => {
                                                 />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Dimensions (m/ft)</label>
+                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.cargo_dims')}</label>
                                                 <input
                                                     type="text"
                                                     name="cargoDimensions"
@@ -430,13 +430,13 @@ const Contact = () => {
 
                                         {/* Right Column: Textarea */}
                                         <div className="space-y-2 h-full">
-                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Informations supplémentaires</label>
+                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.additional_info')}</label>
                                             <textarea
                                                 name="comment"
                                                 value={formData.comment}
                                                 onChange={handleInputChange}
                                                 className="w-full h-full min-h-[300px] bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-indigo-500 outline-none resize-none transition-all placeholder-gray-600"
-                                                placeholder="Description de la marchandise, instructions spéciales..."
+                                                placeholder={t('contact_page.form.cargo_desc_placeholder')}
                                             ></textarea>
                                         </div>
                                     </div>
@@ -447,14 +447,14 @@ const Contact = () => {
                                             onClick={prevStep}
                                             className="text-gray-500 hover:text-white font-bold uppercase tracking-widest transition-colors px-6"
                                         >
-                                            &larr; Retour
+                                            &larr; {t('contact_page.form.back')}
                                         </button>
                                         <button
                                             type="button"
                                             onClick={nextStep}
                                             className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-10 py-4 font-bold uppercase tracking-widest hover:from-violet-500 hover:to-indigo-500 transition-all shadow-[0_0_20px_rgba(99,102,241,0.5)] hover:shadow-[0_0_30px_rgba(99,102,241,0.7)] flex items-center gap-2"
                                         >
-                                            Suivant <ArrowRight className="w-5 h-5" />
+                                            {t('contact_page.form.next')} <ArrowRight className="w-5 h-5" />
                                         </button>
                                     </div>
                                 </motion.div>
@@ -471,19 +471,19 @@ const Contact = () => {
                                     {/* Row 1: Nom | Email */}
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div className="space-y-2">
-                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Nom <span className="text-indigo-500">*</span></label>
+                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.name')} <span className="text-indigo-500">*</span></label>
                                             <input
                                                 type="text"
                                                 name="lastName"
                                                 value={formData.lastName}
                                                 onChange={handleInputChange}
                                                 className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-indigo-500 outline-none transition-all"
-                                                placeholder="Votre nom"
+                                                placeholder={t('contact_page.form.name_placeholder')}
                                                 required
                                             />
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Email <span className="text-indigo-500">*</span></label>
+                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.email')} <span className="text-indigo-500">*</span></label>
                                             <input
                                                 type="email"
                                                 name="email"
@@ -498,19 +498,19 @@ const Contact = () => {
                                     {/* Row 2: Entreprise | Telephone */}
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div className="space-y-2">
-                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Entreprise <span className="text-indigo-500">*</span></label>
+                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.company')} <span className="text-indigo-500">*</span></label>
                                             <input
                                                 type="text"
                                                 name="company"
                                                 value={formData.company}
                                                 onChange={handleInputChange}
                                                 className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-indigo-500 outline-none transition-all"
-                                                placeholder="Nom de l'entreprise"
+                                                placeholder={t('contact_page.form.company_placeholder')}
                                                 required
                                             />
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Téléphone <span className="text-indigo-500">*</span></label>
+                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.phone')} <span className="text-indigo-500">*</span></label>
                                             <div className="flex">
                                                 <span className="bg-zinc-800 text-gray-400 p-4 border border-zinc-700 border-r-0 flex items-center justify-center font-mono text-sm">+33</span>
                                                 <input
@@ -519,7 +519,7 @@ const Contact = () => {
                                                     value={formData.phone}
                                                     onChange={handleInputChange}
                                                     className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-indigo-500 outline-none transition-all"
-                                                    placeholder="1 23 45 67 89"
+                                                    placeholder={t('contact_page.form.phone_placeholder')}
                                                     required
                                                 />
                                             </div>
@@ -529,7 +529,7 @@ const Contact = () => {
                                     {/* Row 3: Pays | Mobile */}
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div className="space-y-2">
-                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Pays <span className="text-indigo-500">*</span></label>
+                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.country')} <span className="text-indigo-500">*</span></label>
                                             <select
                                                 name="country"
                                                 value={formData.country}
@@ -537,15 +537,15 @@ const Contact = () => {
                                                 className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-indigo-500 outline-none transition-all appearance-none"
                                             >
                                                 <option value="France">France</option>
-                                                <option value="United Kingdom">Royaume-Uni</option>
-                                                <option value="USA">États-Unis</option>
-                                                <option value="Switzerland">Suisse</option>
-                                                <option value="Belgium">Belgique</option>
-                                                <option value="Other">Autre</option>
+                                                <option value="United Kingdom">United Kingdom</option>
+                                                <option value="USA">USA</option>
+                                                <option value="Switzerland">Switzerland</option>
+                                                <option value="Belgium">Belgium</option>
+                                                <option value="Other">Other</option>
                                             </select>
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Mobile</label>
+                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.mobile')}</label>
                                             <div className="flex">
                                                 <span className="bg-zinc-800 text-gray-400 p-4 border border-zinc-700 border-r-0 flex items-center justify-center font-mono text-sm">+33</span>
                                                 <input
@@ -554,7 +554,7 @@ const Contact = () => {
                                                     value={formData.mobile}
                                                     onChange={handleInputChange}
                                                     className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-indigo-500 outline-none transition-all"
-                                                    placeholder="6 12 34 56 78"
+                                                    placeholder={t('contact_page.form.mobile_placeholder')}
                                                 />
                                             </div>
                                         </div>
@@ -576,7 +576,7 @@ const Contact = () => {
                                                 </svg>
                                             </div>
                                             <span className="text-sm text-gray-400 group-hover:text-gray-300">
-                                                J'autorise Air Charter Service à utiliser mes informations pour me contacter par téléphone et par email au sujet de ma demande de renseignements et/ou de produits et services équivalents.
+                                                {t('contact_page.form.consent_contact')}
                                             </span>
                                         </label>
 
@@ -595,7 +595,7 @@ const Contact = () => {
                                                 </svg>
                                             </div>
                                             <span className="text-sm text-gray-400 group-hover:text-gray-300">
-                                                J'accepte les termes et conditions, <a href="/mentions-legales" className="text-indigo-400 hover:text-white hover:underline">la politique de confidentialité</a> et de cookies.
+                                                <span dangerouslySetInnerHTML={{ __html: t('contact_page.form.consent_terms') }} />
                                             </span>
                                         </label>
                                     </div>
@@ -606,100 +606,13 @@ const Contact = () => {
                                             onClick={prevStep}
                                             className="text-gray-500 hover:text-white font-bold uppercase tracking-widest transition-colors px-6"
                                         >
-                                            &larr; Retour
+                                            &larr; {t('contact_page.form.back')}
                                         </button>
                                         <button
                                             type="submit"
                                             className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-12 py-4 font-bold uppercase tracking-widest hover:from-violet-500 hover:to-indigo-500 transition-all shadow-[0_0_20px_rgba(99,102,241,0.5)] hover:shadow-[0_0_30px_rgba(99,102,241,0.7)] flex items-center gap-2"
                                         >
-                                            Soumettre <ArrowRight className="w-5 h-5 -rotate-45" />
-                                        </button>
-                                    </div>
-
-                                </motion.div>
-                            )}
-
-                            {/* Step 2 for Cargo Fallback REMOVED as it is now handled above */}
-                            {false && (
-                                <motion.div
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: -20 }}
-                                    className="space-y-8"
-                                >
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        <div className="space-y-2">
-                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Prénom <span className="text-cyan-500">*</span></label>
-                                            <input
-                                                type="text"
-                                                name="firstName"
-                                                value={formData.firstName}
-                                                onChange={handleInputChange}
-                                                className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-cyan-500 outline-none transition-all"
-                                                required
-                                            />
-                                        </div>
-                                        <div className="space-y-2">
-                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Nom <span className="text-cyan-500">*</span></label>
-                                            <input
-                                                type="text"
-                                                name="lastName"
-                                                value={formData.lastName}
-                                                onChange={handleInputChange}
-                                                className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-cyan-500 outline-none transition-all"
-                                                required
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        <div className="space-y-2">
-                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Téléphone <span className="text-cyan-500">*</span></label>
-                                            <input
-                                                type="tel"
-                                                name="phone"
-                                                value={formData.phone}
-                                                onChange={handleInputChange}
-                                                className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-cyan-500 outline-none transition-all"
-                                                required
-                                            />
-                                        </div>
-                                        <div className="space-y-2">
-                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Email <span className="text-cyan-500">*</span></label>
-                                            <input
-                                                type="email"
-                                                name="email"
-                                                value={formData.email}
-                                                onChange={handleInputChange}
-                                                className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-cyan-500 outline-none transition-all"
-                                                required
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="space-y-2">
-                                        <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Message (Optionnel)</label>
-                                        <textarea
-                                            name="comment"
-                                            value={formData.comment}
-                                            onChange={handleInputChange}
-                                            className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-cyan-500 outline-none h-32 resize-none transition-all"
-                                        ></textarea>
-                                    </div>
-
-                                    <div className="flex justify-between pt-8">
-                                        <button
-                                            type="button"
-                                            onClick={prevStep}
-                                            className="text-gray-500 hover:text-white font-bold uppercase tracking-widest transition-colors px-6"
-                                        >
-                                            &larr; Retour
-                                        </button>
-                                        <button
-                                            type="submit"
-                                            className="bg-cyan-500 text-black px-12 py-4 font-bold uppercase tracking-widest hover:bg-cyan-400 transition-colors shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)]"
-                                        >
-                                            Envoyer la demande
+                                            {t('contact_page.form.submit')} <ArrowRight className="w-5 h-5 -rotate-45" />
                                         </button>
                                     </div>
 
@@ -723,15 +636,15 @@ const Contact = () => {
                         <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
                             <ArrowRight className="text-black w-8 h-8 -rotate-45" />
                         </div>
-                        <h3 className="text-2xl font-bold uppercase tracking-wider mb-4">Demande Envoyée</h3>
+                        <h3 className="text-2xl font-bold uppercase tracking-wider mb-4">{t('contact_page.success.title')}</h3>
                         <p className="text-gray-400 font-light leading-relaxed mb-8">
-                            Merci pour votre demande. Elle sera traitée dans les plus brefs délais par notre équipe.
+                            {t('contact_page.success.message')}
                         </p>
                         <button
                             onClick={() => setShowSuccess(false)}
                             className="bg-white text-black px-8 py-3 text-sm font-bold uppercase tracking-widest hover:bg-gray-200 transition-colors w-full"
                         >
-                            Fermer
+                            {t('contact_page.success.close')}
                         </button>
                     </motion.div>
                 </div>

@@ -241,7 +241,7 @@ const Home = () => {
                     </motion.div>
 
                     <div className="text-center mt-12 text-gray-400 text-sm font-mono flex items-center justify-center gap-2">
-                        <ArrowRight className="w-4 h-4" /> GLISSEZ POUR EN VOIR PLUS
+                        <ArrowRight className="w-4 h-4" /> {t('home.testimonials.hint')}
                     </div>
                 </div>
             </section>
