@@ -9,7 +9,7 @@ const Formation = () => {
     const { t } = useTranslation();
 
     const requirements = t('formation.ato.prereq.items', { returnObjects: true }) as string[];
-    const features = t('formation.progdigital.features', { returnObjects: true }) as string[];
+
 
     return (
         <PageTransition>
