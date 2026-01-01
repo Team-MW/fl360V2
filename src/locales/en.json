@@ -5,6 +5,8 @@
             "services": "Services",
             "portfolio": "Portfolio",
             "contact": "Contact",
+            "transport": "Transport",
+            "maintenance": "Maintenance",
             "quote": "Request a Quote"
         },
         "mobile": {
@@ -129,7 +131,7 @@
         "sections": {
             "editor": {
                 "title": "1. Site Publisher",
-                "content": "<0>The website <1>fl360.com</1> is published by <3>FL360 AVIATION SYSTEMS</3>, a simplified joint-stock company (SAS) with a capital of 100,000 euros.<br/>Registered with the Paris Trade and Companies Register under number 123 456 789.<br/><br/><3>Headquarters:</3><br/>123 Avenue de l'Avenir<br/>75000 Paris, France<br/><br/><3>Email:</3> contact@fl360.com<br/><3>Phone:</3> +33 1 00 00 00 00</0>"
+                "content": "<0>The website <1>fl360.com</1> is published by <3>FL360 AVIATION SYSTEMS</3>, a simplified joint-stock company (SAS) with a capital of 100,000 euros.<br/>Registered with the Paris Trade and Companies Register under number 123 456 789.<br/><br/><3>Headquarters:</3><br/>123 Avenue de l'Avenir<br/>75000 Paris, France<br/><br/><3>Email:</3> nav@fl360aviation.com<br/><3>Phone:</3> +33 6 82 27 49 16</0>"
             },
             "director": {
                 "title": "2. Publication Director",
@@ -145,7 +147,26 @@
             },
             "privacy": {
                 "title": "5. Personal Data",
-                "content": "In accordance with the General Data Protection Regulation (GDPR), you have the right to access, rectify, and delete data concerning you. To exercise this right, please contact us at: privacy@fl360.com."
+                "content": "In accordance with the General Data Protection Regulation (GDPR), you have the right to access, rectify, and delete data concerning you. To exercise this right, please contact us at: admin@fl360aviation.com."
+            }
+        }
+    },
+    "transport": {
+        "title": "Air Transport - fl360",
+        "meta_desc": "Air transport for passengers and freight.",
+        "hero": {
+            "title": "Air Transport",
+            "subtitle": "Passengers and Freight",
+            "desc": "Flexible and secure air transport solutions."
+        },
+        "cards": {
+            "passengers": {
+                "title": "Passengers",
+                "desc": "Passenger transport with maximum comfort and safety."
+            },
+            "freight": {
+                "title": "Freight",
+                "desc": "Fast and reliable air freight solutions for all types of cargo."
             }
         }
     },
@@ -193,6 +214,39 @@
                     "desc": "Promotional flights with banners for massive and creative dissemination. Create an imposing and unmissable display in the sky."
                 }
             }
+        },
+        "pricing": {
+            "title": "Our Packages",
+            "initiation": {
+                "title": "Initiation Flight Baptism",
+                "price": "225€"
+            },
+            "theory": {
+                "title": "PPL Theory in 15 days",
+                "subtitle": "Pilot License",
+                "bonus": "Free Baptism",
+                "price": "1500€"
+            },
+            "practical": {
+                "title": "PPL Practical Pack",
+                "subtitle": "From 3 months",
+                "packs": [
+                    {
+                        "hours": "5 hours",
+                        "price": "1000€"
+                    },
+                    {
+                        "hours": "10 hours",
+                        "price": "1800€"
+                    },
+                    {
+                        "hours": "20 hours",
+                        "price": "3500€"
+                    }
+                ]
+            },
+            "dedicated": "Dedicated formula for both",
+            "guarantee": "Satisfaction Guaranteed or Refunded"
         },
         "docs": {
             "title": "Official Documents",
@@ -243,6 +297,7 @@
             "cargo_volume": "Total Volume (m3/ft3)",
             "cargo_size": "Largest Size (m/ft)",
             "cargo_dims": "Dimensions (m/ft)",
+            "cargo_type": "Type of Merchandise",
             "cargo_desc_placeholder": "Goods description, special instructions...",
             "name": "Name",
             "firstname": "First Name",

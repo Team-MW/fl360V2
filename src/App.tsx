@@ -7,6 +7,7 @@ import Layout from './components/Layout';
 
 // Lazy loading pages
 const Home = lazy(() => import('./pages/Home'));
+const Transport = lazy(() => import('./pages/Transport'));
 const Services = lazy(() => import('./pages/Services'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
 const Contact = lazy(() => import('./pages/Contact'));
@@ -29,6 +30,7 @@ const AnimatedRoutes = () => {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="transport" element={<Transport />} />
             <Route path="services" element={<Services />} />
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="formation" element={<Formation />} />

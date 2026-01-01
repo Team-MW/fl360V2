@@ -19,6 +19,7 @@ interface AirportAutocompleteProps {
         inputFocus?: React.CSSProperties;
     };
     placeholder?: string;
+    initialAirport?: Airport | null;
 }
 
 interface CsvAirportRow {
@@ -53,8 +54,8 @@ function useDebounce<T>(value: T, delay: number): T {
 
 // --- Component ---
 
-export const AirportAutocomplete: React.FC<AirportAutocompleteProps> = ({ onSelect, customStyles, placeholder }) => {
-    const [inputValue, setInputValue] = useState('');
+export const AirportAutocomplete: React.FC<AirportAutocompleteProps> = ({ onSelect, customStyles, placeholder, initialAirport }) => {
+    const [inputValue, setInputValue] = useState(initialAirport ? `${initialAirport.name} (${initialAirport.iata})` : '');
     const [allAirports, setAllAirports] = useState<Airport[]>([]);
     const [suggestions, setSuggestions] = useState<Airport[]>([]);
     const [showSuggestions, setShowSuggestions] = useState(false);

@@ -28,10 +28,11 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
 
     const links = [
         { name: t('header.nav.home'), path: '/' },
+        { name: t('header.nav.transport'), path: '/transport' },
         { name: t('header.nav.formation'), path: '/formation' },
+        { name: t('header.nav.maintenance'), path: '/mro' },
         { name: 'CAO / CAMO', path: '/cao-camo' },
         { name: 'CAP LIST', path: '/cap-list' },
-        { name: 'MRO', path: '/mro' },
     ];
 
     return (
@@ -121,13 +122,13 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
                                     </button>
                                 </div>
 
-                                <nav className="flex flex-col gap-8">
+                                <nav className="flex flex-col gap-6">
                                     {links.map((link, idx) => (
                                         <Link
                                             key={link.path}
                                             to={link.path}
                                             onClick={toggleMenu}
-                                            className="text-3xl font-thin tracking-wide text-gray-400 hover:text-white hover:pl-4 transition-all"
+                                            className="text-2xl font-thin tracking-wide text-gray-400 hover:text-white hover:pl-4 transition-all"
                                         >
                                             <span className="text-xs font-mono text-gray-600 mr-4">0{idx + 1}</span>
                                             {link.name}
@@ -138,21 +139,21 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         onClick={toggleMenu}
-                                        className="text-3xl font-thin tracking-wide text-gray-400 hover:text-white hover:pl-4 transition-all flex items-center gap-4"
+                                        className="text-2xl font-thin tracking-wide text-gray-400 hover:text-white hover:pl-4 transition-all flex items-center gap-4"
                                     >
-                                        <span className="text-xs font-mono text-gray-600 mr-4">06</span>
-                                        Accès Clients <User size={24} />
+                                        <span className="text-xs font-mono text-gray-600 mr-4">07</span>
+                                        Accès Clients <User size={20} />
                                     </a>
                                     <Link
                                         to="/contact"
                                         onClick={toggleMenu}
-                                        className="mt-8 w-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-center py-5 rounded-xl font-bold uppercase tracking-widest hover:from-violet-500 hover:to-indigo-500 transition-all shadow-lg hover:shadow-indigo-500/25 flex items-center justify-center gap-3"
+                                        className="mt-8 mb-4 w-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-center py-5 rounded-xl font-bold uppercase tracking-widest hover:from-violet-500 hover:to-indigo-500 transition-all shadow-lg hover:shadow-indigo-500/25 flex items-center justify-center gap-3"
                                     >
                                         {t('header.mobile.quote')} <ArrowRight size={18} />
                                     </Link>
                                 </nav>
 
-                                <div className="mt-auto text-gray-600 text-xs font-mono">
+                                <div className="mt-auto pt-4 text-gray-600 text-xs font-mono border-t border-white/5">
                                     <p>{t('header.mobile.copyright')}</p>
                                     <p>© 2025</p>
                                 </div>

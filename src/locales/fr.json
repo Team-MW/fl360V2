@@ -6,6 +6,8 @@
             "portfolio": "Portfolio",
             "contact": "Devis",
             "formation": "Formation",
+            "transport": "Transport",
+            "maintenance": "Maintenance",
             "quote": "Demander un devis"
         },
         "mobile": {
@@ -151,7 +153,7 @@
         "sections": {
             "editor": {
                 "title": "1. Éditeur du site",
-                "content": "<0>Le site internet <1>fl360.com</1> est édité par la société <3>FL360 AVIATION SYSTEMS</3>, société par actions simplifiée (SAS) au capital de 100 000 euros.<br/>Immatriculée au Registre du Commerce et des Sociétés de Paris sous le numéro 123 456 789.<br/><br/><3>Siège social :</3><br/>123 Avenue de l'Avenir<br/>75000 Paris, France<br/><br/><3>Email :</3> contact@fl360.com<br/><3>Téléphone :</3> +33 1 00 00 00 00</0>"
+                "content": "<0>Le site internet <1>fl360.com</1> est édité par la société <3>FL360 AVIATION SYSTEMS</3>, société par actions simplifiée (SAS) au capital de 100 000 euros.<br/>Immatriculée au Registre du Commerce et des Sociétés de Paris sous le numéro 123 456 789.<br/><br/><3>Siège social :</3><br/>123 Avenue de l'Avenir<br/>75000 Paris, France<br/><br/><3>Email :</3> nav@fl360aviation.com<br/><3>Téléphone :</3> +33 6 82 27 49 16</0>"
             },
             "director": {
                 "title": "2. Directeur de la publication",
@@ -167,7 +169,26 @@
             },
             "privacy": {
                 "title": "5. Données personnelles",
-                "content": "Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant. Pour exercer ce droit, veuillez nous contacter à l'adresse : privacy@fl360.com."
+                "content": "Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant. Pour exercer ce droit, veuillez nous contacter à l'adresse : admin@fl360aviation.com."
+            }
+        }
+    },
+    "transport": {
+        "title": "Transport Aérien - fl360",
+        "meta_desc": "Transport aérien de passagers et de marchandises.",
+        "hero": {
+            "title": "Transport Aérien",
+            "subtitle": "Passagers et Marchandises",
+            "desc": "Solutions de transport aérien flexibles et sécurisées."
+        },
+        "cards": {
+            "passengers": {
+                "title": "Passagers",
+                "desc": "Transport de passagers avec confort et sécurité maximum."
+            },
+            "freight": {
+                "title": "Marchandises",
+                "desc": "Solutions de fret aérien rapides et fiables pour tous types de cargaisons."
             }
         }
     },
@@ -215,6 +236,39 @@
                     "desc": "Vols promotionnels avec banderoles pour une diffusion massive et créative. Créez un affichage imposant et incontournable dans le ciel."
                 }
             }
+        },
+        "pricing": {
+            "title": "Nos Formules",
+            "initiation": {
+                "title": "Initiation Baptême Vol",
+                "price": "225€"
+            },
+            "theory": {
+                "title": "Théorie PPL en 15 jours",
+                "subtitle": "Licence de pilote d'avion",
+                "bonus": "Baptême offert",
+                "price": "1500€"
+            },
+            "practical": {
+                "title": "Pack Pratique PPL",
+                "subtitle": "À partir de 3 mois",
+                "packs": [
+                    {
+                        "hours": "5 heures",
+                        "price": "1000€"
+                    },
+                    {
+                        "hours": "10 heures",
+                        "price": "1800€"
+                    },
+                    {
+                        "hours": "20 heures",
+                        "price": "3500€"
+                    }
+                ]
+            },
+            "dedicated": "Formule dédiée pour les 2",
+            "guarantee": "Satisfait ou Remboursé"
         },
         "docs": {
             "title": "Documents Officiels",
@@ -265,6 +319,7 @@
             "cargo_volume": "Volume Total (m3/ft3)",
             "cargo_size": "Plus grande taille (m/ft)",
             "cargo_dims": "Dimensions (m/ft)",
+            "cargo_type": "Type de marchandise",
             "cargo_desc_placeholder": "Description de la marchandise, instructions spéciales...",
             "name": "Nom",
             "firstname": "Prénom",

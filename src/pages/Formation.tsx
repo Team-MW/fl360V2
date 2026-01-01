@@ -171,6 +171,70 @@ const Formation = () => {
                         </div>
                     </div>
                 </section>
+                {/* Pricing Section */}
+                <section className="py-20 bg-zinc-900 border-t border-white/5 relative">
+                    <div className="container mx-auto px-6">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-widest mb-6 text-white">{t('formation.pricing.title')}</h2>
+                            <p className="text-indigo-400 font-bold tracking-widest uppercase">{t('formation.pricing.guarantee')}</p>
+                        </div>
+
+                        <div className="grid lg:grid-cols-3 gap-8 items-start max-w-6xl mx-auto">
+                            {/* Card 1: Initiation */}
+                            <motion.div
+                                whileHover={{ y: -5 }}
+                                className="bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 p-8 rounded-none flex flex-col items-center text-center hover:border-indigo-500/50 transition-all shadow-xl"
+                            >
+                                <div className="bg-indigo-500/10 p-4 rounded-full mb-6">
+                                    <Plane className="w-8 h-8 text-indigo-400" />
+                                </div>
+                                <h3 className="text-xl font-bold uppercase tracking-widest mb-2 text-white">{t('formation.pricing.initiation.title')}</h3>
+                                <div className="mt-auto pt-6 border-t border-white/5 w-full">
+                                    <span className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">{t('formation.pricing.initiation.price')}</span>
+                                </div>
+                            </motion.div>
+
+                            {/* Card 2: Theory (Highlighted) */}
+                            <motion.div
+                                whileHover={{ y: -10 }}
+                                className="bg-zinc-950 border border-indigo-500 p-8 rounded-none flex flex-col items-center text-center shadow-[0_0_30px_rgba(99,102,241,0.15)] relative scale-105 z-10"
+                            >
+                                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-indigo-600 text-white text-xs font-bold uppercase px-4 py-1 rounded-full tracking-widest whitespace-nowrap">
+                                    {t('formation.pricing.dedicated')}
+                                </div>
+                                <h3 className="text-2xl font-bold uppercase tracking-widest mb-2 text-white mt-4">{t('formation.pricing.theory.title')}</h3>
+                                <p className="text-gray-400 text-sm mb-4">{t('formation.pricing.theory.subtitle')}</p>
+                                <div className="bg-green-500/10 text-green-400 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide mb-8">
+                                    + {t('formation.pricing.theory.bonus')}
+                                </div>
+                                <div className="mt-auto pt-6 border-t border-indigo-500/30 w-full">
+                                    <span className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">{t('formation.pricing.theory.price')}</span>
+                                </div>
+                            </motion.div>
+
+                            {/* Card 3: Practical Packs */}
+                            <motion.div
+                                whileHover={{ y: -5 }}
+                                className="bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 p-8 rounded-none flex flex-col items-center text-center hover:border-indigo-500/50 transition-all shadow-xl"
+                            >
+                                <div className="bg-indigo-500/10 p-4 rounded-full mb-6">
+                                    <Check className="w-8 h-8 text-indigo-400" />
+                                </div>
+                                <h3 className="text-xl font-bold uppercase tracking-widest mb-2 text-white">{t('formation.pricing.practical.title')}</h3>
+                                <p className="text-gray-400 text-sm mb-6">{t('formation.pricing.practical.subtitle')}</p>
+
+                                <ul className="w-full space-y-4 text-left">
+                                    {(t('formation.pricing.practical.packs', { returnObjects: true }) as any[]).map((pack, idx) => (
+                                        <li key={idx} className="flex justify-between items-center border-b border-white/5 pb-2 last:border-0 last:pb-0">
+                                            <span className="text-gray-300 font-medium">{pack.hours}</span>
+                                            <span className="text-indigo-400 font-bold">{pack.price}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </motion.div>
+                        </div>
+                    </div>
+                </section>
 
                 {/* SPO CTA Section */}
                 <section className="py-20 bg-indigo-600 relative overflow-hidden">

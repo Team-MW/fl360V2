@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageTransition from '../components/PageTransition';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowRightLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { AirportAutocomplete, type Airport } from '../components/AirportAutocomplete';
@@ -28,7 +28,6 @@ const Contact = () => {
         returnTime: 'Indifférent',
         // Additional Contact Info (Passenger)
         company: '',
-        country: 'France',
         mobile: '',
         consentContact: false,
         consentTerms: false,
@@ -36,7 +35,8 @@ const Contact = () => {
         cargoWeight: '',
         cargoVolume: '',
         cargoLargestSize: '',
-        cargoDimensions: ''
+        cargoDimensions: '',
+        cargoType: ''
     });
     const [departure, setDeparture] = useState<Airport | null>(null);
     const [arrival, setArrival] = useState<Airport | null>(null);
@@ -61,6 +61,12 @@ const Contact = () => {
 
     const prevStep = () => {
         setStep(prev => prev - 1);
+    };
+
+    const handleSwapAirports = () => {
+        const temp = departure;
+        setDeparture(arrival);
+        setArrival(temp);
     };
 
     const [showSuccess, setShowSuccess] = useState(false);
@@ -110,9 +116,9 @@ const Contact = () => {
                     setFormData({
                         firstName: '', lastName: '', phone: '', email: '', comment: '',
                         flightType: 'PASSENGER', paxCount: 1, departureDate: '', departureTime: 'Indifférent',
-                        returnDate: '', returnTime: 'Indifférent', company: '', country: 'France',
+                        returnDate: '', returnTime: 'Indifférent', company: '',
                         mobile: '', consentContact: false, consentTerms: false,
-                        cargoWeight: '', cargoVolume: '', cargoLargestSize: '', cargoDimensions: ''
+                        cargoWeight: '', cargoVolume: '', cargoLargestSize: '', cargoDimensions: '', cargoType: ''
                     });
                     setDeparture(null);
                     setArrival(null);
@@ -195,7 +201,6 @@ const Contact = () => {
                             {/* Additional Passenger Data for Email */}
                             <input type="hidden" name="passenger_details" value={`
                                 Company: ${formData.company}
-                                Country: ${formData.country}
                                 Mobile: ${formData.mobile}
                                 Marketing Consent: ${formData.consentContact ? 'Yes' : 'No'}
                             `} />
@@ -204,6 +209,7 @@ const Contact = () => {
                             <input type="hidden" name="cargo_details" value={`
                                 Weight: ${formData.cargoWeight}
                                 Volume: ${formData.cargoVolume}
+                                Type: ${formData.cargoType}
                                 Largest Size: ${formData.cargoLargestSize}
                                 Dimensions: ${formData.cargoDimensions}
                             `} />
@@ -246,10 +252,22 @@ const Contact = () => {
                                     </div>
 
                                     {/* Airport Selection */}
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+                                        {/* Swap Button */}
+                                        <button
+                                            type="button"
+                                            onClick={handleSwapAirports}
+                                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-zinc-800 border border-zinc-600 p-2 rounded-full hover:bg-indigo-600 hover:border-indigo-500 hover:text-white transition-all text-gray-400 shadow-xl"
+                                            title="Inverser aéroports"
+                                        >
+                                            <ArrowRightLeft className="w-5 h-5 md:rotate-0 rotate-90" />
+                                        </button>
+
                                         <div className="space-y-2">
                                             <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.departure')} <span className="text-indigo-500">*</span></label>
                                             <AirportAutocomplete
+                                                key={`dep-${departure?.iata || 'empty'}`}
+                                                initialAirport={departure}
                                                 onSelect={setDeparture}
                                                 placeholder={t('contact_page.form.departure')}
                                                 customStyles={{
@@ -261,6 +279,8 @@ const Contact = () => {
                                         <div className="space-y-2">
                                             <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.arrival')} <span className="text-indigo-500">*</span></label>
                                             <AirportAutocomplete
+                                                key={`arr-${arrival?.iata || 'empty'}`}
+                                                initialAirport={arrival}
                                                 onSelect={setArrival}
                                                 placeholder={t('contact_page.form.arrival')}
                                                 customStyles={{
@@ -407,6 +427,16 @@ const Contact = () => {
                                                 />
                                             </div>
                                             <div className="space-y-2">
+                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.cargo_type')}</label>
+                                                <input
+                                                    type="text"
+                                                    name="cargoType"
+                                                    value={formData.cargoType}
+                                                    onChange={handleInputChange}
+                                                    className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-indigo-500 outline-none transition-all"
+                                                />
+                                            </div>
+                                            <div className="space-y-2">
                                                 <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.cargo_size')}</label>
                                                 <input
                                                     type="text"
@@ -498,7 +528,7 @@ const Contact = () => {
                                     {/* Row 2: Entreprise | Telephone */}
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div className="space-y-2">
-                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.company')} <span className="text-indigo-500">*</span></label>
+                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.company')}</label>
                                             <input
                                                 type="text"
                                                 name="company"
@@ -506,7 +536,6 @@ const Contact = () => {
                                                 onChange={handleInputChange}
                                                 className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-indigo-500 outline-none transition-all"
                                                 placeholder={t('contact_page.form.company_placeholder')}
-                                                required
                                             />
                                         </div>
                                         <div className="space-y-2">
@@ -526,24 +555,8 @@ const Contact = () => {
                                         </div>
                                     </div>
 
-                                    {/* Row 3: Pays | Mobile */}
+                                    {/* Row 3: Mobile */}
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        <div className="space-y-2">
-                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.country')} <span className="text-indigo-500">*</span></label>
-                                            <select
-                                                name="country"
-                                                value={formData.country}
-                                                onChange={handleInputChange}
-                                                className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-indigo-500 outline-none transition-all appearance-none"
-                                            >
-                                                <option value="France">France</option>
-                                                <option value="United Kingdom">United Kingdom</option>
-                                                <option value="USA">USA</option>
-                                                <option value="Switzerland">Switzerland</option>
-                                                <option value="Belgium">Belgium</option>
-                                                <option value="Other">Other</option>
-                                            </select>
-                                        </div>
                                         <div className="space-y-2">
                                             <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.mobile')}</label>
                                             <div className="flex">
