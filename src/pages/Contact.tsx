@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageTransition from '../components/PageTransition';
-import { ArrowRight, ArrowRightLeft } from 'lucide-react';
+import { ArrowRight, ArrowRightLeft, MapPin, FileText } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { AirportAutocomplete, type Airport } from '../components/AirportAutocomplete';
@@ -638,6 +638,58 @@ const Contact = () => {
                             )}
                         </form>
                     </motion.div>
+
+                    {/* Location / Access Section */}
+                    <div className="mt-20 mb-12">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            className="text-center mb-12"
+                        >
+                            <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-widest mb-4 flex items-center justify-center gap-3">
+                                <MapPin className="text-indigo-500" />
+                                {t('contact_page.access.title')}
+                            </h2>
+                            <p className="text-gray-400 font-light max-w-2xl mx-auto">
+                                {t('contact_page.access.subtitle')}
+                            </p>
+                        </motion.div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                            <a
+                                href="/plan-acces-1.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group relative bg-zinc-900/50 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-zinc-800/80 hover:border-indigo-500/50 transition-all duration-300 flex flex-col items-center justify-center gap-4 text-center overflow-hidden"
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                <div className="p-4 rounded-full bg-white/5 group-hover:bg-indigo-500/20 transition-colors">
+                                    <FileText className="w-8 h-8 text-indigo-400 group-hover:text-indigo-300 transition-colors" />
+                                </div>
+                                <div>
+                                    <h3 className="text-lg font-bold uppercase tracking-wider mb-2 text-white group-hover:text-indigo-300 transition-colors">{t('contact_page.access.guide1')}</h3>
+                                    <span className="text-xs font-mono text-gray-500 group-hover:text-gray-400 uppercase tracking-widest">PDF • DOCUMENTATION</span>
+                                </div>
+                            </a>
+
+                            <a
+                                href="/plan-acces-2.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group relative bg-zinc-900/50 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-zinc-800/80 hover:border-indigo-500/50 transition-all duration-300 flex flex-col items-center justify-center gap-4 text-center overflow-hidden"
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                <div className="p-4 rounded-full bg-white/5 group-hover:bg-indigo-500/20 transition-colors">
+                                    <FileText className="w-8 h-8 text-indigo-400 group-hover:text-indigo-300 transition-colors" />
+                                </div>
+                                <div>
+                                    <h3 className="text-lg font-bold uppercase tracking-wider mb-2 text-white group-hover:text-indigo-300 transition-colors">{t('contact_page.access.guide2')}</h3>
+                                    <span className="text-xs font-mono text-gray-500 group-hover:text-gray-400 uppercase tracking-widest">PDF • DOCUMENTATION</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 

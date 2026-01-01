@@ -349,6 +349,12 @@
             "date": "Veuillez sélectionner une date de départ.",
             "terms": "Veuillez accepter les termes et conditions.",
             "error": "Erreur lors de l'envoi : "
+        },
+        "access": {
+            "title": "Où nous trouver",
+            "subtitle": "Accédez facilement à nos locaux grâce à nos plans détaillés.",
+            "guide1": "Plan d'Accès - Zone Nord",
+            "guide2": "Plan d'Accès - Zone Sud"
         }
     },
     "cao_camo": {
