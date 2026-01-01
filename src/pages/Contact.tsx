@@ -141,7 +141,7 @@ const Contact = () => {
                 <meta property="og:description" content={t('contact_page.description')} />
                 <meta property="og:type" content="website" />
             </Helmet>
-            <div className="min-h-screen bg-zinc-950 pt-32 pb-20 flex flex-col items-center justify-center text-white relative overflow-hidden font-sans">
+            <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-[#0a0a0a] to-black pt-32 pb-20 flex flex-col items-center justify-center text-white relative overflow-hidden font-sans">
                 <Starfield />
 
                 <div className="container mx-auto px-4 max-w-7xl relative z-10">
@@ -176,13 +176,8 @@ const Contact = () => {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5 }}
-                        className="bg-zinc-900 border border-zinc-800 p-8 md:p-12 relative shadow-2xl rounded-none"
+                        className="bg-black/50 backdrop-blur-xl border border-white/10 p-8 md:p-12 relative shadow-2xl rounded-2xl"
                     >
-                        {/* Decorative Corner Lines */}
-                        <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-indigo-500/50"></div>
-                        <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-indigo-500/50"></div>
-                        <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-indigo-500/50"></div>
-                        <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-indigo-500/50"></div>
 
                         <form ref={form} onSubmit={handleSubmit} className="space-y-10">
                             {/* Hidden inputs for EmailJS */}
@@ -225,15 +220,16 @@ const Contact = () => {
                                     className="space-y-8"
                                 >
                                     {/* Flight Type Selection */}
-                                    <div className="space-y-2">
-                                        <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-2">{t('contact_page.form.aircraft_type')} <span className="text-indigo-500">*</span></label>
-                                        <div className="flex gap-0">
+                                    <div className="space-y-3">
+                                        <label className="text-xs font-bold text-gray-500 uppercase tracking-widest block pl-1">{t('contact_page.form.aircraft_type')}</label>
+                                        <div className="flex bg-black/40 p-1.5 rounded-xl border border-white/5 relative">
+                                            {/* Sliding Background could be added here with separate component, but simple distinct buttons work well too */}
                                             <button
                                                 type="button"
                                                 onClick={() => handleTypeChange('PASSENGER')}
-                                                className={`flex-1 py-4 text-sm font-bold uppercase tracking-widest transition-all border ${formData.flightType === 'PASSENGER'
-                                                    ? 'bg-gradient-to-r from-violet-600 to-indigo-600 text-white border-indigo-500 shadow-[0_0_15px_rgba(99,102,241,0.5)]'
-                                                    : 'bg-transparent text-gray-500 border-zinc-700 hover:border-zinc-500'
+                                                className={`flex-1 py-3 text-sm font-bold uppercase tracking-widest transition-all rounded-lg relative z-10 ${formData.flightType === 'PASSENGER'
+                                                    ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-900/50'
+                                                    : 'text-gray-500 hover:text-gray-300 hover:bg-white/5'
                                                     }`}
                                             >
                                                 {t('contact_page.form.passenger')}
@@ -241,9 +237,9 @@ const Contact = () => {
                                             <button
                                                 type="button"
                                                 onClick={() => handleTypeChange('CARGO')}
-                                                className={`flex-1 py-4 text-sm font-bold uppercase tracking-widest transition-all border-y border-r ${formData.flightType === 'CARGO'
-                                                    ? 'bg-gradient-to-r from-violet-600 to-indigo-600 text-white border-indigo-500 shadow-[0_0_15px_rgba(99,102,241,0.5)]'
-                                                    : 'bg-transparent text-gray-500 border-zinc-700 hover:border-zinc-500'
+                                                className={`flex-1 py-3 text-sm font-bold uppercase tracking-widest transition-all rounded-lg relative z-10 ${formData.flightType === 'CARGO'
+                                                    ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-900/50'
+                                                    : 'text-gray-500 hover:text-gray-300 hover:bg-white/5'
                                                     }`}
                                             >
                                                 {t('contact_page.form.cargo')}
@@ -253,14 +249,23 @@ const Contact = () => {
 
                                     {/* Airport Selection */}
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
-                                        {/* Swap Button */}
+                                        {/* Swap Button - Vertically centered relative to the input boxes (offset by label height approx 24px) */}
                                         <button
                                             type="button"
                                             onClick={handleSwapAirports}
-                                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-zinc-800 border border-zinc-600 p-2 rounded-full hover:bg-indigo-600 hover:border-indigo-500 hover:text-white transition-all text-gray-400 shadow-xl"
+                                            className="hidden md:flex absolute top-[calc(50%+12px)] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 bg-black/80 backdrop-blur-xl border border-white/20 p-2.5 rounded-full hover:border-indigo-500 hover:text-indigo-400 transition-all text-gray-400 shadow-xl group"
                                             title="Inverser aéroports"
                                         >
-                                            <ArrowRightLeft className="w-5 h-5 md:rotate-0 rotate-90" />
+                                            <ArrowRightLeft className="w-4 h-4 transition-transform group-hover:rotate-180" />
+                                        </button>
+
+                                        {/* Mobile Swap Button (visible only on mobile) */}
+                                        <button
+                                            type="button"
+                                            onClick={handleSwapAirports}
+                                            className="md:hidden absolute top-1/2 left-[calc(100%-20px)] -translate-y-1/2 z-20 bg-black/80 backdrop-blur-xl border border-white/20 p-2 rounded-full hover:border-indigo-500 hover:text-indigo-400 transition-all text-gray-400 shadow-xl"
+                                        >
+                                            <ArrowRightLeft className="w-4 h-4 rotate-90" />
                                         </button>
 
                                         <div className="space-y-2">

@@ -1,5 +1,5 @@
 import logo from '../assets/logo360.webp';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, ArrowUpRight } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <footer className="bg-black text-white border-t border-white/10 pt-20 pb-10">
             <div className="container mx-auto px-6">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 justify-items-center text-center md:text-left">
                     {/* Brand Info */}
                     <div className="space-y-6 text-center md:text-left">
                         <div className="flex justify-center md:justify-start">
@@ -28,25 +28,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Navigation */}
-                    <div>
-                        <h4 className="text-sm font-mono uppercase tracking-widest text-white mb-6">{t('footer.links')}</h4>
-                        <ul className="space-y-4">
-                            {[
-                                { name: t('header.nav.home'), path: '/' },
-                                { name: t('header.nav.services'), path: '/services' },
-                                { name: t('header.nav.portfolio'), path: '/portfolio' },
-                                { name: t('header.nav.contact'), path: '/contact' }
-                            ].map((item) => (
-                                <li key={item.name}>
-                                    <a href={item.path} className="text-white hover:text-gray-300 flex items-center gap-2 group transition-colors">
-                                        <span className="w-1 h-1 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                                        {item.name}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+
 
                     {/* Contact Info */}
                     <div>
@@ -72,28 +54,12 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Newsletter */}
-                    <div>
-                        <h4 className="text-sm font-mono uppercase tracking-widest text-white mb-6">{t('footer.newsletter.title')}</h4>
-                        <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                            <div className="relative">
-                                <input
-                                    type="email"
-                                    placeholder={t('footer.newsletter.placeholder')}
-                                    className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder-gray-600 focus:border-white outline-none transition-colors uppercase font-mono text-sm"
-                                />
-                                <button type="submit" className="absolute right-0 top-3 text-gray-400 hover:text-white">
-                                    <ArrowUpRight size={20} />
-                                </button>
-                            </div>
-                            <p className="text-xs text-gray-400">{t('footer.newsletter.sub')}</p>
-                        </form>
-                    </div>
+
                 </div>
 
             </div>
 
-            <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-mono uppercase tracking-wider text-center md:text-left">
+            <div className="container mx-auto px-6 border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-mono uppercase tracking-wider text-center md:text-left">
                 <div className="flex flex-col md:flex-row items-center gap-4">
                     <p>{t('footer.rights', { year: currentYear })}</p>
                     <span className="hidden md:block text-gray-600">|</span>
