@@ -215,12 +215,13 @@ const CaoCamo = () => {
                                 ))}
                             </ul>
                         </div>
-                        <div className="bg-gradient-to-br from-zinc-800 to-zinc-900 p-8 rounded-2xl border border-white/10 flex items-center justify-center min-h-[300px]">
-                            <div className="text-center">
-                                <h3 className="text-2xl font-bold text-white mb-2">{t('cao_camo.progdigital.interface_title')}</h3>
-                                <p className="text-gray-500 text-sm">{t('cao_camo.progdigital.interface_desc')}</p>
-                                {/* Placeholder for software screenshot if available later */}
-                            </div>
+                        <div className="relative group overflow-hidden rounded-2xl border border-white/10">
+                            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                            <img
+                                src="/progdigital.png"
+                                alt="ProgDigital Interface"
+                                className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
+                            />
                         </div>
                     </div>
 

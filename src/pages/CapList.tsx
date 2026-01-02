@@ -63,6 +63,22 @@ const aircraftData = {
         "PIPER PA-46 Malibu / Mirage",
         "PIPER PA-46 Meridian"
     ],
+    "PILATUS": [
+        "PILATUS PC-6 Porter",
+        "PILATUS PC-12",
+        "PILATUS PC-24"
+    ],
+    "DAHER": [
+        "DAHER TBM 840"
+    ],
+    "LEARJET": [
+        "LEARJET 35A"
+    ],
+    "HELICOPTERES": [
+        "AS350 B2",
+        "Robinson R-44",
+        "Gazelle 341 G Civile"
+    ],
     "ROBIN": [
         "ROBIN ATL",
         "ROBIN DR-253 Régent",
@@ -79,16 +95,14 @@ const aircraftData = {
         "SOCATA TB-20 / 21 Trinidad"
     ],
     "DIVERS": [
-        "Aerospatiale Gazelle",
         "Augusta-Bell / Bell 206",
         "Columbia 300 / 350 / 400",
         "Dornier Do-27",
         "Extra 260 / 300 / 400 / 500",
         "Fligth Design CT LS GT600 UL (UL)",
         "Jodel D-11 / 110 / 120",
-        "Robinson R-22 / R-44",
         "Guimbal G-2 Cabri",
-        "Pilatus PC-6 Porter"
+        "Robinson R-22"
     ]
 };
 

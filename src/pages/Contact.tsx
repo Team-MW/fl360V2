@@ -28,9 +28,7 @@ const Contact = () => {
         returnTime: 'Indifférent',
         // Additional Contact Info (Passenger)
         company: '',
-        mobile: '',
         consentContact: false,
-        consentTerms: false,
         // Cargo Details
         cargoWeight: '',
         cargoVolume: '',
@@ -88,16 +86,7 @@ const Contact = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Validation for Passenger Step 2
-        // Validation for Passenger Step 2 OR Cargo Step 3
-        const isFinalStep = (formData.flightType === 'PASSENGER' && step === 2) || (formData.flightType === 'CARGO' && step === 3);
 
-        if (isFinalStep) {
-            if (!formData.consentTerms) {
-                alert(t('contact_page.alerts.terms'));
-                return;
-            }
-        }
 
         if (!departure || !arrival) {
             alert(t('contact_page.alerts.airports'));
@@ -117,7 +106,7 @@ const Contact = () => {
                         firstName: '', lastName: '', phone: '', email: '', comment: '',
                         flightType: 'PASSENGER', paxCount: 1, departureDate: '', departureTime: 'Indifférent',
                         returnDate: '', returnTime: 'Indifférent', company: '',
-                        mobile: '', consentContact: false, consentTerms: false,
+                        consentContact: false,
                         cargoWeight: '', cargoVolume: '', cargoLargestSize: '', cargoDimensions: '', cargoType: ''
                     });
                     setDeparture(null);
@@ -197,7 +186,6 @@ const Contact = () => {
                             <input type="hidden" name="passenger_details" value={`
                                 Company: ${formData.company}
                                 Phone: ${formData.phone}
-                                Mobile: ${formData.mobile}
                                 Marketing Consent: ${formData.consentContact ? 'Yes' : 'No'}
                             `} />
 
@@ -561,23 +549,7 @@ const Contact = () => {
                                         </div>
                                     </div>
 
-                                    {/* Row 3: Mobile */}
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        <div className="space-y-2">
-                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.mobile')}</label>
-                                            <div className="flex">
-                                                <span className="bg-zinc-800 text-gray-400 p-4 border border-zinc-700 border-r-0 flex items-center justify-center font-mono text-sm">+33</span>
-                                                <input
-                                                    type="tel"
-                                                    name="mobile"
-                                                    value={formData.mobile}
-                                                    onChange={handleInputChange}
-                                                    className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-indigo-500 outline-none transition-all"
-                                                    placeholder={t('contact_page.form.mobile_placeholder')}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
+
 
                                     {/* Checkboxes */}
                                     <div className="space-y-4 pt-4">
@@ -589,24 +561,6 @@ const Contact = () => {
                                                     checked={formData.consentContact}
                                                     onChange={handleCheckboxChange}
                                                     className="peer h-5 w-5 cursor-pointer appearance-none border border-zinc-600 bg-zinc-900 checked:bg-indigo-600 checked:border-indigo-600 transition-all"
-                                                />
-                                                <svg className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 pointer-events-none opacity-0 peer-checked:opacity-100 text-white transition-opacity" viewBox="0 0 14 14" fill="none">
-                                                    <path d="M3 8L6 11L11 3.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                                </svg>
-                                            </div>
-                                            <span className="text-sm text-gray-400 group-hover:text-gray-300">
-                                                {t('contact_page.form.consent_contact')}
-                                            </span>
-                                        </label>
-
-                                        <label className="flex items-start gap-4 cursor-pointer group">
-                                            <div className="relative flex items-center">
-                                                <input
-                                                    type="checkbox"
-                                                    name="consentTerms"
-                                                    checked={formData.consentTerms}
-                                                    onChange={handleCheckboxChange}
-                                                    className="peer h-5 w-5 cursor-pointer appearance-none border border-zinc-600 bg-zinc-900 checked:bg-indigo-600 checked:border-indigo-600 transition-all"
                                                     required
                                                 />
                                                 <svg className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 pointer-events-none opacity-0 peer-checked:opacity-100 text-white transition-opacity" viewBox="0 0 14 14" fill="none">
@@ -614,7 +568,7 @@ const Contact = () => {
                                                 </svg>
                                             </div>
                                             <span className="text-sm text-gray-400 group-hover:text-gray-300">
-                                                <span dangerouslySetInnerHTML={{ __html: t('contact_page.form.consent_terms') }} />
+                                                <span dangerouslySetInnerHTML={{ __html: t('contact_page.form.consent_contact') }} />
                                             </span>
                                         </label>
                                     </div>

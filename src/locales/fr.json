@@ -28,17 +28,17 @@
             "title": "Nos Expertises",
             "subtitle": "Des solutions d'ingénierie et de service conçues pour l'avenir de l'aéronautique.",
             "cards": {
-                "security": {
-                    "title": "Sécurité Avancée",
-                    "desc": "Protocoles prédictifs basés sur l'IA et audits en temps réel."
+                "transport": {
+                    "title": "TRANSPORT AÉRIEN DE PASSAGERS ET DE MARCHANDISES",
+                    "desc": "Solutions de transport sur mesure pour passagers et fret, garantissant sécurité et flexibilité."
                 },
-                "timing": {
-                    "title": "Précision Temporelle",
-                    "desc": "Synchronisation absolue pour une efficacité opérationnelle maximale."
+                "training": {
+                    "title": "FORMATION ET QUALIFICATION TYPE SUR AVION",
+                    "desc": "Programmes de formation agréés pour pilotes et techniciens, visant l'excellence opérationnelle."
                 },
-                "quality": {
-                    "title": "Excellence Certifiée",
-                    "desc": "Standards surpassant les normes internationales les plus strictes."
+                "maintenance": {
+                    "title": "ENTRETIEN, MAINTENANCE ET RÉPARATION D'AÉRONEFS",
+                    "desc": "Services MRO complets pour assurer la navigabilité et la performance optimale de votre flotte."
                 }
             },
             "more": "EN SAVOIR PLUS"
@@ -333,8 +333,7 @@
             "phone_placeholder": "1 23 45 67 89",
             "mobile_placeholder": "6 12 34 56 78",
             "name_placeholder": "Votre nom",
-            "consent_contact": "J'autorise FL360 à utiliser mes informations pour me contacter par téléphone et par email au sujet de ma demande de renseignements et/ou de produits et services équivalents.",
-            "consent_terms": "J'accepte les termes et conditions, la politique de confidentialité et la politique de cookies.",
+            "consent_contact": "J'autorise FL360 à utiliser mes informations pour me contacter par téléphone et par email au sujet de ma demande de renseignements et/ou de produits et services équivalents.<br/><br/>J'accepte les termes et conditions, la politique de confidentialité et la politique de cookies.",
             "submit": "Soumettre",
             "next": "Suivant",
             "back": "Retour"
@@ -442,10 +441,28 @@
         "title": "MRO - Maintenance & Pièces - fl360",
         "meta_desc": "Services de maintenance, réparation et pièces détachées pour aéronefs.",
         "hero": {
-            "title_prefix": "Entretenez votre",
+            "title_prefix": "ENTRETENEZ VOTRE",
             "title_highlight": "Aéronef",
-            "title_suffix": "de manière intelligente",
-            "subtitle": "Maintenance • Réparation • Pièces Détachées"
+            "title_suffix": "DE MANIÈRE INTELLIGENTE",
+            "subtitle": "Maintenance Réparation Pièces Détachées"
+        },
+        "intro": {
+            "title": "EXCELLENCE OPÉRATIONNELLE",
+            "desc": "FL360 vous propose une solution globale pour le maintien en condition opérationnelle de votre flotte. De la fourniture de pièces certifiées à la gestion logistique complexe, nous assurons la disponibilité de vos appareils."
+        },
+        "benefits": {
+            "cert": {
+                "title": "CERTIFIÉ EASA",
+                "desc": "Toutes nos pièces sont fournies avec leur EASA Form 1 / FAA 8130-3, garantissant une traçabilité totale."
+            },
+            "stock": {
+                "title": "STOCK DÉDIÉ",
+                "desc": "Un large inventaire de consommables et pièces critiques disponibles immédiatement pour minimiser vos AOG."
+            },
+            "support": {
+                "title": "SUPPORT TECHNIQUE 24/7",
+                "desc": "Une équipe d'experts à votre disposition pour identifier les références et expédier en urgence."
+            }
         },
         "categories": {
             "spark_plugs": "Bougies",

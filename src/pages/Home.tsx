@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageTransition from '../components/PageTransition';
-import { ArrowRight, Shield, Clock, Award, ChevronDown, Plane, Hexagon, FileBadge, FileCheck, CheckCircle } from 'lucide-react';
+import { ArrowRight, ChevronDown, Plane, Hexagon, FileBadge, FileCheck, CheckCircle } from 'lucide-react';
 
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -128,9 +128,9 @@ const Home = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
-                            { icon: Shield, title: t('home.services.cards.security.title'), desc: t('home.services.cards.security.desc') },
-                            { icon: Clock, title: t('home.services.cards.timing.title'), desc: t('home.services.cards.timing.desc') },
-                            { icon: Award, title: t('home.services.cards.quality.title'), desc: t('home.services.cards.quality.desc') }
+                            { icon: Plane, title: t('home.services.cards.transport.title'), desc: t('home.services.cards.transport.desc') },
+                            { icon: FileCheck, title: t('home.services.cards.training.title'), desc: t('home.services.cards.training.desc') },
+                            { icon: Hexagon, title: t('home.services.cards.maintenance.title'), desc: t('home.services.cards.maintenance.desc') }
                         ].map((service, idx) => (
                             <div key={idx} className="group p-10 bg-gray-50 border border-gray-200 hover:border-violet-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-violet-500/10">
                                 <service.icon className="w-12 h-12 text-black mb-8 opacity-70 group-hover:text-violet-600 group-hover:opacity-100 transition-all" />
