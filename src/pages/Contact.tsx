@@ -196,6 +196,7 @@ const Contact = () => {
                             {/* Additional Passenger Data for Email */}
                             <input type="hidden" name="passenger_details" value={`
                                 Company: ${formData.company}
+                                Phone: ${formData.phone}
                                 Mobile: ${formData.mobile}
                                 Marketing Consent: ${formData.consentContact ? 'Yes' : 'No'}
                             `} />
@@ -204,7 +205,7 @@ const Contact = () => {
                             <input type="hidden" name="cargo_details" value={`
                                 Weight: ${formData.cargoWeight}
                                 Volume: ${formData.cargoVolume}
-                                Type: ${formData.cargoType}
+                                Type de Marchandise: ${formData.cargoType}
                                 Largest Size: ${formData.cargoLargestSize}
                                 Dimensions: ${formData.cargoDimensions}
                             `} />
