@@ -24,7 +24,7 @@ const PartnersMarquee = () => {
                     transition={{
                         repeat: Infinity,
                         repeatType: "loop",
-                        duration: 20,
+                        duration: 12,
                         ease: "linear",
                     }}
                 >

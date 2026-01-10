@@ -3,6 +3,7 @@ import PageTransition from '../components/PageTransition';
 import { motion } from 'framer-motion';
 import { Check, Download, Plane, Camera, Video, Megaphone } from 'lucide-react';
 import Starfield from '../components/Starfield';
+import formation from '../assets/formation.avif';
 import { useTranslation, Trans } from 'react-i18next';
 
 const Formation = () => {
@@ -22,12 +23,20 @@ const Formation = () => {
                 <Starfield />
 
                 {/* Hero Section */}
-                <div className="relative pt-40 pb-20 overflow-hidden">
+                <div className="relative min-h-[60vh] flex items-center justify-center pt-32 pb-20 overflow-hidden">
+                    <div className="absolute inset-0 z-0">
+                        <img
+                            src={formation}
+                            alt="Formation"
+                            className="w-full h-full object-cover opacity-70 select-none"
+                        />
+                        <div className="absolute inset-0 bg-black/30"></div>
+                    </div>
                     <div className="container mx-auto px-6 relative z-10 text-center">
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="text-3xl md:text-5xl lg:text-6xl font-black uppercase tracking-widest mb-6 leading-tight"
+                            className="text-2xl md:text-4xl lg:text-5xl font-black uppercase tracking-widest mb-6 leading-tight"
                         >
                             {t('formation.hero.title_line1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">{t('formation.hero.title_highlight')}</span>
                         </motion.h1>

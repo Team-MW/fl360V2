@@ -40,8 +40,8 @@ const Home = () => {
             <section ref={heroRef} className="relative h-screen flex items-center justify-center bg-black overflow-hidden perspective-1000">
                 {/* Background Animation */}
                 <div className="absolute inset-0 z-0">
-                    <img src={acceuil} alt="" className="w-full h-full object-cover opacity-80 select-none" />
-                    <div className="absolute inset-0 bg-black/30"></div>
+                    <img src={acceuil} alt="" className="w-full h-full object-cover opacity-90 select-none" />
+                    <div className="absolute inset-0 bg-black/10"></div>
                 </div>
                 <Starfield />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50 pointer-events-none"></div>

@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import PageTransition from '../components/PageTransition';
 import { motion } from 'framer-motion';
 import Starfield from '../components/Starfield';
+import camo from '../assets/camo.avif';
 import { Check, FileText, Settings, Shield, Monitor, Search } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -34,27 +35,39 @@ const CaoCamo = () => {
                 <meta name="description" content={t('cao_camo.meta_desc')} />
             </Helmet>
 
-            <div className="min-h-screen bg-zinc-950 text-white font-sans pt-32 pb-20">
+            <div className="min-h-screen bg-zinc-950 text-white font-sans">
                 <Starfield />
 
                 {/* Hero Section */}
-                <div className="container mx-auto px-6 relative z-10 mb-24 text-center">
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-3xl md:text-5xl lg:text-6xl font-black uppercase tracking-widest mb-6 leading-tight"
-                    >
-                        {t('cao_camo.hero.title_prefix')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-indigo-500">{t('cao_camo.hero.title_highlight')}</span> {t('cao_camo.hero.title_suffix')}
-                    </motion.h1>
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.2 }}
-                        className="text-xl md:text-2xl text-gray-300 font-light tracking-wide max-w-4xl mx-auto mb-8"
-                    >
-                        {t('cao_camo.hero.subtitle_line1')}<br />
-                        <span className="text-indigo-400 text-lg">{t('cao_camo.hero.subtitle_line2')}</span>
-                    </motion.p>
+                <div className="relative min-h-[60vh] flex items-center justify-center mb-24 overflow-hidden pt-32 pb-20">
+                    <div className="absolute inset-0 z-0">
+                        <img
+                            src={camo}
+                            alt="CAMO Management"
+                            className="w-full h-full object-cover opacity-90 select-none"
+                        />
+                        <div className="absolute inset-0 bg-black/10"></div>
+                    </div>
+                    <Starfield />
+
+                    <div className="container mx-auto px-6 relative z-10 text-center">
+                        <motion.h1
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="text-2xl md:text-4xl lg:text-5xl font-black uppercase tracking-widest mb-6 leading-tight"
+                        >
+                            {t('cao_camo.hero.title_prefix')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-indigo-500">{t('cao_camo.hero.title_highlight')}</span> {t('cao_camo.hero.title_suffix')}
+                        </motion.h1>
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.2 }}
+                            className="text-xl md:text-2xl text-gray-300 font-light tracking-wide max-w-4xl mx-auto mb-8"
+                        >
+                            {t('cao_camo.hero.subtitle_line1')}<br />
+                            <span className="text-indigo-400 text-lg">{t('cao_camo.hero.subtitle_line2')}</span>
+                        </motion.p>
+                    </div>
                 </div>
 
                 <div className="container mx-auto px-6 relative z-10 space-y-24">

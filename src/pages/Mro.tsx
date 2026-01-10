@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import acceuil from '../assets/acceuil.jpg';
+import mro from '../assets/mro.avif';
 import PageTransition from '../components/PageTransition';
 import { motion } from 'framer-motion';
 import Starfield from '../components/Starfield';
@@ -70,14 +70,14 @@ const Mro = () => {
 
             <div className="min-h-screen bg-zinc-950 text-white font-sans">
                 {/* Hero Section */}
-                <div className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+                <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
                     <div className="absolute inset-0 z-0">
                         <img
-                            src={acceuil}
+                            src={mro}
                             alt="MRO Maintenance"
-                            className="w-full h-full object-cover opacity-80 select-none"
+                            className="w-full h-full object-cover opacity-90 select-none"
                         />
-                        <div className="absolute inset-0 bg-black/30"></div>
+                        <div className="absolute inset-0 bg-black/10"></div>
                         <Starfield />
                     </div>
 
@@ -86,7 +86,7 @@ const Mro = () => {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
-                            className="text-4xl md:text-6xl lg:text-7xl font-black tracking-widest mb-6 leading-tight max-w-5xl mx-auto"
+                            className="text-2xl md:text-4xl lg:text-5xl font-black tracking-widest mb-6 leading-tight max-w-5xl mx-auto"
                         >
                             {t('mro.hero.title_prefix')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-indigo-500">{t('mro.hero.title_highlight')}</span> {t('mro.hero.title_suffix')}
                         </motion.h1>
