@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import acceuil from '../assets/acceuil.jpg';
 import PageTransition from '../components/PageTransition';
 import { motion } from 'framer-motion';
 import Starfield from '../components/Starfield';
@@ -72,11 +73,11 @@ const Mro = () => {
                 <div className="relative h-[70vh] flex items-center justify-center overflow-hidden">
                     <div className="absolute inset-0 z-0">
                         <img
-                            src="/pilatus6.avif"
+                            src={acceuil}
                             alt="MRO Maintenance"
-                            className="w-full h-full object-cover opacity-40"
+                            className="w-full h-full object-cover opacity-80 select-none"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-zinc-950"></div>
+                        <div className="absolute inset-0 bg-black/30"></div>
                         <Starfield />
                     </div>
 
