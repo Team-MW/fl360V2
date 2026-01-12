@@ -25,19 +25,19 @@
     "home": {
         "services": {
             "title": "Our Expertise",
-            "subtitle": "Engineering and service solutions designed for the future of aviation.",
+            "subtitle": "Engineering and service solutions designed for the future of aeronautics.",
             "cards": {
-                "security": {
-                    "title": "Advanced Safety",
-                    "desc": "AI-based predictive protocols and real-time audits."
+                "transport": {
+                    "title": "AIR TRANSPORT FOR PASSENGERS AND FREIGHT",
+                    "desc": "Tailor-made transport solutions for passengers and cargo, guaranteeing safety and flexibility."
                 },
-                "timing": {
-                    "title": "Temporal Precision",
-                    "desc": "Absolute synchronization for maximum operational efficiency."
+                "training": {
+                    "title": "AIRCRAFT TRAINING AND TYPE RATING",
+                    "desc": "Approved training programs for pilots and technicians, aiming for operational excellence."
                 },
-                "quality": {
-                    "title": "Certified Excellence",
-                    "desc": "Standards exceeding the strictest international norms."
+                "maintenance": {
+                    "title": "AIRCRAFT MAINTENANCE, REPAIR AND OVERHAUL",
+                    "desc": "Comprehensive MRO services to ensure airworthiness and optimal performance of your fleet."
                 }
             },
             "more": "LEARN MORE"
@@ -74,8 +74,29 @@
         "drag_hint": "SLIDE TO SEE MORE",
         "cta": {
             "title": "READY?",
-            "subtitle": "Start your journey towards excellence. Wait no more.",
+            "subtitle": "Start your journey towards excellence. Don't wait any longer.",
             "button": "Initialize Contact"
+        },
+        "dna": {
+            "title": "Our DNA",
+            "cards": {
+                "navigability": {
+                    "title": "Your Airworthiness: Our Priority",
+                    "desc": "We understand your challenges and support you in maintaining the continuing airworthiness management of your aircraft."
+                },
+                "camo": {
+                    "title": "CAO / CAMO PART M / ML Certification",
+                    "desc": "FL 360 Aviation holds CAO / CAMO PART M / ML certification issued by OSAC under approval number FR.CAO.0170."
+                },
+                "spo": {
+                    "title": "SPO Certification",
+                    "desc": "FL 360 Aviation holds SPO certification issued by DGAC under approval number FR.DEC.0194"
+                },
+                "ato": {
+                    "title": "ATO Certification",
+                    "desc": "FL 360 Aviation holds ATO certification issued by DGAC under approval number FR.ATO.0000"
+                }
+            }
         }
     },
     "services_page": {
@@ -379,6 +400,12 @@
             "date": "Please select a departure date.",
             "terms": "Please accept the terms and conditions.",
             "error": "Error sending: "
+        },
+        "access": {
+            "title": "Where to find us",
+            "subtitle": "Easily access our premises with our detailed plans.",
+            "guide1": "Access Map - North Zone",
+            "guide2": "Access Map - South Zone"
         }
     },
     "cao_camo": {
@@ -468,8 +495,26 @@
         "hero": {
             "title_prefix": "Maintain your",
             "title_highlight": "Aircraft",
-            "title_suffix": "intelligently",
+            "title_suffix": "Intelligently",
             "subtitle": "Maintenance • Repair • Spare Parts"
+        },
+        "intro": {
+            "title": "OPERATIONAL EXCELLENCE",
+            "desc": "FL360 offers a comprehensive solution for maintaining the operational readiness of your fleet. From the supply of certified parts to complex logistics management, we ensure the availability of your aircraft."
+        },
+        "benefits": {
+            "cert": {
+                "title": "EASA CERTIFIED",
+                "desc": "All our parts are supplied with their EASA Form 1 / FAA 8130-3, ensuring total traceability."
+            },
+            "stock": {
+                "title": "DEDICATED STOCK",
+                "desc": "A large inventory of consumables and critical parts available immediately to minimize your AOG time."
+            },
+            "support": {
+                "title": "24/7 TECHNICAL SUPPORT",
+                "desc": "A team of experts at your disposal to identify references and ship urgently."
+            }
         },
         "categories": {
             "spark_plugs": "Spark Plugs",
