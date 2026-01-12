@@ -7,7 +7,7 @@ interface WhatsAppButtonProps {
 }
 
 const WhatsAppButton = ({ isMobileMenuOpen = false }: WhatsAppButtonProps) => {
-    const phoneNumber = "+33682274916"; // Updated number per user request
+    const phoneNumber = "+34617788820"; // Updated number per user request
     const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}`;
     const [isVisible, setIsVisible] = useState(true);
 

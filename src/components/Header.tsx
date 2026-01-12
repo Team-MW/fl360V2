@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowRight, User } from 'lucide-react';
+import { Menu, X, ArrowRight, User, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/logo360.webp';
 import { useTranslation } from 'react-i18next';
@@ -28,9 +28,15 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
 
     const links = [
         { name: t('header.nav.home'), path: '/' },
-        { name: t('header.nav.transport'), path: '/transport' },
-        { name: t('header.nav.formation'), path: '/formation' },
-        { name: t('header.nav.maintenance'), path: '/mro' },
+        {
+            name: 'Flotte et intégration',
+            path: '/flotte',
+            children: [
+                { name: 'TRANSPORT AÉRIEN DE PASSAGERS ET DE MARCHANDISES', path: '/transport' },
+                { name: 'FORMATION ET QUALICATION TYPE SUR AVION', path: '/formation' },
+                { name: "ENTRETIEN, MAINTENANCE ET RÉPARATION D'AÉRONEFS", path: '/mro' }
+            ]
+        },
         { name: 'CAO / CAMO', path: '/cao-camo' },
         { name: 'CAP LIST', path: '/cap-list' },
     ];
@@ -51,14 +57,30 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
                 {/* Desktop Menu */}
                 <nav className="hidden md:flex items-center gap-10">
                     {links.map((link) => (
-                        <Link
-                            key={link.path}
-                            to={link.path}
-                            className="relative text-sm uppercase tracking-widest font-medium text-gray-400 hover:text-white transition-colors group"
-                        >
-                            {link.name}
-                            <span className={`absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover:w-full ${location.pathname === link.path ? 'w-full' : ''}`}></span>
-                        </Link>
+                        <div key={link.name} className="relative group">
+                            {link.children ? (
+                                <>
+                                    <button className="flex items-center gap-1 text-sm uppercase tracking-widest font-medium text-gray-400 hover:text-white transition-colors py-4">
+                                        {link.name} <ChevronDown size={14} />
+                                    </button>
+                                    <div className="absolute top-full left-0 w-80 bg-zinc-950 border border-white/10 rounded-xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl z-50">
+                                        {link.children.map(child => (
+                                            <Link key={child.path} to={child.path} className="block py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors border-b border-white/5 last:border-0">
+                                                {child.name}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </>
+                            ) : (
+                                <Link
+                                    to={link.path}
+                                    className="relative text-sm uppercase tracking-widest font-medium text-gray-400 hover:text-white transition-colors py-4"
+                                >
+                                    {link.name}
+                                    <span className={`absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover:w-full ${location.pathname === link.path ? 'w-full' : ''}`}></span>
+                                </Link>
+                            )}
+                        </div>
                     ))}
                     <div className="flex items-center gap-6">
                         <LanguageSwitcher />
@@ -124,15 +146,37 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
 
                                 <nav className="flex flex-col gap-6">
                                     {links.map((link, idx) => (
-                                        <Link
-                                            key={link.path}
-                                            to={link.path}
-                                            onClick={toggleMenu}
-                                            className="text-2xl font-thin tracking-wide text-gray-400 hover:text-white hover:pl-4 transition-all"
-                                        >
-                                            <span className="text-xs font-mono text-gray-600 mr-4">0{idx + 1}</span>
-                                            {link.name}
-                                        </Link>
+                                        <div key={link.name}>
+                                            {link.children ? (
+                                                <div className="space-y-4">
+                                                    <div className="text-2xl font-thin tracking-wide text-white flex items-center gap-4">
+                                                        <span className="text-xs font-mono text-gray-600">0{idx + 1}</span>
+                                                        {link.name}
+                                                    </div>
+                                                    <div className="pl-10 flex flex-col gap-4 border-l border-white/10 ml-2">
+                                                        {link.children.map(child => (
+                                                            <Link
+                                                                key={child.path}
+                                                                to={child.path}
+                                                                onClick={toggleMenu}
+                                                                className="text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-white transition-colors py-2"
+                                                            >
+                                                                {child.name}
+                                                            </Link>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            ) : (
+                                                <Link
+                                                    to={link.path}
+                                                    onClick={toggleMenu}
+                                                    className="text-2xl font-thin tracking-wide text-gray-400 hover:text-white hover:pl-4 transition-all block"
+                                                >
+                                                    <span className="text-xs font-mono text-gray-600 mr-4">0{idx + 1}</span>
+                                                    {link.name}
+                                                </Link>
+                                            )}
+                                        </div>
                                     ))}
                                     <a
                                         href="https://gestion.progdigital.fr/login"

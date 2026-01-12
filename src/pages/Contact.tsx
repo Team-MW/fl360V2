@@ -535,7 +535,7 @@ const Contact = () => {
                                         <div className="space-y-2">
                                             <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.phone')} <span className="text-indigo-500">*</span></label>
                                             <div className="flex">
-                                                <span className="bg-zinc-800 text-gray-400 p-4 border border-zinc-700 border-r-0 flex items-center justify-center font-mono text-sm">+33</span>
+                                                <span className="bg-zinc-800 text-gray-400 p-4 border border-zinc-700 border-r-0 flex items-center justify-center font-mono text-sm">+34</span>
                                                 <input
                                                     type="tel"
                                                     name="phone"
