@@ -16,13 +16,13 @@ const Footer = () => {
                         <div className="flex justify-center md:justify-start">
                             <img src={logo} alt="fl360 Logo" className="w-[120px] h-auto grayscale brightness-200" />
                         </div>
-                        <p className="text-gray-400 font-light leading-relaxed whitespace-pre-line mx-auto md:mx-0 max-w-sm">
+                        <p className="text-white font-light leading-relaxed whitespace-pre-line mx-auto md:mx-0 max-w-sm">
                             {t('footer.tagline')}
                         </p>
                         <div className="flex gap-4 justify-center md:justify-start">
                             {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
                                 <a key={i} href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all group">
-                                    <Icon size={18} className="text-gray-400 group-hover:text-black transition-colors" />
+                                    <Icon size={18} className="text-white group-hover:text-black transition-colors" />
                                 </a>
                             ))}
                         </div>
@@ -59,10 +59,10 @@ const Footer = () => {
 
             </div>
 
-            <div className="container mx-auto px-6 border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-mono uppercase tracking-wider text-center md:text-left">
+            <div className="container mx-auto px-6 border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center text-xs text-white font-mono uppercase tracking-wider text-center md:text-left">
                 <div className="flex flex-col md:flex-row items-center gap-4">
                     <p>{t('footer.rights', { year: currentYear })}</p>
-                    <span className="hidden md:block text-gray-600">|</span>
+                    <span className="hidden md:block text-white">|</span>
                     <a href="https://microdidact.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                         Réalisé par Microdidact
                     </a>

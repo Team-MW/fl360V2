@@ -78,6 +78,7 @@ const Mro = () => {
                             className="w-full h-full object-cover opacity-90 select-none"
                         />
                         <div className="absolute inset-0 bg-black/10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
                         <Starfield />
                     </div>
 
@@ -195,16 +196,17 @@ const Mro = () => {
                     </div>
 
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-center bg-gradient-to-r from-indigo-900/20 to-violet-900/20 border border-indigo-500/30 p-12 rounded-2xl max-w-4xl mx-auto mb-20"
+                        className="text-center bg-gradient-to-br from-indigo-900/80 via-purple-900/50 to-indigo-900/80 backdrop-blur-md border border-white/10 p-12 rounded-2xl max-w-4xl mx-auto mb-20 shadow-[0_0_50px_rgba(79,70,229,0.15)] relative overflow-hidden"
                     >
-                        <h3 className="text-2xl font-bold uppercase tracking-widest mb-4 text-white">Besoin d'une pièce spécifique ?</h3>
-                        <p className="text-indigo-200 font-medium tracking-wide mb-8 text-lg">
+                        <div className="absolute inset-0 bg-[url('/spark.avif')] bg-cover bg-center opacity-5 mix-blend-overlay"></div>
+                        <h3 className="text-2xl font-black uppercase tracking-widest mb-4 text-white drop-shadow-lg relative z-10">Besoin d'une pièce spécifique ?</h3>
+                        <p className="text-indigo-200 font-medium tracking-wide mb-8 text-lg relative z-10">
                             {t('mro.more_info')}
                         </p>
-                        <a href="/contact" className="inline-block px-10 py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-gray-200 transition-colors rounded-sm">
+                        <a href="/contact" className="inline-block px-12 py-4 bg-white text-indigo-950 font-black uppercase tracking-widest hover:bg-indigo-50 transition-all rounded-full shadow-xl hover:shadow-2xl hover:scale-105 relative z-10">
                             Contactez le stock
                         </a>
                     </motion.div>

@@ -119,7 +119,7 @@ const CapList = () => {
                 <meta name="description" content={t('cap_list.meta_desc')} />
             </Helmet>
 
-            <div className="min-h-screen bg-zinc-950 text-white font-sans pt-32 pb-20">
+            <div className="min-h-screen bg-zinc-950 text-white font-sans pt-32 pb-20 relative">
                 <Starfield />
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="text-center mb-16">

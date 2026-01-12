@@ -190,6 +190,58 @@
                 "title": "Marchandises",
                 "desc": "Solutions de fret aérien rapides et fiables pour tous types de cargaisons."
             }
+        },
+        "passengers_section": {
+            "title": "Transport de Passagers",
+            "subtitle": "Une expérience de vol sur mesure",
+            "business": {
+                "title": "Aviation d'Affaires",
+                "desc": "Optimisez votre temps avec nos solutions de vols privés. Flexibilité totale des horaires, accès aux aéroports secondaires, confidentialité absolue et confort haut de gamme pour vos déplacements professionnels."
+            },
+            "group": {
+                "title": "Vols de Groupe",
+                "desc": "Transportez vos équipes, orchestres ou invités sportifs. Nous organisons des affrètements pour groupes de toutes tailles, garantissant une logistique fluide et personnalisée."
+            },
+            "medical": {
+                "title": "Vols Sanitaires (EVASAN)",
+                "desc": "Réactivité immédiate pour le transport médical d'urgence. Avions équipés en unités de soins intensifs, coordination avec les équipes médicales et protocoles de sécurité stricts."
+            }
+        },
+        "freight_section": {
+            "title": "Fret Aérien",
+            "subtitle": "Logistique critique et industrielle",
+            "urgent": {
+                "title": "Fret Urgent (AOG / Time-Critical)",
+                "desc": "Quand chaque minute compte. Solutions d'acheminement express pour pièces détachées, documents sensibles ou chaînes de production à l'arrêt."
+            },
+            "dangerous": {
+                "title": "Marchandises Dangereuses",
+                "desc": "Expertise certifiée pour le transport de produits réglementés (DGR). Emballage, documentation et manutention conformes aux normes IATA les plus strictes."
+            },
+            "heavy": {
+                "title": "Hors Gabarit & Industrie",
+                "desc": "Transport de charges lourdes ou volumineuses. Nous sélectionnons l'appareil adapté (An-124, B747F...) pour vos équipements industriels ou humanitaires."
+            }
+        },
+        "features": {
+            "title": "Pourquoi choisir fl360 ?",
+            "flexibility": {
+                "title": "Flexibilité Totale",
+                "desc": "Disponibilité 24/7/365. Décollage en moins de 2h pour les urgences."
+            },
+            "safety": {
+                "title": "Sécurité Maximale",
+                "desc": "Opérateurs certifiés AOC uniquement. Audits de sécurité rigoureux avant chaque vol."
+            },
+            "global": {
+                "title": "Portée Mondiale",
+                "desc": "Accès à des milliers d'aéroports dans le monde, même les plus isolés."
+            }
+        },
+        "cta_footer": {
+            "title": "Prêt à décoller ?",
+            "subtitle": "Contactez nos experts pour une étude personnalisée de votre besoin de transport.",
+            "button": "Demander une cotation"
         }
     },
     "formation": {

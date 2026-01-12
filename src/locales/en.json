@@ -168,6 +168,58 @@
                 "title": "Freight",
                 "desc": "Fast and reliable air freight solutions for all types of cargo."
             }
+        },
+        "passengers_section": {
+            "title": "Passenger Transport",
+            "subtitle": "A Tailor-Made Flight Experience",
+            "business": {
+                "title": "Business Aviation",
+                "desc": "Optimize your time with our private flight solutions. Total schedule flexibility, access to secondary airports, absolute privacy, and premium comfort for your business travel."
+            },
+            "group": {
+                "title": "Group Flights",
+                "desc": "Transport your teams, orchestras, or sports guests. We organize charters for groups of all sizes, ensuring smooth and personalized logistics."
+            },
+            "medical": {
+                "title": "Medical Flights (Medevac)",
+                "desc": "Immediate response for emergency medical transport. Aircraft equipped with intensive care units, coordination with medical teams, and strict safety protocols."
+            }
+        },
+        "freight_section": {
+            "title": "Air Freight",
+            "subtitle": "Critical and Industrial Logistics",
+            "urgent": {
+                "title": "Urgent Freight (AOG / Time-Critical)",
+                "desc": "When every minute counts. Express delivery solutions for spare parts, sensitive documents, or stalled production lines."
+            },
+            "dangerous": {
+                "title": "Dangerous Goods",
+                "desc": "Certified expertise for the transport of regulated goods (DGR). Packaging, documentation, and handling compliant with the strictest IATA standards."
+            },
+            "heavy": {
+                "title": "Oversize & Industry",
+                "desc": "Transport of heavy or bulky loads. We select the appropriate aircraft (An-124, B747F...) for your industrial or humanitarian equipment."
+            }
+        },
+        "features": {
+            "title": "Why Choose fl360?",
+            "flexibility": {
+                "title": "Total Flexibility",
+                "desc": "Available 24/7/365. Takeoff in less than 2h for emergencies."
+            },
+            "safety": {
+                "title": "Maximum Safety",
+                "desc": "AOC certified operators only. Rigorous safety audits before every flight."
+            },
+            "global": {
+                "title": "Global Reach",
+                "desc": "Access to thousands of airports worldwide, even the most remote."
+            }
+        },
+        "cta_footer": {
+            "title": "Ready to Take Off?",
+            "subtitle": "Contact our experts for a personalized study of your transport needs.",
+            "button": "Request a Quote"
         }
     },
     "formation": {

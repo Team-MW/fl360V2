@@ -35,7 +35,7 @@ const CaoCamo = () => {
                 <meta name="description" content={t('cao_camo.meta_desc')} />
             </Helmet>
 
-            <div className="min-h-screen bg-zinc-950 text-white font-sans">
+            <div className="min-h-screen bg-zinc-950 text-white font-sans relative">
                 <Starfield />
 
                 {/* Hero Section */}
@@ -47,6 +47,7 @@ const CaoCamo = () => {
                             className="w-full h-full object-cover opacity-90 select-none"
                         />
                         <div className="absolute inset-0 bg-black/10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
                     </div>
                     <Starfield />
 
@@ -152,13 +153,14 @@ const CaoCamo = () => {
                                 </motion.div>
                                 <motion.div
                                     whileHover={{ scale: 1.02 }}
-                                    className="bg-gradient-to-br from-indigo-900/40 to-violet-900/40 border border-indigo-500/30 p-8 rounded-xl"
+                                    className="bg-gradient-to-br from-indigo-900/60 via-purple-900/30 to-violet-900/60 backdrop-blur-sm border border-indigo-500/30 p-8 rounded-xl shadow-lg relative overflow-hidden group"
                                 >
-                                    <h3 className="text-xl font-bold text-indigo-300 mb-4 uppercase">{t('cao_camo.navigability.offer.title')}</h3>
-                                    <p className="text-gray-300 leading-relaxed mb-4">
+                                    <div className="absolute inset-0 bg-indigo-500/5 group-hover:bg-indigo-500/10 transition-colors"></div>
+                                    <h3 className="text-xl font-bold text-indigo-300 mb-4 uppercase relative z-10">{t('cao_camo.navigability.offer.title')}</h3>
+                                    <p className="text-gray-300 leading-relaxed mb-4 relative z-10">
                                         {t('cao_camo.navigability.offer.desc1')}
                                     </p>
-                                    <p className="text-gray-300 leading-relaxed">
+                                    <p className="text-gray-300 leading-relaxed relative z-10">
                                         {t('cao_camo.navigability.offer.desc2')}
                                     </p>
                                 </motion.div>
@@ -183,13 +185,14 @@ const CaoCamo = () => {
                                 </motion.div>
                                 <motion.div
                                     whileHover={{ scale: 1.02 }}
-                                    className="bg-gradient-to-br from-indigo-900/40 to-violet-900/40 border border-indigo-500/30 p-8 rounded-xl"
+                                    className="bg-gradient-to-br from-indigo-900/60 via-purple-900/30 to-violet-900/60 backdrop-blur-sm border border-indigo-500/30 p-8 rounded-xl shadow-lg relative overflow-hidden group"
                                 >
-                                    <h3 className="text-xl font-bold text-indigo-300 mb-4 uppercase">{t('cao_camo.prebuy.offer.title')}</h3>
-                                    <p className="text-gray-300 leading-relaxed mb-4">
+                                    <div className="absolute inset-0 bg-indigo-500/5 group-hover:bg-indigo-500/10 transition-colors"></div>
+                                    <h3 className="text-xl font-bold text-indigo-300 mb-4 uppercase relative z-10">{t('cao_camo.prebuy.offer.title')}</h3>
+                                    <p className="text-gray-300 leading-relaxed mb-4 relative z-10">
                                         {t('cao_camo.prebuy.offer.desc1')}
                                     </p>
-                                    <p className="text-gray-300 leading-relaxed">
+                                    <p className="text-gray-300 leading-relaxed relative z-10">
                                         {t('cao_camo.prebuy.offer.desc2')}
                                     </p>
                                 </motion.div>
@@ -238,19 +241,31 @@ const CaoCamo = () => {
                         </div>
                     </div>
 
-                    {/* Contact CTA */}
-                    <div className="text-center pt-12">
+                </div>
+
+                {/* CTA Section - Full Width */}
+                <section className="py-24 relative overflow-hidden border-t border-white/10 mt-24">
+                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-purple-950 to-indigo-950"></div>
+                    <div className="absolute inset-0 z-0 opacity-20 mix-blend-overlay">
+                        <img src={camo} alt="" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-900/10 to-transparent"></div>
+
+                    <div className="container mx-auto px-6 text-center relative z-20">
+                        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-widest text-white mb-8 drop-shadow-2xl">
+                            {t('cao_camo.cta')}
+                        </h2>
+
                         <motion.a
                             href="/contact"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="inline-flex items-center gap-2 bg-white text-black px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-gray-200 transition-colors"
+                            className="inline-block bg-white text-indigo-950 px-12 py-5 rounded-full font-black uppercase tracking-widest hover:bg-indigo-50 transition-all shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)]"
                         >
-                            {t('cao_camo.cta')}
+                            Contactez-nous
                         </motion.a>
                     </div>
-
-                </div>
+                </section>
             </div>
         </PageTransition>
     );

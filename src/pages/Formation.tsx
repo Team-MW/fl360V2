@@ -19,7 +19,7 @@ const Formation = () => {
                 <meta name="description" content={t('formation.meta_desc')} />
             </Helmet>
 
-            <div className="min-h-screen bg-zinc-950 text-white font-sans selection:bg-indigo-500/30">
+            <div className="min-h-screen bg-zinc-950 text-white font-sans selection:bg-indigo-500/30 relative">
                 <Starfield />
 
                 {/* Hero Section */}
@@ -31,6 +31,7 @@ const Formation = () => {
                             className="w-full h-full object-cover opacity-70 select-none"
                         />
                         <div className="absolute inset-0 bg-black/30"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
                     </div>
                     <div className="container mx-auto px-6 relative z-10 text-center">
                         <motion.h1
@@ -246,25 +247,26 @@ const Formation = () => {
                 </section>
 
                 {/* SPO CTA Section */}
-                <section className="py-20 bg-indigo-600 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-[url('/helico4.avif')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/90 to-violet-900/90"></div>
+                <section className="py-24 relative overflow-hidden border-t border-white/10">
+                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-purple-950 to-indigo-950"></div>
+                    <div className="absolute inset-0 bg-[url('/helico4.avif')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-900/10 to-transparent"></div>
 
                     <div className="container mx-auto px-6 text-center relative z-10">
-                        <h2 className="text-3xl font-bold uppercase tracking-widest mb-8 text-white drop-shadow-xl">{t('formation.docs.title')}</h2>
+                        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-widest mb-8 text-white drop-shadow-2xl">{t('formation.docs.title')}</h2>
 
                         <motion.a
-                            whileHover={{ scale: 1.05, backgroundColor: "#ffffff" }}
+                            whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             href="/Licence-Exploitation-Commercial.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-3 bg-white text-indigo-900 px-10 py-5 rounded-full font-black uppercase tracking-widest hover:text-indigo-700 transition-all shadow-2xl shadow-indigo-900/50 border-4 border-transparent hover:border-indigo-100"
+                            className="inline-flex items-center gap-3 bg-white text-indigo-950 px-12 py-6 rounded-full font-black uppercase tracking-widest hover:bg-indigo-50 transition-all shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] border-4 border-transparent"
                         >
                             <Download size={24} />
                             <span>{t('formation.docs.button')}</span>
                         </motion.a>
-                        <p className="mt-6 text-indigo-200 font-medium tracking-wide">{t('formation.docs.sub')}</p>
+                        <p className="mt-8 text-indigo-200/80 font-medium tracking-wide text-sm">{t('formation.docs.sub')}</p>
                     </div>
                 </section>
             </div>
