@@ -68,7 +68,7 @@ const Footer = () => {
                     </a>
                 </div>
                 <div className="flex flex-col md:flex-row gap-4 md:gap-8 mt-6 md:mt-0">
-                    <a href="#" className="hover:text-white transition-colors">{t('footer.privacy')}</a>
+                    <Link to="/mentions-legales" className="hover:text-white transition-colors">{t('footer.privacy')}</Link>
                     <Link to="/mentions-legales" className="hover:text-white transition-colors">{t('footer.legal')}</Link>
                 </div>
             </div>

@@ -153,11 +153,11 @@
         "sections": {
             "editor": {
                 "title": "1. Éditeur du site",
-                "content": "<0>Le site internet <1>fl360.com</1> est édité par la société <3>FL360 AVIATION SYSTEMS</3>, société par actions simplifiée (SAS) au capital de 100 000 euros.<br/>Immatriculée au Registre du Commerce et des Sociétés de Paris sous le numéro 123 456 789.<br/><br/><3>Siège social :</3><br/>123 Avenue de l'Avenir<br/>75000 Paris, France<br/><br/><3>Email :</3> nav@fl360aviation.com<br/><3>Téléphone :</3> +33 6 82 27 49 16</0>"
+                "content": "<0>Le site internet <1>fl360.com</1> est édité par la société <3>FL 360 AVIATION</3>, société par actions simplifiée unipersonnelle (SASU) au capital de 1 000,00 euros.<br/><br/><3>Siège social :</3><br/>BUSINESS CENTRE BATIMENT SOCRAT<br/>17 AVENUE DIDIER DAURAT<br/>31700 BLAGNAC<br/><br/><3>Informations légales :</3><br/>SIREM : 920 041 654<br/>SIRET : 920 041 654 00012<br/>RCS Toulouse : 920 041 654<br/>Numéro de TVA Intracommunautaire : FR62920041654<br/>Code NAF/APE : 51.10Z (Transports aériens de passagers)<br/><br/><3>Contact :</3><br/>Email : nav@fl360aviation.com<br/>Téléphone : +33 6 82 27 49 16</0>"
             },
             "director": {
                 "title": "2. Directeur de la publication",
-                "content": "Le Directeur de la publication est Monsieur Jean Dupont, en qualité de Président de FL360 AVIATION SYSTEMS."
+                "content": "Le Directeur de la publication est Monsieur Hamamna Fouad, en qualité de Dirigeant de FL 360 AVIATION."
             },
             "hosting": {
                 "title": "3. Hébergement",
@@ -165,7 +165,7 @@
             },
             "ip": {
                 "title": "4. Propriété intellectuelle",
-                "content": "L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques."
+                "content": "L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques. La reproduction de tout ou partie de ce site sur un support électronique quel qu'il soit est formellement interdite sauf autorisation expresse du directeur de la publication."
             },
             "privacy": {
                 "title": "5. Données personnelles",
