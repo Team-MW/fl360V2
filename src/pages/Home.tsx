@@ -6,7 +6,7 @@ import { ArrowRight, ChevronDown, Plane, Hexagon, FileBadge, FileCheck, CheckCir
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import logo from '../assets/logo360.webp';
-import acceuil from '../assets/acceuil.jpg';
+import acceuil from '../assets/acceuil.jpg.avif';
 
 import PartnersMarquee from '../components/PartnersMarquee';
 import { useTranslation } from 'react-i18next';
