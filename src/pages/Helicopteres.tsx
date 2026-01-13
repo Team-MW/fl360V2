@@ -111,6 +111,43 @@ const Helicopteres = () => {
                     </div>
                 </section>
 
+                {/* Fleet Section */}
+                <section className="py-20 bg-zinc-950 relative z-10">
+                    <div className="container mx-auto px-6">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="text-center mb-16"
+                        >
+                            <h2 className="text-4xl md:text-5xl font-bold mb-4 uppercase tracking-tight">
+                                Notre Flotte
+                            </h2>
+                            <p className="text-gray-400 text-lg">Hélicoptères à votre disposition</p>
+                        </motion.div>
+
+                        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                            {[
+                                { name: 'AS350 B2', subtitle: 'Écureuil' },
+                                { name: 'Robinson R44', subtitle: 'Raven II' },
+                                { name: 'Gazelle SA 341 G', subtitle: 'Version Civile' }
+                            ].map((heli, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: idx * 0.1 }}
+                                    className="bg-zinc-900/50 border border-white/5 p-8 hover:border-violet-500/50 transition-all text-center"
+                                >
+                                    <h3 className="text-2xl font-bold text-violet-300 mb-2 uppercase tracking-tight">{heli.name}</h3>
+                                    <p className="text-gray-500 text-sm uppercase tracking-wider">{heli.subtitle}</p>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
                 {/* CTA Section */}
                 <section className="py-32 relative overflow-hidden z-10">
                     <div className="absolute inset-0 bg-gradient-to-br from-violet-950 via-purple-950 to-indigo-950"></div>
