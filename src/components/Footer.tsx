@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <footer className="bg-black text-white border-t border-white/10 pt-20 pb-10">
             <div className="container mx-auto px-6">
-                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 justify-items-center text-center md:text-left">
+                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                     {/* Brand Info */}
                     <div className="space-y-6 text-center md:text-left">
                         <div className="flex justify-center md:justify-start">
@@ -28,7 +28,64 @@ const Footer = () => {
                         </div>
                     </div>
 
+                    {/* Navigation - Transport */}
+                    <div>
+                        <h4 className="text-sm font-mono uppercase tracking-widest text-white mb-6">Transport</h4>
+                        <ul className="space-y-3">
+                            <li>
+                                <Link to="/jets-prives" className="text-gray-400 hover:text-white transition-colors">
+                                    Jets Privés
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/helicopteres" className="text-gray-400 hover:text-white transition-colors">
+                                    Hélicoptères
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/avions-affaires" className="text-gray-400 hover:text-white transition-colors">
+                                    Avions d'Affaires
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/avions-taxi" className="text-gray-400 hover:text-white transition-colors">
+                                    Avions Taxi
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/hand-carry" className="text-gray-400 hover:text-white transition-colors">
+                                    Hand Carry
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
 
+                    {/* Navigation - Services */}
+                    <div>
+                        <h4 className="text-sm font-mono uppercase tracking-widest text-white mb-6">Services</h4>
+                        <ul className="space-y-3">
+                            <li>
+                                <Link to="/formation" className="text-gray-400 hover:text-white transition-colors">
+                                    Formation
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/cao-camo" className="text-gray-400 hover:text-white transition-colors">
+                                    CAO / CAMO
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/cap-list" className="text-gray-400 hover:text-white transition-colors">
+                                    CAP LIST
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/mro" className="text-gray-400 hover:text-white transition-colors">
+                                    MRO
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
 
                     {/* Contact Info */}
                     <div>
