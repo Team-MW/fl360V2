@@ -12,6 +12,7 @@ const JetsPrives = lazy(() => import('./pages/JetsPrives'));
 const Helicopteres = lazy(() => import('./pages/Helicopteres'));
 const AvionsAffaires = lazy(() => import('./pages/AvionsAffaires'));
 const AvionsTaxi = lazy(() => import('./pages/AvionsTaxi'));
+const HandCarry = lazy(() => import('./pages/HandCarry'));
 const Services = lazy(() => import('./pages/Services'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
 const Contact = lazy(() => import('./pages/Contact'));
@@ -39,6 +40,7 @@ const AnimatedRoutes = () => {
             <Route path="helicopteres" element={<Helicopteres />} />
             <Route path="avions-affaires" element={<AvionsAffaires />} />
             <Route path="avions-taxi" element={<AvionsTaxi />} />
+            <Route path="hand-carry" element={<HandCarry />} />
             <Route path="services" element={<Services />} />
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="formation" element={<Formation />} />

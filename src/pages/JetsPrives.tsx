@@ -1,9 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import PageTransition from '../components/PageTransition';
 import { motion } from 'framer-motion';
-import Starfield from '../components/Starfield';
 import { Link } from 'react-router-dom';
-import { Plane, Clock, ShieldCheck, Crown, Wifi, Users, MapPin } from 'lucide-react';
 
 const JetsPrives = () => {
     return (
@@ -13,35 +11,15 @@ const JetsPrives = () => {
                 <meta name="description" content="Location de jets privés pour vos déplacements d'affaires et personnels. Luxe, confort et discrétion absolue." />
             </Helmet>
 
-            <div className="min-h-screen bg-zinc-950 text-white font-sans selection:bg-violet-500/30 relative">
-                <Starfield />
-
+            <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-violet-500/30">
                 {/* Hero Section */}
-                <div className="relative h-screen flex items-center justify-center overflow-hidden">
-                    <div className="absolute inset-0 z-0">
-                        <img
-                            src="/extra2.avif"
-                            alt="Jets Privés"
-                            className="w-full h-full object-cover opacity-70 select-none"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-zinc-950"></div>
-                    </div>
-
+                <div className="relative h-[70vh] flex items-center justify-center overflow-hidden bg-slate-50">
                     <div className="container mx-auto px-6 relative z-10 text-center">
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className="mb-6"
-                        >
-                            <Crown className="w-16 h-16 mx-auto text-violet-400 mb-6" />
-                        </motion.div>
-
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 }}
-                            className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-widest mb-6 leading-tight"
+                            className="text-5xl md:text-7xl font-bold uppercase tracking-tight mb-6 text-slate-700"
                         >
                             Jets Privés
                         </motion.h1>
@@ -50,144 +28,204 @@ const JetsPrives = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.4 }}
-                            className="text-xl md:text-2xl text-gray-300 font-light max-w-3xl mx-auto mb-12"
+                            className="text-xl md:text-2xl text-slate-600 font-light max-w-3xl mx-auto mb-12"
                         >
-                            L'excellence du voyage aérien privé. Luxe, confort et discrétion pour vos déplacements d'affaires et personnels.
+                            Une optimisation du temps pour les affaires et les loisirs
                         </motion.p>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.6 }}
-                        >
-                            <Link
-                                to="/contact"
-                                className="group inline-flex items-center gap-3 bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest hover:from-violet-500 hover:to-indigo-500 transition-all shadow-2xl hover:shadow-violet-500/50"
-                            >
-                                Demander un devis
-                                <Plane size={20} className="transition-all duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:rotate-12" />
-                            </Link>
-                        </motion.div>
                     </div>
                 </div>
 
-                {/* Features Section */}
-                <section className="py-24 bg-zinc-950 relative z-10">
+                {/* Business & Leisure Section */}
+                <section className="py-20 bg-white">
+                    <div className="container mx-auto px-6">
+                        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="bg-slate-50 p-10 border border-slate-200"
+                            >
+                                <h2 className="text-3xl font-bold uppercase tracking-tight mb-6 text-slate-700">
+                                    Avions d'affaires pour les entreprises
+                                </h2>
+                                <p className="text-slate-600 leading-relaxed mb-8">
+                                    Emplois du temps serrés, réunions multiples, visites de plusieurs sites en une seule journée...
+                                    Nous permettons aux femmes et hommes d'affaires d'optimiser leur temps tout en utilisant la méthode
+                                    la plus sûre et confortable pour leurs déplacements professionnels.
+                                </p>
+                                <Link
+                                    to="/contact"
+                                    className="inline-block bg-violet-600 text-white px-8 py-3 font-bold uppercase tracking-wide hover:bg-violet-700 transition-all"
+                                >
+                                    Demandez un devis rapide
+                                </Link>
+                            </motion.div>
+
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="bg-slate-50 p-10 border border-slate-200"
+                            >
+                                <h2 className="text-3xl font-bold uppercase tracking-tight mb-6 text-slate-700">
+                                    Jets privés pour les loisirs
+                                </h2>
+                                <p className="text-slate-600 leading-relaxed mb-8">
+                                    Weekend de ski à Courchevel, escapade gourmande en Sardaigne, farniente dans les Caraïbes…
+                                    Voyager dans le confort d'un jet privé vous permettra d'arriver à destination avec vos amis et
+                                    votre famille sans stress, en toute sécurité, tout en préservant votre vie privée.
+                                </p>
+                                <Link
+                                    to="/contact"
+                                    className="inline-block bg-violet-600 text-white px-8 py-3 font-bold uppercase tracking-wide hover:bg-violet-700 transition-all"
+                                >
+                                    Demandez un devis rapide
+                                </Link>
+                            </motion.div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Charter Method */}
+                <section className="py-20 bg-slate-50">
                     <div className="container mx-auto px-6">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-center mb-20"
+                            className="text-center mb-16"
                         >
-                            <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-widest mb-6">
-                                Pourquoi choisir un jet privé ?
+                            <h2 className="text-4xl md:text-5xl font-bold text-slate-700 mb-6 uppercase tracking-tight">
+                                Notre méthode, affrètement privé
                             </h2>
-                            <div className="h-1 w-24 bg-gradient-to-r from-violet-600 to-indigo-600 mx-auto"></div>
+                            <p className="text-slate-600 text-lg max-w-4xl mx-auto leading-relaxed">
+                                Nous sommes les experts qui simplifient le processus d'affrètement grâce à une méthode simple, en quatre étapes.
+                                Chez nous, chaque client bénéficie des services d'un consultant en affrètement dédié, un interlocuteur unique,
+                                épaulé par nos équipes internationales chargées des opérations, des services à bord et de la conformité,
+                                qui veillent à ce que tout se déroule sans accroc.
+                            </p>
                         </motion.div>
 
-                        <div className="grid md:grid-cols-3 gap-8">
-                            {[
-                                {
-                                    icon: Clock,
-                                    title: 'Flexibilité Totale',
-                                    desc: 'Décollez quand vous le souhaitez. Aucune contrainte horaire, aucune file d\'attente. Votre emploi du temps dicte votre vol.'
-                                },
-                                {
-                                    icon: ShieldCheck,
-                                    title: 'Confidentialité Absolue',
-                                    desc: 'Vos conversations restent privées. Voyagez en toute discrétion avec vos collaborateurs ou votre famille.'
-                                },
-                                {
-                                    icon: Crown,
-                                    title: 'Luxe & Confort',
-                                    desc: 'Intérieurs sur mesure, sièges en cuir, espace de travail premium. Le summum du confort aérien.'
-                                }
-                            ].map((feature, idx) => (
+                        <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                            {['Demande', 'Sélection', 'Confirmation', 'Vol'].map((step, idx) => (
                                 <motion.div
                                     key={idx}
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: idx * 0.1 }}
-                                    className="group bg-zinc-900/50 border border-white/5 p-10 hover:border-violet-500/50 transition-all hover:-translate-y-2"
+                                    className="bg-white p-8 border border-slate-200 text-center hover:border-violet-500 transition-all"
                                 >
-                                    <feature.icon className="w-12 h-12 text-violet-400 mb-6 group-hover:scale-110 transition-transform" />
-                                    <h3 className="text-2xl font-bold uppercase tracking-wider mb-4 group-hover:text-violet-300 transition-colors">
-                                        {feature.title}
-                                    </h3>
-                                    <p className="text-gray-400 leading-relaxed">{feature.desc}</p>
+                                    <div className="text-5xl font-black text-slate-200 mb-4">{idx + 1}</div>
+                                    <h3 className="text-xl font-bold uppercase tracking-tight text-slate-700">{step}</h3>
                                 </motion.div>
                             ))}
                         </div>
                     </div>
                 </section>
 
-                {/* Services Section */}
-                <section className="py-24 bg-zinc-900/30 border-y border-white/5 relative z-10">
+                {/* Benefits */}
+                <section className="py-20 bg-white">
                     <div className="container mx-auto px-6">
-                        <div className="grid md:grid-cols-2 gap-16 items-center">
-                            <motion.div
-                                initial={{ opacity: 0, x: -50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                            >
-                                <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-widest mb-8">
-                                    Services Premium
-                                </h2>
-                                <div className="space-y-6">
-                                    {[
-                                        { icon: Wifi, text: 'Wi-Fi haute vitesse à bord' },
-                                        { icon: Users, text: 'Service de conciergerie 24/7' },
-                                        { icon: MapPin, text: 'Accès à 5000+ aéroports privés' },
-                                        { icon: Crown, text: 'Restauration gastronomique sur demande' }
-                                    ].map((service, idx) => (
-                                        <div key={idx} className="flex items-center gap-4">
-                                            <div className="w-12 h-12 bg-violet-600/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                                <service.icon className="w-6 h-6 text-violet-400" />
-                                            </div>
-                                            <p className="text-lg text-gray-300">{service.text}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="text-center mb-16"
+                        >
+                            <h2 className="text-4xl md:text-5xl font-bold text-slate-700 mb-4 uppercase tracking-tight">
+                                Pourquoi affréter vos vols privés avec nous ?
+                            </h2>
+                        </motion.div>
 
-                            <motion.div
-                                initial={{ opacity: 0, x: 50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                className="relative"
-                            >
-                                <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-white/10">
-                                    <img
-                                        src="/pilatus6.avif"
-                                        alt="Intérieur jet privé"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                            </motion.div>
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                            {[
+                                { title: 'Luxe et Confort', desc: 'Voler doit avant tout être un plaisir. Nous mettons tout en œuvre pour que votre expérience à bord soit des plus confortables et luxueuses.' },
+                                { title: 'Couverture Mondiale', desc: 'Peu importe votre lieu de départ ou d\'arrivée, notre réseau mondial vous garantit une excellence connaissance des marchés locaux.' },
+                                { title: 'Sécurité et Discrétion', desc: 'Voyager avec nous garantit un respect total de votre vie privée. Nous assurons votre sécurité tout au long de votre vol.' },
+                                { title: 'Rentabilité', desc: 'Notre pouvoir d\'achat nous permet de dénicher des prix très compétitifs et vous offrir des solutions au meilleur prix du marché.' },
+                                { title: 'Créer Votre Planning', desc: 'Vol régulier ou arrangement selon votre emploi du temps - nous affrèterons le jet privé qui vous conviendra.' },
+                                { title: 'Gamme d\'Avions', desc: 'Accès à 50 000 avions et 130 modèles différents. Nous vous fournirons toujours l\'avion idéal pour vos exigences.' },
+                                { title: 'Accès à Plus d\'Aéroports', desc: 'Atteignez des lieux qu\'un vol régulier ne dessert pas : endroits isolés ou localités plus proches de votre destination finale.' },
+                                { title: 'Chargé de Clientèle Dédié', desc: 'Votre expert en affrètement est disponible 24h/24, 7j/7 pour vous assister à chaque étape de votre demande.' }
+                            ].map((benefit, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: idx * 0.05 }}
+                                    className="bg-slate-50 border border-slate-200 p-6 hover:border-violet-500 transition-all"
+                                >
+                                    <h3 className="text-lg font-bold uppercase tracking-tight mb-3 text-slate-700">
+                                        {benefit.title}
+                                    </h3>
+                                    <p className="text-slate-600 text-sm leading-relaxed">{benefit.desc}</p>
+                                </motion.div>
+                            ))}
                         </div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="mt-12 bg-violet-50 border border-violet-200 p-8 text-center max-w-4xl mx-auto"
+                        >
+                            <h3 className="text-2xl font-bold uppercase tracking-tight mb-4 text-slate-700">Terminaux Privés</h3>
+                            <p className="text-slate-600">
+                                Évitez les files d'attentes et les retards inutiles. Nos passagers peuvent monter à bord jusqu'à la dernière minute avant le décollage.
+                            </p>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* Price Estimation */}
+                <section className="py-20 bg-slate-50">
+                    <div className="container mx-auto px-6 text-center">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                        >
+                            <h2 className="text-4xl md:text-5xl font-bold text-slate-700 mb-6 uppercase tracking-tight">
+                                Vous avez besoin d'une estimation de prix ?
+                            </h2>
+                            <p className="text-slate-600 text-lg max-w-3xl mx-auto mb-12 leading-relaxed">
+                                Si vous cherchez à louer un jet privé, notre guide des prix est le point de départ idéal.
+                                Notre équipe vous permettra d'obtenir un tarif approximatif pour louer un jet privé spécifique
+                                ou d'accéder à une sélection d'appareils disponibles aux dates que vous recherchez.
+                            </p>
+                            <Link
+                                to="/contact"
+                                className="inline-block bg-violet-600 text-white px-12 py-4 font-bold uppercase tracking-wide hover:bg-violet-700 transition-all"
+                            >
+                                En savoir +
+                            </Link>
+                        </motion.div>
                     </div>
                 </section>
 
                 {/* CTA Section */}
-                <section className="py-32 relative overflow-hidden z-10">
-                    <div className="absolute inset-0 bg-gradient-to-br from-violet-950 via-purple-950 to-indigo-950"></div>
-                    <div className="absolute inset-0 bg-[url('/extra2.avif')] bg-cover bg-center opacity-10"></div>
-
-                    <div className="container mx-auto px-6 text-center relative z-20">
-                        <h2 className="text-4xl md:text-6xl font-black uppercase tracking-widest text-white mb-6">
-                            Prêt à décoller ?
-                        </h2>
-                        <p className="text-violet-200 text-xl mb-12 max-w-2xl mx-auto">
-                            Contactez nos experts pour organiser votre prochain vol en jet privé.
-                        </p>
-                        <Link
-                            to="/contact"
-                            className="inline-block bg-white text-violet-950 px-12 py-5 rounded-full font-black uppercase tracking-widest hover:bg-violet-50 transition-all shadow-2xl hover:shadow-white/30"
+                <section className="py-20 bg-white">
+                    <div className="container mx-auto px-6 text-center">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
                         >
-                            Réserver maintenant
-                        </Link>
+                            <h2 className="text-4xl md:text-5xl font-bold text-slate-700 mb-6 uppercase tracking-tight">
+                                Prêt à décoller ?
+                            </h2>
+                            <p className="text-slate-600 text-xl mb-12 max-w-2xl mx-auto">
+                                Contactez nos experts pour organiser votre prochain vol en jet privé.
+                            </p>
+                            <Link
+                                to="/contact"
+                                className="inline-block bg-violet-600 text-white px-12 py-4 font-bold uppercase tracking-wide hover:bg-violet-700 transition-all"
+                            >
+                                Réserver maintenant
+                            </Link>
+                        </motion.div>
                     </div>
                 </section>
             </div>
