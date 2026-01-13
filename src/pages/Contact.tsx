@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageTransition from '../components/PageTransition';
-import { ArrowRight, ArrowRightLeft, MapPin, FileText } from 'lucide-react';
+import { ArrowRight, ArrowRightLeft, MapPin, FileText, Plus, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { AirportAutocomplete, type Airport } from '../components/AirportAutocomplete';
@@ -21,6 +21,7 @@ const Contact = () => {
         comment: '',
         // Flight Details
         flightType: 'PASSENGER' as 'PASSENGER' | 'CARGO',
+        tripType: 'ROUND_TRIP' as 'ONE_WAY' | 'ROUND_TRIP' | 'MULTI_DESTINATION',
         paxCount: 1,
         departureDate: '',
         departureTime: 'Indifférent',
@@ -39,6 +40,15 @@ const Contact = () => {
     const [departure, setDeparture] = useState<Airport | null>(null);
     const [arrival, setArrival] = useState<Airport | null>(null);
 
+    // Multi-destination segments
+    type FlightSegment = {
+        from: Airport | null;
+        to: Airport | null;
+        date: string;
+        time: string;
+    };
+    const [additionalSegments, setAdditionalSegments] = useState<FlightSegment[]>([]);
+
     const nextStep = () => {
         if (!departure || !arrival) {
             alert(t('contact_page.alerts.airports'));
@@ -47,6 +57,16 @@ const Contact = () => {
         if (!formData.departureDate) {
             alert(t('contact_page.alerts.date'));
             return;
+        }
+
+        // For multi-destination, check all segments
+        if (formData.tripType === 'MULTI_DESTINATION') {
+            for (const segment of additionalSegments) {
+                if (!segment.from || !segment.to || !segment.date) {
+                    alert('Veuillez remplir tous les segments de vol');
+                    return;
+                }
+            }
         }
 
 
@@ -104,13 +124,14 @@ const Contact = () => {
                     setShowSuccess(true);
                     setFormData({
                         firstName: '', lastName: '', phone: '', email: '', comment: '',
-                        flightType: 'PASSENGER', paxCount: 1, departureDate: '', departureTime: 'Indifférent',
+                        flightType: 'PASSENGER', tripType: 'ROUND_TRIP', paxCount: 1, departureDate: '', departureTime: 'Indifférent',
                         returnDate: '', returnTime: 'Indifférent', company: '',
                         consentContact: false,
                         cargoWeight: '', cargoVolume: '', cargoLargestSize: '', cargoDimensions: '', cargoType: ''
                     });
                     setDeparture(null);
                     setArrival(null);
+                    setAdditionalSegments([]);
                     setStep(1); // Return to Step 1
                     setTimeout(() => setShowSuccess(false), 5000);
                 })
@@ -174,11 +195,18 @@ const Contact = () => {
                             <input type="hidden" name="reply_to" value={formData.email} />
                             <input type="hidden" name="flight_details" value={`
                                 Type: ${formData.flightType}
+                                Trip Type: ${formData.tripType}
                                 Pax: ${formData.paxCount}
                                 Dep: ${departure?.name} (${departure?.iata})
                                 Arr: ${arrival?.name} (${arrival?.iata})
                                 Date: ${formData.departureDate} ${formData.departureTime}
                                 Return: ${formData.returnDate} ${formData.returnTime}
+                                ${formData.tripType === 'MULTI_DESTINATION' && additionalSegments.length > 0 ? `
+                                Additional Segments:
+                                ${additionalSegments.map((seg, i) => `
+                                  Segment ${i + 2}: ${seg.from?.name} (${seg.from?.iata}) → ${seg.to?.name} (${seg.to?.iata}) | ${seg.date} ${seg.time}
+                                `).join('')}
+                                ` : ''}
                                 Message: ${formData.comment}
                             `} />
 
@@ -232,6 +260,43 @@ const Contact = () => {
                                                     }`}
                                             >
                                                 {t('contact_page.form.cargo')}
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    {/* Trip Type Selection */}
+                                    <div className="space-y-3">
+                                        <label className="text-xs font-bold text-gray-500 uppercase tracking-widest block pl-1">Type de voyage</label>
+                                        <div className="flex bg-black/40 p-1.5 rounded-xl border border-white/5 relative">
+                                            <button
+                                                type="button"
+                                                onClick={() => setFormData(prev => ({ ...prev, tripType: 'ROUND_TRIP' }))}
+                                                className={`flex-1 py-3 px-2 text-xs md:text-sm font-bold uppercase tracking-widest transition-all rounded-lg relative z-10 ${formData.tripType === 'ROUND_TRIP'
+                                                    ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-900/50'
+                                                    : 'text-gray-500 hover:text-gray-300 hover:bg-white/5'
+                                                    }`}
+                                            >
+                                                ✓ Aller-retour
+                                            </button>
+                                            <button
+                                                type="button"
+                                                onClick={() => setFormData(prev => ({ ...prev, tripType: 'ONE_WAY', returnDate: '', returnTime: 'Indifférent' }))}
+                                                className={`flex-1 py-3 px-2 text-xs md:text-sm font-bold uppercase tracking-widest transition-all rounded-lg relative z-10 ${formData.tripType === 'ONE_WAY'
+                                                    ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-900/50'
+                                                    : 'text-gray-500 hover:text-gray-300 hover:bg-white/5'
+                                                    }`}
+                                            >
+                                                Aller simple
+                                            </button>
+                                            <button
+                                                type="button"
+                                                onClick={() => setFormData(prev => ({ ...prev, tripType: 'MULTI_DESTINATION' }))}
+                                                className={`flex-1 py-3 px-2 text-xs md:text-sm font-bold uppercase tracking-widest transition-all rounded-lg relative z-10 ${formData.tripType === 'MULTI_DESTINATION'
+                                                    ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-900/50'
+                                                    : 'text-gray-500 hover:text-gray-300 hover:bg-white/5'
+                                                    }`}
+                                            >
+                                                Multidestination
                                             </button>
                                         </div>
                                     </div>
@@ -331,35 +396,143 @@ const Contact = () => {
                                         )}
                                     </div>
 
-                                    {/* Return Date (Optional) */}
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 border-t border-zinc-800">
-                                        <div className="grid grid-cols-2 gap-4">
-                                            <div className="space-y-2">
-                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.return_date')}</label>
-                                                <input
-                                                    type="date"
-                                                    name="returnDate"
-                                                    value={formData.returnDate}
-                                                    onChange={handleInputChange}
-                                                    className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-indigo-500 outline-none transition-all uppercase placeholder-gray-600 text-gray-400 focus:text-white"
-                                                />
-                                            </div>
-                                            <div className="space-y-2">
-                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.time')}</label>
-                                                <select
-                                                    name="returnTime"
-                                                    value={formData.returnTime}
-                                                    onChange={handleInputChange}
-                                                    className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-indigo-500 outline-none transition-all uppercase appearance-none text-gray-400 focus:text-white"
-                                                >
-                                                    <option>{t('contact_page.form.indifferent')}</option>
-                                                    <option>{t('contact_page.form.morning')}</option>
-                                                    <option>{t('contact_page.form.afternoon')}</option>
-                                                    <option>{t('contact_page.form.evening')}</option>
-                                                </select>
+                                    {/* Return Date (Only show if not ONE_WAY) */}
+                                    {formData.tripType !== 'ONE_WAY' && (
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 border-t border-zinc-800">
+                                            <div className="grid grid-cols-2 gap-4">
+                                                <div className="space-y-2">
+                                                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.return_date')}</label>
+                                                    <input
+                                                        type="date"
+                                                        name="returnDate"
+                                                        value={formData.returnDate}
+                                                        onChange={handleInputChange}
+                                                        className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-indigo-500 outline-none transition-all uppercase placeholder-gray-600 text-gray-400 focus:text-white"
+                                                    />
+                                                </div>
+                                                <div className="space-y-2">
+                                                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.time')}</label>
+                                                    <select
+                                                        name="returnTime"
+                                                        value={formData.returnTime}
+                                                        onChange={handleInputChange}
+                                                        className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-indigo-500 outline-none transition-all uppercase appearance-none text-gray-400 focus:text-white"
+                                                    >
+                                                        <option>{t('contact_page.form.indifferent')}</option>
+                                                        <option>{t('contact_page.form.morning')}</option>
+                                                        <option>{t('contact_page.form.afternoon')}</option>
+                                                        <option>{t('contact_page.form.evening')}</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    )}
+
+                                    {/* Multi-Destination Segments */}
+                                    {formData.tripType === 'MULTI_DESTINATION' && (
+                                        <div className="space-y-6 pt-4 border-t border-zinc-800">
+                                            <div className="flex items-center justify-between">
+                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">Étapes supplémentaires</label>
+                                                <button
+                                                    type="button"
+                                                    onClick={() => setAdditionalSegments([...additionalSegments, { from: null, to: null, date: '', time: 'Indifférent' }])}
+                                                    className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-indigo-400 hover:text-indigo-300 transition-colors"
+                                                >
+                                                    <Plus size={16} /> Ajouter une étape
+                                                </button>
+                                            </div>
+
+                                            {additionalSegments.map((segment, index) => (
+                                                <div key={index} className="relative bg-zinc-900/30 border border-zinc-800 p-6 rounded-lg">
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => setAdditionalSegments(additionalSegments.filter((_, i) => i !== index))}
+                                                        className="absolute top-4 right-4 text-gray-500 hover:text-red-400 transition-colors"
+                                                    >
+                                                        <X size={18} />
+                                                    </button>
+
+                                                    <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Étape {index + 2}</div>
+
+                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                        <div className="space-y-2">
+                                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">De <span className="text-indigo-500">*</span></label>
+                                                            <AirportAutocomplete
+                                                                key={`seg-${index}-from-${segment.from?.iata || 'empty'}`}
+                                                                initialAirport={segment.from}
+                                                                onSelect={(airport) => {
+                                                                    const newSegments = [...additionalSegments];
+                                                                    newSegments[index].from = airport;
+                                                                    setAdditionalSegments(newSegments);
+                                                                }}
+                                                                placeholder="Départ"
+                                                                customStyles={{
+                                                                    input: { backgroundColor: '#18181b', border: '1px solid #3f3f46', padding: '1rem', fontSize: '1rem', borderRadius: 0 },
+                                                                    inputFocus: { borderColor: '#6366f1' }
+                                                                }}
+                                                            />
+                                                        </div>
+                                                        <div className="space-y-2">
+                                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Vers <span className="text-indigo-500">*</span></label>
+                                                            <AirportAutocomplete
+                                                                key={`seg-${index}-to-${segment.to?.iata || 'empty'}`}
+                                                                initialAirport={segment.to}
+                                                                onSelect={(airport) => {
+                                                                    const newSegments = [...additionalSegments];
+                                                                    newSegments[index].to = airport;
+                                                                    setAdditionalSegments(newSegments);
+                                                                }}
+                                                                placeholder="Arrivée"
+                                                                customStyles={{
+                                                                    input: { backgroundColor: '#18181b', border: '1px solid #3f3f46', padding: '1rem', fontSize: '1rem', borderRadius: 0 },
+                                                                    inputFocus: { borderColor: '#6366f1' }
+                                                                }}
+                                                            />
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="grid grid-cols-2 gap-4 mt-4">
+                                                        <div className="space-y-2">
+                                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Date <span className="text-indigo-500">*</span></label>
+                                                            <input
+                                                                type="date"
+                                                                value={segment.date}
+                                                                onChange={(e) => {
+                                                                    const newSegments = [...additionalSegments];
+                                                                    newSegments[index].date = e.target.value;
+                                                                    setAdditionalSegments(newSegments);
+                                                                }}
+                                                                className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-indigo-500 outline-none transition-all uppercase"
+                                                            />
+                                                        </div>
+                                                        <div className="space-y-2">
+                                                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Heure</label>
+                                                            <select
+                                                                value={segment.time}
+                                                                onChange={(e) => {
+                                                                    const newSegments = [...additionalSegments];
+                                                                    newSegments[index].time = e.target.value;
+                                                                    setAdditionalSegments(newSegments);
+                                                                }}
+                                                                className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-indigo-500 outline-none transition-all uppercase appearance-none"
+                                                            >
+                                                                <option>{t('contact_page.form.indifferent')}</option>
+                                                                <option>{t('contact_page.form.morning')}</option>
+                                                                <option>{t('contact_page.form.afternoon')}</option>
+                                                                <option>{t('contact_page.form.evening')}</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+
+                                            {additionalSegments.length === 0 && (
+                                                <div className="text-center py-8 text-gray-500 text-sm">
+                                                    Cliquez sur "Ajouter une étape" pour créer un vol multidestination
+                                                </div>
+                                            )}
+                                        </div>
+                                    )}
 
                                     <div className="space-y-2 pt-4 border-t border-zinc-800">
                                         {formData.flightType === 'PASSENGER' && (

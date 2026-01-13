@@ -93,7 +93,8 @@ const Home = () => {
                     >
                         <Link to="/contact" className="group relative px-8 py-4 bg-white text-black font-bold uppercase tracking-widest overflow-hidden hover:bg-violet-50 transition-colors">
                             <span className="relative z-10 flex items-center gap-2 group-hover:gap-4 transition-all group-hover:text-violet-700">
-                                {t('hero.primary_cta')} <ArrowRight size={18} />
+                                {t('hero.primary_cta')}
+                                <Plane size={18} className="transition-all duration-500 group-hover:-translate-y-2 group-hover:translate-x-2 group-hover:rotate-12" />
                             </span>
                             <div className="absolute inset-0 bg-gray-200 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
                         </Link>

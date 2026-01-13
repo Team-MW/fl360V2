@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowRight, User, ChevronDown } from 'lucide-react';
+import { Menu, X, ArrowRight, User, ChevronDown, Plane } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/logo360.webp';
 import { useTranslation } from 'react-i18next';
@@ -29,16 +29,32 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
     const links = [
         { name: t('header.nav.home'), path: '/' },
         {
-            name: 'Flotte et intégration',
-            path: '/flotte',
+            name: 'Transport',
+            path: '/transport',
             children: [
-                { name: 'TRANSPORT AÉRIEN DE PASSAGERS ET DE MARCHANDISES', path: '/transport' },
-                { name: 'FORMATION ET QUALICATION TYPE SUR AVION', path: '/formation' },
-                { name: "ENTRETIEN, MAINTENANCE ET RÉPARATION D'AÉRONEFS", path: '/mro' }
+                { name: 'Jets privés', path: '/jets-prives' },
+                { name: 'Hélicoptères', path: '/helicopteres' },
+                { name: "Avions d'affaires", path: '/avions-affaires' },
+                { name: 'Avions taxi', path: '/avions-taxi' }
             ]
         },
-        { name: 'CAO / CAMO', path: '/cao-camo' },
-        { name: 'CAP LIST', path: '/cap-list' },
+        {
+            name: 'Formation et Qualification',
+            path: '/formation',
+            children: [
+                { name: 'Formation', path: '/formation' },
+                { name: 'Flotte intégration', path: '/transport' }
+            ]
+        },
+        {
+            name: 'Entretiens',
+            path: '/cao-camo',
+            children: [
+                { name: 'CAO / CAMO', path: '/cao-camo' },
+                { name: 'CAP LIST', path: '/cap-list' },
+                { name: 'MRO', path: '/mro' }
+            ]
+        },
     ];
 
     return (
@@ -83,12 +99,12 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
                         </div>
                     ))}
                     <div className="flex items-center gap-6">
-                        <LanguageSwitcher />
                         <Link
                             to="/contact"
-                            className="border border-white/20 hover:border-white text-white px-6 py-2 rounded-full text-sm font-semibold transition-all hover:bg-white hover:text-black flex items-center gap-2"
+                            className="group border border-white/20 hover:border-white text-white px-6 py-2 rounded-full text-sm font-semibold transition-all hover:bg-white hover:text-black flex items-center gap-2"
                         >
-                            {t('header.nav.quote')} <ArrowRight size={14} />
+                            {t('header.nav.quote')}
+                            <Plane size={14} className="transition-all duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:rotate-12" />
                         </Link>
                         <a
                             href="https://gestion.progdigital.fr/login"
@@ -99,6 +115,7 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
                         >
                             <User size={18} />
                         </a>
+                        <LanguageSwitcher />
                     </div>
                 </nav>
 
