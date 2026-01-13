@@ -432,14 +432,16 @@ const Contact = () => {
                                     {formData.tripType === 'MULTI_DESTINATION' && (
                                         <div className="space-y-6 pt-4 border-t border-zinc-800">
                                             <div className="flex items-center justify-between">
-                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">Étapes supplémentaires</label>
-                                                <button
-                                                    type="button"
-                                                    onClick={() => setAdditionalSegments([...additionalSegments, { from: null, to: null, date: '', time: 'Indifférent' }])}
-                                                    className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-indigo-400 hover:text-indigo-300 transition-colors"
-                                                >
-                                                    <Plus size={16} /> Ajouter une étape
-                                                </button>
+                                                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">Étapes supplémentaires (max 4)</label>
+                                                {additionalSegments.length < 4 && (
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => setAdditionalSegments([...additionalSegments, { from: null, to: null, date: '', time: 'Indifférent' }])}
+                                                        className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-indigo-400 hover:text-indigo-300 transition-colors"
+                                                    >
+                                                        <Plus size={16} /> Ajouter une étape
+                                                    </button>
+                                                )}
                                             </div>
 
                                             {additionalSegments.map((segment, index) => (
