@@ -74,7 +74,7 @@ const AvionsAffaires = () => {
                     </div>
                 </section>
 
-                {/* Use Cases Section */}
+                {/* Specialized Services Section */}
                 <section className="py-20 bg-zinc-900/30 border-y border-white/5 relative z-10">
                     <div className="container mx-auto px-6">
                         <motion.div
@@ -84,27 +84,63 @@ const AvionsAffaires = () => {
                             className="text-center mb-16"
                         >
                             <h2 className="text-4xl md:text-5xl font-bold mb-4 uppercase tracking-tight">
-                                Cas d'Usage
+                                Services Spécialisés
                             </h2>
+                            <p className="text-gray-400 text-lg">Transport d'affaires sur mesure</p>
                         </motion.div>
 
-                        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                             {[
-                                { title: 'Réunions Internationales', desc: 'Assistez à plusieurs réunions dans différentes villes en une seule journée' },
-                                { title: 'Déplacements Executives', desc: 'Transport de dirigeants et équipes pour événements stratégiques' },
-                                { title: 'Roadshows Investisseurs', desc: 'Tournées de présentation auprès d\'investisseurs dans plusieurs pays' },
-                                { title: 'Visites de Sites', desc: 'Inspection de sites industriels, usines, bureaux régionaux' }
-                            ].map((useCase, idx) => (
+                                {
+                                    title: "Urgent 'Go Now'",
+                                    desc: "Affréter un avion dans les plus brefs délais.",
+                                    icon: "⚡"
+                                },
+                                {
+                                    title: 'Produits Dangereux',
+                                    desc: "Affréter vos produits dangereux.",
+                                    icon: "⚠️"
+                                },
+                                {
+                                    title: 'Pièces Lourdes ou Hors-Gabarit',
+                                    desc: "Affréter vos marchandises lourdes et hors-gabarit.",
+                                    icon: "📦"
+                                },
+                                {
+                                    title: 'Aide Humanitaire',
+                                    desc: "Transport rapide pour missions humanitaires d'urgence.",
+                                    icon: "🤝"
+                                },
+                                {
+                                    title: 'Destinations Isolées',
+                                    desc: "Accès aux zones difficiles et destinations isolées.",
+                                    icon: "🌍"
+                                },
+                                {
+                                    title: 'Service de Bagage Accompagné',
+                                    desc: "Transport sécurisé de bagages avec convoyeur dédié.",
+                                    icon: "🧳"
+                                }
+                            ].map((service, idx) => (
                                 <motion.div
                                     key={idx}
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: idx * 0.1 }}
-                                    className="bg-zinc-900/50 border border-white/5 p-8 hover:border-violet-500/50 transition-all"
+                                    className="bg-zinc-900/50 border border-white/5 p-8 hover:border-violet-500/50 transition-all group"
                                 >
-                                    <h3 className="text-xl font-bold text-violet-300 mb-3 uppercase tracking-tight">{useCase.title}</h3>
-                                    <p className="text-gray-400">{useCase.desc}</p>
+                                    <div className="text-4xl mb-4">{service.icon}</div>
+                                    <h3 className="text-xl font-bold text-violet-300 mb-3 uppercase tracking-tight group-hover:text-violet-200 transition-colors">
+                                        {service.title}
+                                    </h3>
+                                    <p className="text-gray-400 text-sm leading-relaxed">{service.desc}</p>
+                                    <Link
+                                        to="/contact"
+                                        className="inline-block mt-4 text-xs font-bold uppercase tracking-widest text-indigo-400 hover:text-indigo-300 transition-colors"
+                                    >
+                                        En Savoir +
+                                    </Link>
                                 </motion.div>
                             ))}
                         </div>
