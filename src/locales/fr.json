@@ -8,11 +8,11 @@
             "formation": "Formation",
             "transport": "Transport",
             "maintenance": "Maintenance",
-            "quote": "Demander un devis"
+            "quote": "Réserver un transport aérien"
         },
         "mobile": {
             "menu": "MENU",
-            "quote": "Demander un devis",
+            "quote": "Réserver un transport aérien",
             "copyright": "FL360 AVIATION SYSTEMS"
         }
     },
@@ -20,7 +20,7 @@
         "subtitle": "Aviation Systems",
         "description": "Redéfinir les standards de l'altitude.",
         "tagline": "Sécurité. Innovation. Silence.",
-        "primary_cta": "Demander un devis",
+        "primary_cta": "Réserver un transport aérien",
         "secondary_cta": "Découvrir nos services"
     },
     "home": {
