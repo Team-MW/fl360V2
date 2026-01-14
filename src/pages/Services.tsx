@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import PageTransition from '../components/PageTransition';
+import PartnersMarquee from '../components/PartnersMarquee';
 import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
@@ -70,6 +71,9 @@ const Services = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Partners Section */}
+            <PartnersMarquee />
         </PageTransition>
     );
 };

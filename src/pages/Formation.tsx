@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import PageTransition from '../components/PageTransition';
+import PartnersMarquee from '../components/PartnersMarquee';
 import { motion } from 'framer-motion';
 import { Check, Download, Plane, Camera, Video, Megaphone } from 'lucide-react';
 import Starfield from '../components/Starfield';
@@ -269,6 +270,9 @@ const Formation = () => {
                         <p className="mt-8 text-indigo-200/80 font-medium tracking-wide text-sm">{t('formation.docs.sub')}</p>
                     </div>
                 </section>
+
+                {/* Partners Section */}
+                <PartnersMarquee />
             </div>
         </PageTransition>
     );

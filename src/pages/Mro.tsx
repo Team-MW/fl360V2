@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import mro from '../assets/mro.avif';
 import PageTransition from '../components/PageTransition';
+import PartnersMarquee from '../components/PartnersMarquee';
 import { motion } from 'framer-motion';
 import Starfield from '../components/Starfield';
 import { Zap, Link, Battery, Disc, Settings, Package, Check, Shield, Wrench } from 'lucide-react';
@@ -212,6 +213,9 @@ const Mro = () => {
                     </motion.div>
                 </div>
             </div>
+
+            {/* Partners Section */}
+            <PartnersMarquee />
         </PageTransition>
     );
 };

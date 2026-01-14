@@ -30,7 +30,7 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
         { name: t('header.nav.home'), path: '/' },
         {
             name: 'Transport',
-            path: '/transport',
+            path: '/transport-page',
             children: [
                 { name: 'Jets privés', path: '/jets-prives' },
                 { name: 'Hélicoptères', path: '/helicopteres' },
@@ -41,19 +41,20 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
         },
         {
             name: 'Formation et Qualification',
-            path: '/formation',
+            path: '/formation-qualification',
             children: [
                 { name: 'Formation', path: '/formation' },
-                { name: 'Flotte intégration', path: '/transport' }
+                { name: 'CAO / CAMO', path: '/cao-camo' },
+                { name: 'CAP LIST', path: '/cap-list' },
+                { name: 'Flotte intégration', path: '/flotte-integration' }
             ]
         },
         {
             name: 'Entretiens',
-            path: '/cao-camo',
+            path: '/entretiens',
             children: [
-                { name: 'CAO / CAMO', path: '/cao-camo' },
-                { name: 'CAP LIST', path: '/cap-list' },
-                { name: 'MRO', path: '/mro' }
+                { name: 'MRO', path: '/mro' },
+                { name: 'Flotte intégration', path: '/flotte-integration' }
             ]
         },
     ];
@@ -77,9 +78,12 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
                         <div key={link.name} className="relative group">
                             {link.children ? (
                                 <>
-                                    <button className="flex items-center gap-1 text-sm uppercase tracking-widest font-medium text-gray-400 hover:text-white transition-colors py-4">
+                                    <Link
+                                        to={link.path}
+                                        className="flex items-center gap-1 text-sm uppercase tracking-widest font-medium text-gray-400 hover:text-white transition-colors py-4"
+                                    >
                                         {link.name} <ChevronDown size={14} />
-                                    </button>
+                                    </Link>
                                     <div className="absolute top-full left-0 w-80 bg-zinc-950 border border-white/10 rounded-xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl z-50">
                                         {link.children.map(child => (
                                             <Link key={child.path} to={child.path} className="block py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors border-b border-white/5 last:border-0">
@@ -167,10 +171,14 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
                                         <div key={link.name}>
                                             {link.children ? (
                                                 <div className="space-y-4">
-                                                    <div className="text-2xl font-thin tracking-wide text-white flex items-center gap-4">
+                                                    <Link
+                                                        to={link.path}
+                                                        onClick={toggleMenu}
+                                                        className="text-2xl font-thin tracking-wide text-white hover:text-violet-400 flex items-center gap-4 transition-colors"
+                                                    >
                                                         <span className="text-xs font-mono text-gray-600">0{idx + 1}</span>
                                                         {link.name}
-                                                    </div>
+                                                    </Link>
                                                     <div className="pl-10 flex flex-col gap-4 border-l border-white/10 ml-2">
                                                         {link.children.map(child => (
                                                             <Link

@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import PageTransition from '../components/PageTransition';
+import PartnersMarquee from '../components/PartnersMarquee';
 import { motion } from 'framer-motion';
 import Starfield from '../components/Starfield';
 import camo from '../assets/camo.avif';
@@ -267,6 +268,9 @@ const CaoCamo = () => {
                     </div>
                 </section>
             </div>
+
+            {/* Partners Section */}
+            <PartnersMarquee />
         </PageTransition>
     );
 };

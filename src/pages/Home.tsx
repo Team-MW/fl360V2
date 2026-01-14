@@ -134,18 +134,18 @@ const Home = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
-                            { icon: Plane, title: t('home.services.cards.transport.title'), desc: t('home.services.cards.transport.desc') },
-                            { icon: FileCheck, title: t('home.services.cards.training.title'), desc: t('home.services.cards.training.desc') },
-                            { icon: Hexagon, title: t('home.services.cards.maintenance.title'), desc: t('home.services.cards.maintenance.desc') }
+                            { icon: Plane, title: t('home.services.cards.transport.title'), desc: t('home.services.cards.transport.desc'), path: '/transport-page' },
+                            { icon: FileCheck, title: t('home.services.cards.training.title'), desc: t('home.services.cards.training.desc'), path: '/formation-qualification' },
+                            { icon: Hexagon, title: t('home.services.cards.maintenance.title'), desc: t('home.services.cards.maintenance.desc'), path: '/entretiens' }
                         ].map((service, idx) => (
-                            <div key={idx} className="group p-10 bg-gray-50 border border-gray-200 hover:border-violet-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-violet-500/10">
+                            <Link key={idx} to={service.path} className="group p-10 bg-gray-50 border border-gray-200 hover:border-violet-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-violet-500/10 block">
                                 <service.icon className="w-12 h-12 text-black mb-8 opacity-70 group-hover:text-violet-600 group-hover:opacity-100 transition-all" />
                                 <h3 className="text-2xl font-bold mb-4 text-black uppercase tracking-wider group-hover:text-violet-900 transition-colors">{service.title}</h3>
                                 <p className="text-gray-600 font-light leading-relaxed">{service.desc}</p>
                                 <div className="mt-8 opacity-0 group-hover:opacity-100 transition-all transform translate-y-4 group-hover:translate-y-0 text-violet-600 text-sm font-mono flex items-center gap-2 font-bold uppercase tracking-widest">
                                     {t('home.services.more')} <ArrowRight size={14} />
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -324,14 +324,15 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* CTA - White Section for Contrast */}
-            <section className="py-32 bg-white text-black">
-                <div className="container mx-auto px-6 text-center">
+            {/* CTA - Dark Premium Section */}
+            <section className="py-20 bg-gradient-to-b from-zinc-950 to-black text-white relative overflow-hidden border-t border-white/5">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-violet-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+                <div className="container mx-auto px-6 text-center relative z-10">
                     <h2 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8">{t('home.cta.title')}</h2>
-                    <p className="text-xl text-gray-600 mb-12 max-w-xl mx-auto font-light">
+                    <p className="text-xl text-gray-400 mb-12 max-w-xl mx-auto font-light">
                         {t('home.cta.subtitle')}
                     </p>
-                    <Link to="/contact" className="inline-block px-12 py-5 bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-lg font-bold uppercase tracking-widest hover:from-violet-500 hover:to-indigo-500 transition-all shadow-2xl hover:shadow-indigo-500/30">
+                    <Link to="/contact" className="inline-block px-12 py-5 bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-lg font-bold uppercase tracking-widest hover:from-violet-500 hover:to-indigo-500 transition-all shadow-2xl hover:shadow-violet-500/50 hover:scale-105">
                         {t('home.cta.button')}
                     </Link>
                 </div>
