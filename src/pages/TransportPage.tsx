@@ -6,6 +6,9 @@ import { Plane, ArrowRight, Users, Globe, Clock, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Starfield from '../components/Starfield';
 import jetprive from '../assets/jetprié.jpg';
+import helicoptereImg from '../assets/hélicoptère AS350 B2.jpg';
+import avionsaffairesImg from '../assets/avionsd\'affaire.jpg.webp';
+import helico4Img from '../assets/helico4.avif';
 
 const TransportPage = () => {
     const transportServices = [
@@ -15,7 +18,7 @@ const TransportPage = () => {
             slug: "/jets-prives",
             description: "Solutions de transport aérien haut de gamme pour vos déplacements professionnels et privés.",
             icon: Plane,
-            image: "/jet1.avif",
+            image: jetprive,
             features: ["Vol direct", "Confort premium", "Flexibilité totale"]
         },
         {
@@ -24,7 +27,7 @@ const TransportPage = () => {
             slug: "/helicopteres",
             description: "Déplacements rapides et flexibles pour accéder aux zones difficiles d'accès.",
             icon: Plane,
-            image: "/helico1.avif",
+            image: helicoptereImg,
             features: ["Accès partout", "Rapidité", "Vue panoramique"]
         },
         {
@@ -33,7 +36,7 @@ const TransportPage = () => {
             slug: "/avions-affaires",
             description: "Transport professionnel adapté aux besoins des entreprises et dirigeants.",
             icon: Plane,
-            image: "/jet2.avif",
+            image: avionsaffairesImg,
             features: ["Productivité", "Confidentialité", "Efficacité"]
         },
         {
@@ -42,7 +45,7 @@ const TransportPage = () => {
             slug: "/avions-taxi",
             description: "Solution économique pour vos vols courts et moyens courriers.",
             icon: Plane,
-            image: "/jet3.avif",
+            image: jetprive,
             features: ["Prix compétitifs", "Vols réguliers", "Simplicité"]
         },
         {
@@ -51,7 +54,7 @@ const TransportPage = () => {
             slug: "/hand-carry",
             description: "Transport sécurisé de documents et colis sensibles partout dans le monde.",
             icon: Globe,
-            image: "/jet4.avif",
+            image: helico4Img,
             features: ["Sécurité maximale", "Livraison express", "Traçabilité"]
         }
     ];
