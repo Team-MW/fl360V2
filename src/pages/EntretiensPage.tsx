@@ -126,9 +126,6 @@ const EntretiensPage = () => {
                                 <span className="px-6 py-2 bg-violet-600/20 border border-violet-500/30 rounded-full text-violet-300 text-sm font-semibold">
                                     Techniciens Qualifiés
                                 </span>
-                                <span className="px-6 py-2 bg-violet-600/20 border border-violet-500/30 rounded-full text-violet-300 text-sm font-semibold">
-                                    Stock Permanent
-                                </span>
                             </div>
                         </motion.div>
                     </div>
@@ -273,25 +270,8 @@ const EntretiensPage = () => {
                         ))}
                     </div>
 
-                    {/* CTA Section */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center bg-gradient-to-br from-violet-900/30 via-purple-900/20 to-indigo-900/30 backdrop-blur-md border border-violet-500/20 p-12 rounded-2xl"
-                    >
-                        <h3 className="text-3xl font-bold mb-4">Besoin d'une maintenance ?</h3>
-                        <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-                            Confiez l'entretien de vos aéronefs à nos experts certifiés. Devis gratuit et intervention rapide.
-                        </p>
-                        <Link
-                            to="/contact"
-                            className="inline-block px-10 py-4 bg-violet-600 hover:bg-violet-700 text-white font-bold uppercase tracking-wider rounded-full transition-all hover:scale-105 shadow-lg shadow-violet-500/30"
-                        >
-                            Demander un devis
-                        </Link>
-                    </motion.div>
                 </div>
+
 
                 {/* Partners Section */}
                 <PartnersMarquee />

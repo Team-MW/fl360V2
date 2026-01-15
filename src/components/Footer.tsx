@@ -1,5 +1,5 @@
 import logo from '../assets/logo360.webp';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -17,6 +17,7 @@ const Footer = () => {
                         <p className="text-gray-400 text-sm font-light leading-relaxed">
                             Excellence aéronautique et innovation au service de vos vols.
                         </p>
+                        {/* Social Media - Hidden for now
                         <div className="flex gap-3 justify-center md:justify-start">
                             {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
                                 <a key={i} href="#" className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center hover:bg-violet-600 hover:border-violet-600 transition-all group">
@@ -24,6 +25,7 @@ const Footer = () => {
                                 </a>
                             ))}
                         </div>
+                        */}
                     </div>
 
                     {/* Navigation - Transport */}
