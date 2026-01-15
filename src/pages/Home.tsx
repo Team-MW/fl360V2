@@ -227,7 +227,7 @@ const Home = () => {
                         transition={{ duration: 0.8 }}
                         className="text-center mb-24"
                     >
-                        <h2 className="text-5xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500 mb-6 tracking-tighter uppercase relative inline-block">
+                        <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500 mb-6 tracking-tighter uppercase relative inline-block">
                             Nos Avions
                             <span className="absolute -top-6 -right-12 text-lg text-violet-500 font-mono tracking-widest hidden md:block">FLEET.01</span>
                         </h2>

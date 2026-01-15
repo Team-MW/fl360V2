@@ -36,7 +36,7 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
                 { name: 'Hélicoptères', path: '/helicopteres' },
                 { name: "Avions d'affaires", path: '/avions-affaires' },
                 { name: 'Avions taxi', path: '/avions-taxi' },
-                { name: 'Hand Carry', path: '/hand-carry' }
+                { name: 'Colis accompagné – Hand Carry –', path: '/hand-carry' }
             ]
         },
         {

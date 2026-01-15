@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Plane, ArrowRight, Users, Globe, Clock, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Starfield from '../components/Starfield';
+import jetprive from '../assets/jetprié.jpg';
 
 const TransportPage = () => {
     const transportServices = [
@@ -46,7 +47,7 @@ const TransportPage = () => {
         },
         {
             id: 5,
-            title: "Hand Carry",
+            title: "Colis accompagné – Hand Carry –",
             slug: "/hand-carry",
             description: "Transport sécurisé de documents et colis sensibles partout dans le monde.",
             icon: Globe,
@@ -87,11 +88,12 @@ const TransportPage = () => {
                 <div className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
                     <div className="absolute inset-0 z-0">
                         <img
-                            src="/jet1.avif"
+                            src={jetprive}
                             alt="Transport Aérien"
-                            className="w-full h-full object-cover opacity-40"
+                            className="w-full h-full object-cover opacity-70 select-none"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-zinc-950"></div>
+                        <div className="absolute inset-0 bg-black/30"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
                     </div>
 
                     <div className="container mx-auto px-6 relative z-10 text-center pt-32 pb-20">

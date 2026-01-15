@@ -52,7 +52,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <Link to="/hand-carry" className="text-gray-400 text-sm hover:text-violet-400 transition-colors">
-                                    Hand Carry
+                                    Colis accompagné – Hand Carry –
                                 </Link>
                             </li>
                         </ul>

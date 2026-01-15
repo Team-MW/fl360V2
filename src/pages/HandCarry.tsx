@@ -3,12 +3,13 @@ import PageTransition from '../components/PageTransition';
 import { motion } from 'framer-motion';
 import Starfield from '../components/Starfield';
 import { Link } from 'react-router-dom';
+import jetprive from '../assets/jetprié.jpg';
 
 const HandCarry = () => {
     return (
         <PageTransition>
             <Helmet>
-                <title>Hand Carry - Colis Accompagné - fl360 Aviation</title>
+                <title>Colis accompagné – Hand Carry – - fl360 Aviation</title>
                 <meta name="description" content="Service de transport de colis accompagné par avion. Livraison express et sécurisée partout dans le monde." />
             </Helmet>
 
@@ -17,6 +18,15 @@ const HandCarry = () => {
 
                 {/* Hero Section */}
                 <div className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+                    <div className="absolute inset-0 z-0">
+                        <img
+                            src={jetprive}
+                            alt="Hand Carry - Colis accompagné"
+                            className="w-full h-full object-cover opacity-70 select-none"
+                        />
+                        <div className="absolute inset-0 bg-black/30"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
+                    </div>
                     <div className="container mx-auto px-6 relative z-10 text-center">
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
@@ -24,7 +34,7 @@ const HandCarry = () => {
                             transition={{ delay: 0.2 }}
                             className="text-5xl md:text-7xl font-bold uppercase tracking-tight mb-6"
                         >
-                            Hand Carry
+                            Colis accompagné – Hand Carry –
                         </motion.h1>
 
                         <motion.p
@@ -35,6 +45,19 @@ const HandCarry = () => {
                         >
                             Colis accompagné par avion - Livraison express et sécurisée
                         </motion.p>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.6 }}
+                        >
+                            <Link
+                                to="/contact"
+                                className="inline-block bg-violet-600 hover:bg-violet-700 text-white px-10 py-4 rounded-full font-bold uppercase tracking-wider transition-all hover:scale-105 shadow-2xl shadow-violet-500/50 hover:shadow-violet-500/70"
+                            >
+                                Demander un devis
+                            </Link>
+                        </motion.div>
                     </div>
                 </div>
 
@@ -164,7 +187,7 @@ const HandCarry = () => {
                             className="text-center mb-16"
                         >
                             <h2 className="text-4xl md:text-5xl font-bold mb-4 uppercase tracking-tight">
-                                Pourquoi Choisir Notre Service Hand Carry ?
+                                Pourquoi Choisir Notre Service Colis accompagné – Hand Carry – ?
                             </h2>
                         </motion.div>
 

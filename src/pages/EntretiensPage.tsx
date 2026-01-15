@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Wrench, ArrowRight, Shield, Clock, CheckCircle, Settings, Package } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Starfield from '../components/Starfield';
+import piecesImg from '../assets/pieces.avif';
 
 const EntretiensPage = () => {
     const maintenanceServices = [
@@ -98,11 +99,12 @@ const EntretiensPage = () => {
                 <div className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
                     <div className="absolute inset-0 z-0">
                         <img
-                            src="/mro.avif"
+                            src={piecesImg}
                             alt="Maintenance Aéronautique"
-                            className="w-full h-full object-cover opacity-50"
+                            className="w-full h-full object-cover opacity-70 select-none"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-zinc-950"></div>
+                        <div className="absolute inset-0 bg-black/30"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
                     </div>
 
                     <div className="container mx-auto px-6 relative z-10 text-center pt-32 pb-20">

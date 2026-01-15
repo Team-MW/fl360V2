@@ -3,6 +3,7 @@ import PageTransition from '../components/PageTransition';
 import { motion } from 'framer-motion';
 import Starfield from '../components/Starfield';
 import { Link } from 'react-router-dom';
+import helicoptere from '../assets/hélicoptère AS350 B2.jpg';
 
 const Helicopteres = () => {
     return (
@@ -17,6 +18,15 @@ const Helicopteres = () => {
 
                 {/* Hero Section */}
                 <div className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+                    <div className="absolute inset-0 z-0">
+                        <img
+                            src={helicoptere}
+                            alt="Hélicoptères"
+                            className="w-full h-full object-cover opacity-70 select-none"
+                        />
+                        <div className="absolute inset-0 bg-black/30"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
+                    </div>
                     <div className="container mx-auto px-6 relative z-10 text-center">
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
@@ -35,6 +45,19 @@ const Helicopteres = () => {
                         >
                             La solution la plus adaptée pour les vols de courte distance
                         </motion.p>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.6 }}
+                        >
+                            <Link
+                                to="/contact"
+                                className="inline-block bg-violet-600 hover:bg-violet-700 text-white px-10 py-4 rounded-full font-bold uppercase tracking-wider transition-all hover:scale-105 shadow-2xl shadow-violet-500/50 hover:shadow-violet-500/70"
+                            >
+                                Réserver un vol
+                            </Link>
+                        </motion.div>
                     </div>
                 </div>
 

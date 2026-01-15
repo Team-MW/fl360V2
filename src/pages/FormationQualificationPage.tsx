@@ -5,6 +5,10 @@ import { motion } from 'framer-motion';
 import { GraduationCap, ArrowRight, Award, BookOpen, Users, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Starfield from '../components/Starfield';
+import formationQualification from '../assets/formation etqualification.avif';
+import formationImg from '../assets/formation.avif';
+import camoImg from '../assets/camo.avif';
+import mroImg from '../assets/mro.avif';
 
 const FormationQualificationPage = () => {
     const formationServices = [
@@ -14,7 +18,7 @@ const FormationQualificationPage = () => {
             slug: "/formation",
             description: "Formation complète pour devenir pilote professionnel, du PPL au CPL avec qualifications de type.",
             icon: GraduationCap,
-            image: "/formation.avif",
+            image: formationImg,
             features: ["ATO Certifié", "Instructeurs qualifiés", "Flotte moderne"],
             highlights: ["Type Rating", "Théorie & Pratique", "Travaux Aériens"]
         },
@@ -24,7 +28,7 @@ const FormationQualificationPage = () => {
             slug: "/cao-camo",
             description: "Gestion de la navigabilité et organisation de la maintenance pour votre flotte aérienne.",
             icon: Award,
-            image: "/camo.avif",
+            image: camoImg,
             features: ["Conformité EASA", "Gestion complète", "Expertise technique"],
             highlights: ["Navigabilité", "Prebuy Inspection", "Programme de maintenance"]
         },
@@ -34,7 +38,7 @@ const FormationQualificationPage = () => {
             slug: "/cap-list",
             description: "Liste des capacités et compétences techniques pour la maintenance aéronautique.",
             icon: BookOpen,
-            image: "/mro.avif",
+            image: mroImg,
             features: ["Documentation complète", "Mise à jour régulière", "Support technique"],
             highlights: ["Capacités certifiées", "Conformité réglementaire", "Traçabilité"]
         }
@@ -79,11 +83,12 @@ const FormationQualificationPage = () => {
                 <div className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
                     <div className="absolute inset-0 z-0">
                         <img
-                            src="/formation.avif"
-                            alt="Formation Aviation"
-                            className="w-full h-full object-cover opacity-50"
+                            src={formationQualification}
+                            alt="Formation et Qualification Aviation"
+                            className="w-full h-full object-cover opacity-70 select-none"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-zinc-950"></div>
+                        <div className="absolute inset-0 bg-black/30"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
                     </div>
 
                     <div className="container mx-auto px-6 relative z-10 text-center pt-32 pb-20">
