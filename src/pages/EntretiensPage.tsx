@@ -6,6 +6,8 @@ import { Wrench, ArrowRight, Shield, Clock, CheckCircle, Settings, Package } fro
 import { Link } from 'react-router-dom';
 import Starfield from '../components/Starfield';
 import piecesImg from '../assets/pieces.avif';
+import mroImg from '../assets/mro.avif';
+import flotteintegrationImg from '../assets/flotteintegration.avif';
 
 const EntretiensPage = () => {
     const maintenanceServices = [
@@ -15,7 +17,7 @@ const EntretiensPage = () => {
             slug: "/mro",
             description: "Services complets de maintenance, réparation et révision pour tous types d'aéronefs.",
             icon: Wrench,
-            image: "/mro.avif",
+            image: mroImg,
             features: ["Maintenance préventive", "Réparations certifiées", "Pièces d'origine"],
             services: [
                 "Inspections périodiques",
@@ -30,7 +32,7 @@ const EntretiensPage = () => {
             slug: "/flotte-integration",
             description: "Intégration et gestion complète de votre flotte aérienne avec suivi personnalisé.",
             icon: Settings,
-            image: "/flotteintegration.avif",
+            image: flotteintegrationImg,
             features: ["Gestion centralisée", "Optimisation", "Suivi en temps réel"],
             services: [
                 "Planification maintenance",

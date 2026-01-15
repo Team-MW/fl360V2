@@ -3,6 +3,7 @@ import PageTransition from '../components/PageTransition';
 import { motion } from 'framer-motion';
 import Starfield from '../components/Starfield';
 import { Link } from 'react-router-dom';
+import flotteintegrationImg from '../assets/flotteintegration.avif';
 
 const FlotteIntegration = () => {
     return (
@@ -17,6 +18,15 @@ const FlotteIntegration = () => {
 
                 {/* Hero Section */}
                 <div className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+                    <div className="absolute inset-0 z-0">
+                        <img
+                            src={flotteintegrationImg}
+                            alt="Flotte & Intégration"
+                            className="w-full h-full object-cover opacity-70 select-none"
+                        />
+                        <div className="absolute inset-0 bg-black/30"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
+                    </div>
                     <div className="container mx-auto px-6 relative z-10 text-center">
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
