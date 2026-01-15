@@ -240,12 +240,14 @@ const FormationQualificationPage = () => {
                         <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
                             Rejoignez nos programmes de formation et développez vos compétences avec les meilleurs instructeurs du secteur.
                         </p>
-                        <Link
-                            to="/contact"
+                        <a
+                            href="https://wa.me/34617788820"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="inline-block px-10 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold uppercase tracking-wider rounded-full transition-all hover:scale-105 shadow-lg shadow-indigo-500/30"
                         >
                             Nous contacter
-                        </Link>
+                        </a>
                     </motion.div>
                 </div>
 

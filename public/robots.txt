@@ -1,3 +1,15 @@
+# FL360 Aviation - Robots.txt
+# Allow all search engines to crawl the site
+
 User-agent: *
 Allow: /
-Sitemap: https://www.fl360.com/sitemap.xml
+
+# Sitemap location
+Sitemap: https://www.fl360aviation.com/sitemap.xml
+
+# Crawl-delay for respectful crawling (optional, helps prevent server overload)
+Crawl-delay: 1
+
+# Disallow crawling of admin/private areas (if any in the future)
+# Disallow: /admin/
+# Disallow: /private/

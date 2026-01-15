@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import PageTransition from '../components/PageTransition';
 import { motion } from 'framer-motion';
 import Starfield from '../components/Starfield';
-import { Link } from 'react-router-dom';
+
 import flotteintegrationImg from '../assets/flotteintegration.avif';
 
 const FlotteIntegration = () => {
@@ -193,12 +193,14 @@ const FlotteIntegration = () => {
                         <p className="text-violet-200 text-xl mb-12 max-w-2xl mx-auto">
                             Contactez-nous pour intégrer votre aéronef dans notre flotte SPO.
                         </p>
-                        <Link
-                            to="/contact"
+                        <a
+                            href="https://wa.me/34617788820"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="inline-block bg-white text-violet-950 px-12 py-5 rounded-full font-black uppercase tracking-widest hover:bg-violet-50 transition-all shadow-2xl hover:shadow-white/30"
                         >
                             Nous Contacter
-                        </Link>
+                        </a>
                     </div>
                 </section>
             </div>
