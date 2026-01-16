@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageTransition from '../components/PageTransition';
-import { ArrowRight, ChevronDown, Plane, Hexagon, FileBadge, FileCheck, CheckCircle } from 'lucide-react';
+import { ArrowRight, ChevronDown, Plane, Hexagon, FileBadge, FileCheck, CheckCircle, Check } from 'lucide-react';
 
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -210,73 +210,68 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Nos Avions Section */}
-            {/* Nos Avions Section - Redesigned "Truc de Fou" */}
-            <section className="py-32 bg-black text-white relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-950 to-black"></div>
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
 
-                {/* Glowing Orbs */}
-                <div className="absolute top-1/4 -left-64 w-[500px] h-[500px] bg-violet-600/20 blur-[120px] rounded-full mix-blend-screen pointer-events-none"></div>
-                <div className="absolute bottom-1/4 -right-64 w-[500px] h-[500px] bg-indigo-600/20 blur-[120px] rounded-full mix-blend-screen pointer-events-none"></div>
 
-                <div className="container mx-auto px-6 relative z-10">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="text-center mb-24"
-                    >
-                        <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500 mb-6 tracking-tighter uppercase relative inline-block">
-                            Nos Avions
-                            <span className="absolute -top-6 -right-12 text-lg text-violet-500 font-mono tracking-widest hidden md:block">FLEET.01</span>
-                        </h2>
-                        <div className="h-1 w-24 mx-auto bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full"></div>
-                    </motion.div>
+            {/* Pricing Section - Nos Formules - Imported from Formation */}
+            <section className="py-32 bg-zinc-900 border-t border-white/5 relative">
+                <div className="container mx-auto px-6">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-widest mb-6 text-white">{t('formation.pricing.title')}</h2>
+                        <p className="text-indigo-400 font-bold tracking-widest uppercase">{t('formation.pricing.guarantee')}</p>
+                    </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-                        {/* Extra EA400 */}
+                    <div className="grid lg:grid-cols-3 gap-8 items-start max-w-6xl mx-auto">
+                        {/* Card 1: Initiation */}
                         <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className="group relative"
+                            whileHover={{ y: -5 }}
+                            className="bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 p-8 rounded-none flex flex-col items-center text-center hover:border-indigo-500/50 transition-all shadow-xl"
                         >
-                            <div className="absolute -inset-4 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-2xl opacity-0 group-hover:opacity-75 blur-xl transition-opacity duration-700"></div>
-                            <div className="relative overflow-hidden rounded-xl bg-zinc-900 border border-white/10 aspect-[4/3] group-hover:scale-[1.02] transition-transform duration-500 ease-out shadow-2xl">
-                                <img src="/extra2.avif" alt="Extra EA400" className="object-cover w-full h-full transform scale-100 group-hover:scale-110 transition-transform duration-1000" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-
-                                <div className="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                    <div className="text-violet-400 font-mono text-xs tracking-[0.2em] mb-2 uppercase">Performance</div>
-                                    <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white mb-4">Extra EA400</h3>
-                                    <p className="text-gray-300 font-light leading-relaxed max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                        L'alliance parfaite entre aérodynamisme et puissance. Une expérience de vol monomoteur sans précédent pour les passionnés exigeants.
-                                    </p>
-                                </div>
+                            <div className="bg-indigo-500/10 p-4 rounded-full mb-6">
+                                <Plane className="w-8 h-8 text-indigo-400" />
+                            </div>
+                            <h3 className="text-xl font-bold uppercase tracking-widest mb-2 text-white">{t('formation.pricing.initiation.title')}</h3>
+                            <div className="mt-auto pt-6 border-t border-white/5 w-full">
+                                <span className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">{t('formation.pricing.initiation.price')}</span>
                             </div>
                         </motion.div>
 
-                        {/* Pilatus PC6 */}
+                        {/* Card 2: Theory (Highlighted) */}
                         <motion.div
-                            initial={{ opacity: 0, x: 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className="group relative lg:mt-32"
+                            whileHover={{ y: -10 }}
+                            className="bg-zinc-950 border border-indigo-500 p-8 rounded-none flex flex-col items-center text-center shadow-[0_0_30px_rgba(99,102,241,0.15)] relative scale-105 z-10"
                         >
-                            <div className="absolute -inset-4 bg-gradient-to-r from-indigo-600 to-cyan-600 rounded-2xl opacity-0 group-hover:opacity-75 blur-xl transition-opacity duration-700"></div>
-                            <div className="relative overflow-hidden rounded-xl bg-zinc-900 border border-white/10 aspect-[4/3] group-hover:scale-[1.02] transition-transform duration-500 ease-out shadow-2xl">
-                                <img src="/pilatus6.avif" alt="Pilatus PC6 B2H4" className="object-cover w-full h-full transform scale-100 group-hover:scale-110 transition-transform duration-1000" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-
-                                <div className="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                    <div className="text-indigo-400 font-mono text-xs tracking-[0.2em] mb-2 uppercase">Polyvalence</div>
-                                    <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white mb-4">Pilatus PC6</h3>
-                                    <p className="text-gray-300 font-light leading-relaxed max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                        Le légendaire "Turbo Porter". Robustesse inégalée et capacités STOL pour les missions les plus extrêmes à travers le monde.
-                                    </p>
-                                </div>
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-indigo-600 text-white text-xs font-bold uppercase px-4 py-1 rounded-full tracking-widest whitespace-nowrap">
+                                {t('formation.pricing.dedicated')}
                             </div>
+                            <h3 className="text-2xl font-bold uppercase tracking-widest mb-2 text-white mt-4">{t('formation.pricing.theory.title')}</h3>
+                            <p className="text-gray-400 text-sm mb-4">{t('formation.pricing.theory.subtitle')}</p>
+                            <div className="bg-green-500/10 text-green-400 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide mb-8">
+                                + {t('formation.pricing.theory.bonus')}
+                            </div>
+                            <div className="mt-auto pt-6 border-t border-indigo-500/30 w-full">
+                                <span className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">{t('formation.pricing.theory.price')}</span>
+                            </div>
+                        </motion.div>
+
+                        {/* Card 3: Practical Packs */}
+                        <motion.div
+                            whileHover={{ y: -5 }}
+                            className="bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 p-8 rounded-none flex flex-col items-center text-center hover:border-indigo-500/50 transition-all shadow-xl"
+                        >
+                            <div className="bg-indigo-500/10 p-4 rounded-full mb-6">
+                                <Check className="w-8 h-8 text-indigo-400" />
+                            </div>
+                            <h3 className="text-xl font-bold uppercase tracking-widest mb-2 text-white">{t('formation.pricing.practical.title')}</h3>
+                            <p className="text-gray-400 text-sm mb-6">{t('formation.pricing.practical.subtitle')}</p>
+
+                            <ul className="w-full space-y-4 text-left">
+                                {(t('formation.pricing.practical.packs', { returnObjects: true }) as any[]).map((pack, idx) => (
+                                    <li key={idx} className="flex justify-between items-center border-b border-white/5 pb-2 last:border-0 last:pb-0">
+                                        <span className="text-gray-300 font-medium">{pack.hours}</span>
+                                        <span className="text-indigo-400 font-bold">{pack.price}</span>
+                                    </li>
+                                ))}
+                            </ul>
                         </motion.div>
                     </div>
                 </div>

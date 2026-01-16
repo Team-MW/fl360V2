@@ -153,7 +153,7 @@
         "sections": {
             "editor": {
                 "title": "1. Éditeur du site",
-                "content": "<0>Le site internet <1>fl360.com</1> est édité par la société <3>FL 360 AVIATION</3>, société par actions simplifiée unipersonnelle (SASU) au capital de 1 000,00 euros.<br/><br/><3>Siège social :</3><br/>BUSINESS CENTRE BATIMENT SOCRAT<br/>17 AVENUE DIDIER DAURAT<br/>31700 BLAGNAC<br/><br/><3>Informations légales :</3><br/>SIREM : 920 041 654<br/>SIRET : 920 041 654 00012<br/>RCS Toulouse : 920 041 654<br/>Numéro de TVA Intracommunautaire : FR62920041654<br/>Code NAF/APE : 51.10Z (Transports aériens de passagers)<br/><br/><3>Contact :</3><br/>Email : nav@fl360aviation.com<br/>Téléphone : +33 6 82 27 49 16</0>"
+                "content": "<0>Le site internet <1>fl360.com</1> est édité par la société <3>FL 360 AVIATION</3>, société par actions simplifiée unipersonnelle (SASU) au capital de 1 000,00 euros.<br/><br/><3>Siège social :</3><br/>BUSINESS CENTRE BATIMENT SOCRAT<br/>17 AVENUE DIDIER DAURAT<br/>31700 BLAGNAC<br/><br/><3>Informations légales :</3><br/>SIREN : 920 041 654<br/>SIRET (siège) : 920 041 654 00012<br/>Inscription au RCS : INSCRIT (au greffe de TOULOUSE , le 04/10/2022 )<br/>Inscription au RNE : INSCRIT (le 04/10/2022)<br/>Numéro RCS : 920 041 654 R.C.S. Toulouse<br/>Numéro de TVA : FR62920041654<br/>Code NAF/APE : 51.10Z (Transports aériens de passagers)<br/><br/><3>Contact :</3><br/>Email : nav@fl360aviation.com<br/>Téléphone : +33 6 82 27 49 16</0>"
             },
             "director": {
                 "title": "2. Directeur de la publication",
@@ -385,7 +385,7 @@
             "phone_placeholder": "1 23 45 67 89",
             "mobile_placeholder": "6 12 34 56 78",
             "name_placeholder": "Votre nom",
-            "consent_contact": "J'autorise FL360 à utiliser mes informations pour me contacter par téléphone et par email au sujet de ma demande de renseignements et/ou de produits et services équivalents.<br/><br/>J'accepte les termes et conditions, la politique de confidentialité et la politique de cookies.",
+            "consent_contact": "J'accepte les termes et conditions, la politique de confidentialité et la politique de cookies.<br/><br/>J'autorise FL360 à utiliser mes informations pour me contacter par téléphone et par email au sujet de ma demande de renseignements et/ou de produits et services équivalents.",
             "submit": "Soumettre",
             "next": "Suivant",
             "back": "Retour"

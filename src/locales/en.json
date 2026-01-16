@@ -152,7 +152,7 @@
         "sections": {
             "editor": {
                 "title": "1. Site Publisher",
-                "content": "<0>The website <1>fl360.com</1> is published by <3>FL 360 AVIATION</3>, a simplified single-member joint-stock company (SASU) with a capital of 1,000.00 euros.<br/><br/><3>Headquarters:</3><br/>BUSINESS CENTRE BATIMENT SOCRAT<br/>17 AVENUE DIDIER DAURAT<br/>31700 BLAGNAC<br/>FRANCE<br/><br/><3>Legal Information:</3><br/>SIREN: 920 041 654<br/>SIRET: 920 041 654 00012<br/>RCS Toulouse: 920 041 654<br/>VAT Number: FR62920041654<br/>NAF/APE Code: 51.10Z (Passenger air transport)<br/><br/><3>Contact:</3><br/>Email: nav@fl360aviation.com<br/>Phone: +33 6 82 27 49 16</0>"
+                "content": "<0>The website <1>fl360.com</1> is published by <3>FL 360 AVIATION</3>, a simplified single-member joint-stock company (SASU) with a capital of 1,000.00 euros.<br/><br/><3>Headquarters:</3><br/>BUSINESS CENTRE BATIMENT SOCRAT<br/>17 AVENUE DIDIER DAURAT<br/>31700 BLAGNAC<br/>FRANCE<br/><br/><3>Legal Information:</3><br/>SIREN: 920 041 654<br/>SIRET (Headquarters): 920 041 654 00012<br/>RCS Registration: REGISTERED (at TOULOUSE registry, on 04/10/2022)<br/>RNE Registration: REGISTERED (on 04/10/2022)<br/>RCS Number: 920 041 654 R.C.S. Toulouse<br/>VAT Number: FR62920041654<br/>NAF/APE Code: 51.10Z (Passenger air transport)<br/><br/><3>Contact:</3><br/>Email: nav@fl360aviation.com<br/>Phone: +33 6 82 27 49 16</0>"
             },
             "director": {
                 "title": "2. Publication Director",

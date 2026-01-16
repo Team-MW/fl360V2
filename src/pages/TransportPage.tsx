@@ -82,6 +82,10 @@ const TransportPage = () => {
             <Helmet>
                 <title>Transport Aérien - FL360 Aviation</title>
                 <meta name="description" content="Solutions de transport aérien sur mesure : jets privés, hélicoptères, avions d'affaires et hand carry. Service premium disponible 24/7." />
+                <meta property="og:title" content="Transport Aérien - FL360 Aviation" />
+                <meta property="og:description" content="Solutions de transport aérien sur mesure : jets privés, hélicoptères, avions d'affaires et hand carry. Service premium disponible 24/7." />
+                <meta property="og:image" content="/jetprié.jpg" />
+                <meta property="og:url" content="https://fl360.com/transport-page" />
             </Helmet>
 
             <div className="min-h-screen bg-zinc-950 text-white relative">

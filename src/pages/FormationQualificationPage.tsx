@@ -9,6 +9,7 @@ import formationQualification from '../assets/formation etqualification.avif';
 import formationImg from '../assets/formation.avif';
 import camoImg from '../assets/camo.avif';
 import mroImg from '../assets/mro.avif';
+import AnimatedCounter from '../components/AnimatedCounter';
 
 const FormationQualificationPage = () => {
     const formationServices = [
@@ -74,6 +75,10 @@ const FormationQualificationPage = () => {
             <Helmet>
                 <title>Formation et Qualification - FL360 Aviation</title>
                 <meta name="description" content="Formation professionnelle pour pilotes, gestion de la navigabilité CAO/CAMO et certifications aéronautiques. ATO certifié EASA." />
+                <meta property="og:title" content="Formation et Qualification - FL360 Aviation" />
+                <meta property="og:description" content="Formation professionnelle pour pilotes, gestion de la navigabilité CAO/CAMO et certifications aéronautiques. ATO certifié EASA." />
+                <meta property="og:image" content="/formation.avif" />
+                <meta property="og:url" content="https://fl360.com/formation-qualification" />
             </Helmet>
 
             <div className="min-h-screen bg-zinc-950 text-white relative">
@@ -131,7 +136,7 @@ const FormationQualificationPage = () => {
                                 className="text-center"
                             >
                                 <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400 mb-2">
-                                    {stat.number}
+                                    <AnimatedCounter value={stat.number} />
                                 </div>
                                 <div className="text-gray-400 text-sm uppercase tracking-wider">{stat.label}</div>
                             </motion.div>
@@ -254,7 +259,7 @@ const FormationQualificationPage = () => {
                 {/* Partners Section */}
                 <PartnersMarquee />
             </div>
-        </PageTransition>
+        </PageTransition >
     );
 };
 

@@ -8,6 +8,7 @@ import Starfield from '../components/Starfield';
 import piecesImg from '../assets/pieces.avif';
 import mroImg from '../assets/mro.avif';
 import flotteintegrationImg from '../assets/flotteintegration.avif';
+import AnimatedCounter from '../components/AnimatedCounter';
 
 const EntretiensPage = () => {
     const maintenanceServices = [
@@ -92,6 +93,10 @@ const EntretiensPage = () => {
             <Helmet>
                 <title>Entretiens & Maintenance - FL360 Aviation</title>
                 <meta name="description" content="Services de maintenance aéronautique MRO certifiés EASA. Entretien, réparation et gestion de flotte pour tous types d'aéronefs." />
+                <meta property="og:title" content="Entretiens & Maintenance - FL360 Aviation" />
+                <meta property="og:description" content="Services de maintenance aéronautique MRO certifiés EASA. Entretien, réparation et gestion de flotte pour tous types d'aéronefs." />
+                <meta property="og:image" content="/mro.avif" />
+                <meta property="og:url" content="https://fl360.com/entretiens" />
             </Helmet>
 
             <div className="min-h-screen bg-zinc-950 text-white relative">
@@ -146,7 +151,7 @@ const EntretiensPage = () => {
                                 className="text-center"
                             >
                                 <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400 mb-2">
-                                    {stat.number}
+                                    <AnimatedCounter value={stat.number} />
                                 </div>
                                 <div className="text-gray-400 text-sm uppercase tracking-wider">{stat.label}</div>
                             </motion.div>
