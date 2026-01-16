@@ -4,6 +4,7 @@ import PartnersMarquee from '../components/PartnersMarquee';
 import { motion } from 'framer-motion';
 import { Plane, ArrowRight, Users, Globe, Clock, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Starfield from '../components/Starfield';
 import jetprive from '../assets/jetprié.jpg';
 import helicoptereImg from '../assets/hélicoptère AS350 B2.jpg';
@@ -11,6 +12,7 @@ import avionsaffairesImg from '../assets/avionsd\'affaire.jpg.webp';
 import helico4Img from '../assets/helico4.avif';
 
 const TransportPage = () => {
+    const { t } = useTranslation();
     const transportServices = [
         {
             id: 1,
@@ -126,6 +128,12 @@ const TransportPage = () => {
                                     Sécurité Certifiée
                                 </span>
                             </div>
+                            <Link
+                                to="/contact"
+                                className="inline-block mt-8 px-10 py-4 bg-violet-600 hover:bg-violet-700 text-white font-bold uppercase tracking-wider rounded-full transition-all hover:scale-105 shadow-lg shadow-violet-500/30"
+                            >
+                                {t('contact_page.form.book_flight')}
+                            </Link>
                         </motion.div>
                     </div>
                 </div>
@@ -227,7 +235,7 @@ const TransportPage = () => {
                             to="/contact"
                             className="inline-block px-10 py-4 bg-violet-600 hover:bg-violet-700 text-white font-bold uppercase tracking-wider rounded-full transition-all hover:scale-105 shadow-lg shadow-violet-500/30"
                         >
-                            Demander un devis
+                            {t('contact_page.form.book_flight')}
                         </Link>
                     </motion.div>
                 </div>

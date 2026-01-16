@@ -59,6 +59,12 @@ const Contact = () => {
             return;
         }
 
+        // Validate return date for round trip
+        if (formData.tripType === 'ROUND_TRIP' && !formData.returnDate) {
+            alert('Veuillez sélectionner une date de retour pour un aller-retour.');
+            return;
+        }
+
         // For multi-destination, check all segments
         if (formData.tripType === 'MULTI_DESTINATION') {
             for (const segment of additionalSegments) {
@@ -266,7 +272,7 @@ const Contact = () => {
 
                                     {/* Trip Type Selection */}
                                     <div className="space-y-3">
-                                        <label className="text-xs font-bold text-gray-500 uppercase tracking-widest block pl-1">Type de voyage</label>
+                                        <label className="text-xs font-bold text-gray-500 uppercase tracking-widest block pl-1">{t('contact_page.form.trip_type')}</label>
                                         <div className="flex bg-black/40 p-1.5 rounded-xl border border-white/5 relative">
                                             <button
                                                 type="button"
@@ -276,7 +282,7 @@ const Contact = () => {
                                                     : 'text-gray-500 hover:text-gray-300 hover:bg-white/5'
                                                     }`}
                                             >
-                                                ✓ Aller-retour
+                                                ✓ {t('contact_page.form.round_trip')}
                                             </button>
                                             <button
                                                 type="button"
@@ -286,7 +292,7 @@ const Contact = () => {
                                                     : 'text-gray-500 hover:text-gray-300 hover:bg-white/5'
                                                     }`}
                                             >
-                                                Aller simple
+                                                {t('contact_page.form.one_way')}
                                             </button>
                                             <button
                                                 type="button"
@@ -296,7 +302,7 @@ const Contact = () => {
                                                     : 'text-gray-500 hover:text-gray-300 hover:bg-white/5'
                                                     }`}
                                             >
-                                                Multidestination
+                                                {t('contact_page.form.multi_destination')}
                                             </button>
                                         </div>
                                     </div>
@@ -401,13 +407,14 @@ const Contact = () => {
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 border-t border-zinc-800">
                                             <div className="grid grid-cols-2 gap-4">
                                                 <div className="space-y-2">
-                                                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.return_date')}</label>
+                                                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">{t('contact_page.form.return_date')} {formData.tripType === 'ROUND_TRIP' && <span className="text-violet-500">*</span>}</label>
                                                     <input
                                                         type="date"
                                                         name="returnDate"
                                                         value={formData.returnDate}
                                                         onChange={handleInputChange}
                                                         className="w-full bg-zinc-900 border border-zinc-700 p-4 text-white focus:border-indigo-500 outline-none transition-all uppercase placeholder-gray-600 text-gray-400 focus:text-white"
+                                                        required={formData.tripType === 'ROUND_TRIP'}
                                                     />
                                                 </div>
                                                 <div className="space-y-2">

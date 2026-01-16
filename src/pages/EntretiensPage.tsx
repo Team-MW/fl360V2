@@ -4,6 +4,7 @@ import PartnersMarquee from '../components/PartnersMarquee';
 import { motion } from 'framer-motion';
 import { Wrench, ArrowRight, Shield, Clock, CheckCircle, Settings, Package } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Starfield from '../components/Starfield';
 import piecesImg from '../assets/pieces.avif';
 import mroImg from '../assets/mro.avif';
@@ -11,6 +12,7 @@ import flotteintegrationImg from '../assets/flotteintegration.avif';
 import AnimatedCounter from '../components/AnimatedCounter';
 
 const EntretiensPage = () => {
+    const { t } = useTranslation();
     const maintenanceServices = [
         {
             id: 1,
@@ -134,6 +136,12 @@ const EntretiensPage = () => {
                                     Techniciens Qualifiés
                                 </span>
                             </div>
+                            <Link
+                                to="/contact"
+                                className="inline-block mt-8 px-10 py-4 bg-violet-600 hover:bg-violet-700 text-white font-bold uppercase tracking-wider rounded-full transition-all hover:scale-105 shadow-lg shadow-violet-500/30"
+                            >
+                                {t('contact_page.form.book_flight')}
+                            </Link>
                         </motion.div>
                     </div>
                 </div>
@@ -277,6 +285,24 @@ const EntretiensPage = () => {
                         ))}
                     </div>
 
+                    {/* CTA Section */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-center bg-gradient-to-br from-violet-900/30 via-purple-900/20 to-indigo-900/30 backdrop-blur-md border border-violet-500/20 p-12 rounded-2xl mb-20"
+                    >
+                        <h3 className="text-3xl font-bold mb-4">Besoin d'une maintenance ?</h3>
+                        <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+                            Contactez notre équipe pour planifier l'entretien de votre aéronef et bénéficier de notre expertise certifiée EASA.
+                        </p>
+                        <Link
+                            to="/contact"
+                            className="inline-block px-10 py-4 bg-violet-600 hover:bg-violet-700 text-white font-bold uppercase tracking-wider rounded-full transition-all hover:scale-105 shadow-lg shadow-violet-500/30"
+                        >
+                            {t('contact_page.form.book_flight')}
+                        </Link>
+                    </motion.div>
                 </div>
 
 

@@ -355,6 +355,10 @@
             "aircraft_type": "Type d'appareil",
             "passenger": "Passager",
             "cargo": "Cargo",
+            "trip_type": "Type de voyage",
+            "round_trip": "Aller-retour",
+            "one_way": "Aller simple",
+            "multi_destination": "Multidestination",
             "departure": "Départ",
             "arrival": "Arrivée",
             "departure_date": "Date de départ",
@@ -388,7 +392,8 @@
             "consent_contact": "J'accepte les termes et conditions, la politique de confidentialité et la politique de cookies.<br/><br/>J'autorise FL360 à utiliser mes informations pour me contacter par téléphone et par email au sujet de ma demande de renseignements et/ou de produits et services équivalents.",
             "submit": "Soumettre",
             "next": "Suivant",
-            "back": "Retour"
+            "back": "Retour",
+            "book_flight": "Réserver un vol"
         },
         "success": {
             "title": "Demande Envoyée",

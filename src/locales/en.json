@@ -4,14 +4,15 @@
             "home": "Home",
             "services": "Services",
             "portfolio": "Portfolio",
-            "contact": "Contact",
+            "contact": "Quote",
+            "formation": "Training",
             "transport": "Transport",
             "maintenance": "Maintenance",
-            "quote": "Request a Quote"
+            "quote": "Book a Flight"
         },
         "mobile": {
             "menu": "MENU",
-            "quote": "Request a Quote",
+            "quote": "Book a Flight",
             "copyright": "FL360 AVIATION SYSTEMS"
         }
     },
@@ -19,7 +20,7 @@
         "subtitle": "Aviation Systems",
         "description": "Redefining altitude standards.",
         "tagline": "Safety. Innovation. Silence.",
-        "primary_cta": "Request a Quote",
+        "primary_cta": "Book a Flight",
         "secondary_cta": "Discover Services"
     },
     "home": {
@@ -240,7 +241,7 @@
         "cta_footer": {
             "title": "Ready to Take Off?",
             "subtitle": "Contact our experts for a personalized study of your transport needs.",
-            "button": "Request a Quote"
+            "button": "Book a Flight"
         }
     },
     "formation": {
@@ -328,7 +329,7 @@
         }
     },
     "contact_page": {
-        "title": "CONTACT",
+        "title": "QUOTE",
         "description": "Ready to push the limits?\nLet's discuss your next flight.",
         "labels": {
             "email": "Email",
@@ -354,6 +355,10 @@
             "aircraft_type": "Aircraft Type",
             "passenger": "Passenger",
             "cargo": "Cargo",
+            "trip_type": "Trip Type",
+            "round_trip": "Round Trip",
+            "one_way": "One Way",
+            "multi_destination": "Multi-Destination",
             "departure": "Departure",
             "arrival": "Arrival",
             "departure_date": "Departure Date",
@@ -387,7 +392,8 @@
             "consent_contact": "I accept the terms and conditions, privacy policy and cookie policy.<br/><br/>I authorize FL360 to use my information to contact me by phone and email regarding my inquiry and/or equivalent products and services.",
             "submit": "Submit",
             "next": "Next",
-            "back": "Back"
+            "back": "Back",
+            "book_flight": "Book a Flight"
         },
         "success": {
             "title": "Request Sent",

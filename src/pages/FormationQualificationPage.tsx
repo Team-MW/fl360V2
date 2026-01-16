@@ -4,6 +4,7 @@ import PartnersMarquee from '../components/PartnersMarquee';
 import { motion } from 'framer-motion';
 import { GraduationCap, ArrowRight, Award, BookOpen, Users, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Starfield from '../components/Starfield';
 import formationQualification from '../assets/formation etqualification.avif';
 import formationImg from '../assets/formation.avif';
@@ -12,6 +13,7 @@ import mroImg from '../assets/mro.avif';
 import AnimatedCounter from '../components/AnimatedCounter';
 
 const FormationQualificationPage = () => {
+    const { t } = useTranslation();
     const formationServices = [
         {
             id: 1,
@@ -119,6 +121,12 @@ const FormationQualificationPage = () => {
                                     Formation Continue
                                 </span>
                             </div>
+                            <Link
+                                to="/contact"
+                                className="inline-block mt-8 px-10 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold uppercase tracking-wider rounded-full transition-all hover:scale-105 shadow-lg shadow-indigo-500/30"
+                            >
+                                {t('contact_page.form.book_flight')}
+                            </Link>
                         </motion.div>
                     </div>
                 </div>
@@ -245,14 +253,12 @@ const FormationQualificationPage = () => {
                         <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
                             Rejoignez nos programmes de formation et développez vos compétences avec les meilleurs instructeurs du secteur.
                         </p>
-                        <a
-                            href="https://wa.me/34617788820"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <Link
+                            to="/contact"
                             className="inline-block px-10 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold uppercase tracking-wider rounded-full transition-all hover:scale-105 shadow-lg shadow-indigo-500/30"
                         >
-                            Nous contacter
-                        </a>
+                            {t('contact_page.form.book_flight')}
+                        </Link>
                     </motion.div>
                 </div>
 
