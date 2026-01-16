@@ -5,10 +5,23 @@
             "services": "Services",
             "portfolio": "Portfolio",
             "contact": "Quote",
-            "formation": "Training",
-            "transport": "Transport",
+            "transport": "Air Transport",
+            "formation": "Training & Qualification",
             "maintenance": "Maintenance",
-            "quote": "Book a Flight"
+            "quote": "Book a Flight",
+            "submenu": {
+                "private_jets": "Private Jets",
+                "helicopters": "Helicopters",
+                "business_jets": "Business Jets",
+                "taxi_planes": "Air Taxi",
+                "hand_carry": "Hand Carry",
+                "pilot_training": "Pilot Training",
+                "cao_camo": "CAO / CAMO",
+                "cap_list": "CAP LIST",
+                "fleet_integration": "Fleet Integration",
+                "mro": "MRO",
+                "client_access": "Client Access"
+            }
         },
         "mobile": {
             "menu": "MENU",
@@ -244,6 +257,74 @@
             "button": "Book a Flight"
         }
     },
+    "transport_page": {
+        "hero": {
+            "title_prefix": "Air Transport",
+            "title_highlight": "Solutions",
+            "subtitle": "Travel on your terms with our tailor-made air transport solutions",
+            "badge_247": "24/7 Service",
+            "badge_fleet": "Modern Fleet",
+            "badge_security": "Certified Security"
+        },
+        "advantages": {
+            "availability": {
+                "title": "24/7 Availability",
+                "desc": "Our team is at your disposal at any time to organize your flights."
+            },
+            "security": {
+                "title": "Maximum Security",
+                "desc": "All our aircraft are certified and maintained according to the strictest standards."
+            },
+            "personalized": {
+                "title": "Personalized Service",
+                "desc": "Each flight is adapted to your specific needs and preferences."
+            }
+        },
+        "services_title": "Our",
+        "services_highlight": "Services",
+        "services": {
+            "private_jets": {
+                "title": "Private Jets",
+                "desc": "Premium air transport solutions for your professional and private travel.",
+                "feature1": "Direct flight",
+                "feature2": "Premium comfort",
+                "feature3": "Total flexibility"
+            },
+            "helicopters": {
+                "title": "Helicopters",
+                "desc": "Fast and flexible travel to access hard-to-reach areas.",
+                "feature1": "Access everywhere",
+                "feature2": "Speed",
+                "feature3": "Panoramic view"
+            },
+            "business_jets": {
+                "title": "Business Jets",
+                "desc": "Professional transport adapted to the needs of companies and executives.",
+                "feature1": "Productivity",
+                "feature2": "Confidentiality",
+                "feature3": "Efficiency"
+            },
+            "taxi_planes": {
+                "title": "Air Taxi",
+                "desc": "Economical solution for your short and medium-haul flights.",
+                "feature1": "Competitive prices",
+                "feature2": "Regular flights",
+                "feature3": "Simplicity"
+            },
+            "hand_carry": {
+                "title": "Hand Carry",
+                "desc": "Secure transport of documents and sensitive parcels worldwide.",
+                "feature1": "Maximum security",
+                "feature2": "Express delivery",
+                "feature3": "Traceability"
+            }
+        },
+        "cta": {
+            "title": "Ready to Take Off?",
+            "subtitle": "Contact our team to organize your next flight and discover our tailor-made solutions."
+        },
+        "learn_more": "Learn more"
+    },
     "formation": {
         "title": "Pilatus PC6 Training & Aerial Work - fl360",
         "meta_desc": "Pilatus PC6 B2H4 training and aerial services: surveillance, photography, filming, and advertising.",
@@ -327,6 +408,167 @@
             "button": "Download SPO Approval",
             "sub": "Commercial Operation License"
         }
+    },
+    "formation_qualification_page": {
+        "hero": {
+            "title_prefix": "Training &",
+            "title_highlight": "Qualification",
+            "subtitle": "Develop your skills with our certified training programs and professional qualification services",
+            "badge_ato": "EASA Certified ATO",
+            "badge_instructors": "Qualified Instructors",
+            "badge_training": "Continuous Training"
+        },
+        "stats": {
+            "pilots": "Trained Pilots",
+            "experience": "Years of Experience",
+            "success": "Success Rate",
+            "support": "Available Support"
+        },
+        "advantages": {
+            "certifications": {
+                "title": "Official Certifications",
+                "desc": "All our training programs are EASA certified and internationally recognized."
+            },
+            "instructors": {
+                "title": "Experienced Instructors",
+                "desc": "Our teaching team has years of experience in aviation."
+            },
+            "personalized": {
+                "title": "Personalized Approach",
+                "desc": "Programs adapted to your level and professional goals."
+            }
+        },
+        "programs_title": "Our",
+        "programs_highlight": "Programs",
+        "services": {
+            "pilot_training": {
+                "title": "Pilot Training",
+                "desc": "Complete training to become a professional pilot, from PPL to CPL with type ratings.",
+                "feature1": "ATO Certified",
+                "feature2": "Qualified instructors",
+                "feature3": "Modern fleet",
+                "highlight1": "Type Rating",
+                "highlight2": "Theory & Practice",
+                "highlight3": "Aerial Work"
+            },
+            "cao_camo": {
+                "title": "CAO / CAMO",
+                "desc": "Airworthiness management and maintenance organization for your aircraft fleet.",
+                "feature1": "EASA Compliance",
+                "feature2": "Complete management",
+                "feature3": "Technical expertise",
+                "highlight1": "Airworthiness",
+                "highlight2": "Prebuy Inspection",
+                "highlight3": "Maintenance program"
+            },
+            "cap_list": {
+                "title": "CAP LIST",
+                "desc": "List of capabilities and technical skills for aeronautical maintenance.",
+                "feature1": "Complete documentation",
+                "feature2": "Regular updates",
+                "feature3": "Technical support",
+                "highlight1": "Certified capabilities",
+                "highlight2": "Regulatory compliance",
+                "highlight3": "Traceability"
+            }
+        },
+        "cta": {
+            "title": "Ready to Train?",
+            "subtitle": "Join our training programs and develop your skills with the best instructors in the industry."
+        },
+        "discover": "Discover"
+    },
+    "entretiens_page": {
+        "hero": {
+            "title_prefix": "Maintenance &",
+            "title_highlight": "Repair",
+            "subtitle": "Excellence in aeronautical maintenance with EASA certified services to ensure the safety and performance of your fleet",
+            "badge_easa": "EASA Part-145 Certified",
+            "badge_technicians": "Qualified Technicians"
+        },
+        "stats": {
+            "experience": "Years of Experience",
+            "interventions": "Interventions/year",
+            "compliance": "EASA Compliance",
+            "delay": "Average Delay"
+        },
+        "advantages": {
+            "certifications": {
+                "title": "EASA Certifications",
+                "desc": "All our workshops and technicians are certified according to the strictest EASA standards."
+            },
+            "availability": {
+                "title": "Fast Availability",
+                "desc": "Quick interventions and flexible planning to minimize aircraft downtime."
+            },
+            "stock": {
+                "title": "Parts Stock",
+                "desc": "Large stock of spare parts and consumables for efficient maintenance."
+            }
+        },
+        "services_title": "Our",
+        "services_highlight": "Services",
+        "services": {
+            "mro": {
+                "title": "MRO - Maintenance & Repair",
+                "desc": "Complete maintenance, repair and overhaul services for all types of aircraft.",
+                "feature1": "Preventive maintenance",
+                "feature2": "Certified repairs",
+                "feature3": "Original parts",
+                "service1": "Periodic inspections",
+                "service2": "Scheduled maintenance",
+                "service3": "Structural repairs",
+                "service4": "Technical modifications"
+            },
+            "fleet_integration": {
+                "title": "Fleet Integration",
+                "desc": "Complete integration and management of your aircraft fleet with personalized monitoring.",
+                "feature1": "Centralized management",
+                "feature2": "Optimization",
+                "feature3": "Real-time tracking",
+                "service1": "Maintenance planning",
+                "service2": "Document management",
+                "service3": "Cost optimization",
+                "service4": "Detailed reporting"
+            }
+        },
+        "capabilities_title": "Our",
+        "capabilities_highlight": "Capabilities",
+        "capabilities": {
+            "engines": {
+                "title": "Engines & Propulsion",
+                "item1": "Engine overhaul",
+                "item2": "Propeller replacement",
+                "item3": "Fuel systems",
+                "item4": "Exhaust systems"
+            },
+            "structure": {
+                "title": "Structure & Airframe",
+                "item1": "Structural repairs",
+                "item2": "Corrosion treatment",
+                "item3": "STC modifications",
+                "item4": "Painting & finishing"
+            },
+            "avionics": {
+                "title": "Avionics & Electrical",
+                "item1": "Avionics installation",
+                "item2": "Electrical wiring",
+                "item3": "Navigation systems",
+                "item4": "Cockpit instruments"
+            },
+            "systems": {
+                "title": "Systems & Equipment",
+                "item1": "Landing gear",
+                "item2": "Hydraulic systems",
+                "item3": "Air conditioning",
+                "item4": "Safety equipment"
+            }
+        },
+        "cta": {
+            "title": "Need Maintenance?",
+            "subtitle": "Contact our team to schedule your aircraft maintenance and benefit from our EASA certified expertise."
+        },
+        "learn_more": "Learn more"
     },
     "contact_page": {
         "title": "QUOTE",

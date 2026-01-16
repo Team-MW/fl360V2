@@ -14,62 +14,63 @@ import AnimatedCounter from '../components/AnimatedCounter';
 
 const FormationQualificationPage = () => {
     const { t } = useTranslation();
+
     const formationServices = [
         {
             id: 1,
-            title: "Formation Pilote",
+            titleKey: 'formation_qualification_page.services.pilot_training.title',
             slug: "/formation",
-            description: "Formation complète pour devenir pilote professionnel, du PPL au CPL avec qualifications de type.",
+            descKey: 'formation_qualification_page.services.pilot_training.desc',
             icon: GraduationCap,
             image: formationImg,
-            features: ["ATO Certifié", "Instructeurs qualifiés", "Flotte moderne"],
-            highlights: ["Type Rating", "Théorie & Pratique", "Travaux Aériens"]
+            features: ['formation_qualification_page.services.pilot_training.feature1', 'formation_qualification_page.services.pilot_training.feature2', 'formation_qualification_page.services.pilot_training.feature3'],
+            highlights: ['formation_qualification_page.services.pilot_training.highlight1', 'formation_qualification_page.services.pilot_training.highlight2', 'formation_qualification_page.services.pilot_training.highlight3']
         },
         {
             id: 2,
-            title: "CAO / CAMO",
+            titleKey: 'formation_qualification_page.services.cao_camo.title',
             slug: "/cao-camo",
-            description: "Gestion de la navigabilité et organisation de la maintenance pour votre flotte aérienne.",
+            descKey: 'formation_qualification_page.services.cao_camo.desc',
             icon: Award,
             image: camoImg,
-            features: ["Conformité EASA", "Gestion complète", "Expertise technique"],
-            highlights: ["Navigabilité", "Prebuy Inspection", "Programme de maintenance"]
+            features: ['formation_qualification_page.services.cao_camo.feature1', 'formation_qualification_page.services.cao_camo.feature2', 'formation_qualification_page.services.cao_camo.feature3'],
+            highlights: ['formation_qualification_page.services.cao_camo.highlight1', 'formation_qualification_page.services.cao_camo.highlight2', 'formation_qualification_page.services.cao_camo.highlight3']
         },
         {
             id: 3,
-            title: "CAP LIST",
+            titleKey: 'formation_qualification_page.services.cap_list.title',
             slug: "/cap-list",
-            description: "Liste des capacités et compétences techniques pour la maintenance aéronautique.",
+            descKey: 'formation_qualification_page.services.cap_list.desc',
             icon: BookOpen,
             image: mroImg,
-            features: ["Documentation complète", "Mise à jour régulière", "Support technique"],
-            highlights: ["Capacités certifiées", "Conformité réglementaire", "Traçabilité"]
+            features: ['formation_qualification_page.services.cap_list.feature1', 'formation_qualification_page.services.cap_list.feature2', 'formation_qualification_page.services.cap_list.feature3'],
+            highlights: ['formation_qualification_page.services.cap_list.highlight1', 'formation_qualification_page.services.cap_list.highlight2', 'formation_qualification_page.services.cap_list.highlight3']
         }
     ];
 
     const advantages = [
         {
             icon: Award,
-            title: "Certifications Officielles",
-            description: "Toutes nos formations sont certifiées EASA et reconnues internationalement."
+            titleKey: 'formation_qualification_page.advantages.certifications.title',
+            descKey: 'formation_qualification_page.advantages.certifications.desc'
         },
         {
             icon: Users,
-            title: "Instructeurs Expérimentés",
-            description: "Notre équipe pédagogique compte des années d'expérience dans l'aviation."
+            titleKey: 'formation_qualification_page.advantages.instructors.title',
+            descKey: 'formation_qualification_page.advantages.instructors.desc'
         },
         {
             icon: Target,
-            title: "Approche Personnalisée",
-            description: "Programmes adaptés à votre niveau et vos objectifs professionnels."
+            titleKey: 'formation_qualification_page.advantages.personalized.title',
+            descKey: 'formation_qualification_page.advantages.personalized.desc'
         }
     ];
 
     const stats = [
-        { number: "500+", label: "Pilotes formés" },
-        { number: "15+", label: "Années d'expérience" },
-        { number: "98%", label: "Taux de réussite" },
-        { number: "24/7", label: "Support disponible" }
+        { number: "500+", labelKey: "formation_qualification_page.stats.pilots" },
+        { number: "15+", labelKey: "formation_qualification_page.stats.experience" },
+        { number: "98%", labelKey: "formation_qualification_page.stats.success" },
+        { number: "24/7", labelKey: "formation_qualification_page.stats.support" }
     ];
 
     return (
@@ -105,20 +106,20 @@ const FormationQualificationPage = () => {
                             transition={{ duration: 0.8 }}
                         >
                             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-6">
-                                Formation & <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">Qualification</span>
+                                {t('formation_qualification_page.hero.title_prefix')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">{t('formation_qualification_page.hero.title_highlight')}</span>
                             </h1>
                             <p className="text-xl md:text-2xl text-gray-300 font-light max-w-3xl mx-auto mb-8">
-                                Développez vos compétences avec nos programmes de formation certifiés et nos services de qualification professionnelle
+                                {t('formation_qualification_page.hero.subtitle')}
                             </p>
                             <div className="flex flex-wrap gap-4 justify-center">
                                 <span className="px-6 py-2 bg-indigo-600/20 border border-indigo-500/30 rounded-full text-indigo-300 text-sm font-semibold">
-                                    ATO Certifié EASA
+                                    {t('formation_qualification_page.hero.badge_ato')}
                                 </span>
                                 <span className="px-6 py-2 bg-indigo-600/20 border border-indigo-500/30 rounded-full text-indigo-300 text-sm font-semibold">
-                                    Instructeurs Qualifiés
+                                    {t('formation_qualification_page.hero.badge_instructors')}
                                 </span>
                                 <span className="px-6 py-2 bg-indigo-600/20 border border-indigo-500/30 rounded-full text-indigo-300 text-sm font-semibold">
-                                    Formation Continue
+                                    {t('formation_qualification_page.hero.badge_training')}
                                 </span>
                             </div>
                             <Link
@@ -146,7 +147,7 @@ const FormationQualificationPage = () => {
                                 <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400 mb-2">
                                     <AnimatedCounter value={stat.number} />
                                 </div>
-                                <div className="text-gray-400 text-sm uppercase tracking-wider">{stat.label}</div>
+                                <div className="text-gray-400 text-sm uppercase tracking-wider">{t(stat.labelKey)}</div>
                             </motion.div>
                         ))}
                     </div>
@@ -163,15 +164,15 @@ const FormationQualificationPage = () => {
                                 className="bg-zinc-900/50 backdrop-blur-sm border border-white/5 p-8 rounded-xl hover:border-indigo-500/30 transition-all group"
                             >
                                 <advantage.icon className="w-12 h-12 text-indigo-400 mb-4 group-hover:scale-110 transition-transform" />
-                                <h3 className="text-xl font-bold mb-3">{advantage.title}</h3>
-                                <p className="text-gray-400">{advantage.description}</p>
+                                <h3 className="text-xl font-bold mb-3">{t(advantage.titleKey)}</h3>
+                                <p className="text-gray-400">{t(advantage.descKey)}</p>
                             </motion.div>
                         ))}
                     </div>
 
                     {/* Formation Services Grid */}
                     <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-center mb-16">
-                        Nos <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">Programmes</span>
+                        {t('formation_qualification_page.programs_title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">{t('formation_qualification_page.programs_highlight')}</span>
                     </h2>
 
                     <div className="grid md:grid-cols-3 gap-8 mb-20">
@@ -191,7 +192,7 @@ const FormationQualificationPage = () => {
                                     <div className="relative h-56 overflow-hidden">
                                         <img
                                             src={service.image}
-                                            alt={service.title}
+                                            alt={t(service.titleKey)}
                                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent"></div>
@@ -203,37 +204,37 @@ const FormationQualificationPage = () => {
                                     {/* Content */}
                                     <div className="p-6">
                                         <h3 className="text-2xl font-bold mb-3 group-hover:text-indigo-400 transition-colors">
-                                            {service.title}
+                                            {t(service.titleKey)}
                                         </h3>
                                         <p className="text-gray-400 mb-4 leading-relaxed">
-                                            {service.description}
+                                            {t(service.descKey)}
                                         </p>
 
                                         {/* Highlights */}
                                         <div className="space-y-2 mb-4">
-                                            {service.highlights.map((highlight, idx) => (
+                                            {service.highlights.map((highlightKey, idx) => (
                                                 <div key={idx} className="flex items-center gap-2 text-sm text-gray-300">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-indigo-500"></div>
-                                                    <span>{highlight}</span>
+                                                    <span>{t(highlightKey)}</span>
                                                 </div>
                                             ))}
                                         </div>
 
                                         {/* Features */}
                                         <div className="flex flex-wrap gap-2 mb-4">
-                                            {service.features.map((feature, idx) => (
+                                            {service.features.map((featureKey, idx) => (
                                                 <span
                                                     key={idx}
                                                     className="text-xs px-3 py-1 bg-indigo-600/10 border border-indigo-500/20 rounded-full text-indigo-300"
                                                 >
-                                                    {feature}
+                                                    {t(featureKey)}
                                                 </span>
                                             ))}
                                         </div>
 
                                         {/* CTA */}
                                         <div className="flex items-center gap-2 text-indigo-400 font-semibold group-hover:gap-4 transition-all">
-                                            <span>Découvrir</span>
+                                            <span>{t('formation_qualification_page.discover')}</span>
                                             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                                         </div>
                                     </div>
@@ -249,9 +250,9 @@ const FormationQualificationPage = () => {
                         viewport={{ once: true }}
                         className="text-center bg-gradient-to-br from-indigo-900/30 via-purple-900/20 to-violet-900/30 backdrop-blur-md border border-indigo-500/20 p-12 rounded-2xl"
                     >
-                        <h3 className="text-3xl font-bold mb-4">Prêt à vous former ?</h3>
+                        <h3 className="text-3xl font-bold mb-4">{t('formation_qualification_page.cta.title')}</h3>
                         <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-                            Rejoignez nos programmes de formation et développez vos compétences avec les meilleurs instructeurs du secteur.
+                            {t('formation_qualification_page.cta.subtitle')}
                         </p>
                         <Link
                             to="/contact"

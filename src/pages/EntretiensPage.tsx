@@ -13,35 +13,36 @@ import AnimatedCounter from '../components/AnimatedCounter';
 
 const EntretiensPage = () => {
     const { t } = useTranslation();
+
     const maintenanceServices = [
         {
             id: 1,
-            title: "MRO - Maintenance & Réparation",
+            titleKey: 'entretiens_page.services.mro.title',
             slug: "/mro",
-            description: "Services complets de maintenance, réparation et révision pour tous types d'aéronefs.",
+            descKey: 'entretiens_page.services.mro.desc',
             icon: Wrench,
             image: mroImg,
-            features: ["Maintenance préventive", "Réparations certifiées", "Pièces d'origine"],
+            features: ['entretiens_page.services.mro.feature1', 'entretiens_page.services.mro.feature2', 'entretiens_page.services.mro.feature3'],
             services: [
-                "Inspections périodiques",
-                "Maintenance programmée",
-                "Réparations structurelles",
-                "Modifications techniques"
+                'entretiens_page.services.mro.service1',
+                'entretiens_page.services.mro.service2',
+                'entretiens_page.services.mro.service3',
+                'entretiens_page.services.mro.service4'
             ]
         },
         {
             id: 2,
-            title: "Flotte Intégration",
+            titleKey: 'entretiens_page.services.fleet_integration.title',
             slug: "/flotte-integration",
-            description: "Intégration et gestion complète de votre flotte aérienne avec suivi personnalisé.",
+            descKey: 'entretiens_page.services.fleet_integration.desc',
             icon: Settings,
             image: flotteintegrationImg,
-            features: ["Gestion centralisée", "Optimisation", "Suivi en temps réel"],
+            features: ['entretiens_page.services.fleet_integration.feature1', 'entretiens_page.services.fleet_integration.feature2', 'entretiens_page.services.fleet_integration.feature3'],
             services: [
-                "Planification maintenance",
-                "Gestion documentaire",
-                "Optimisation des coûts",
-                "Reporting détaillé"
+                'entretiens_page.services.fleet_integration.service1',
+                'entretiens_page.services.fleet_integration.service2',
+                'entretiens_page.services.fleet_integration.service3',
+                'entretiens_page.services.fleet_integration.service4'
             ]
         }
     ];
@@ -49,45 +50,65 @@ const EntretiensPage = () => {
     const advantages = [
         {
             icon: Shield,
-            title: "Certifications EASA",
-            description: "Tous nos ateliers et techniciens sont certifiés selon les normes EASA les plus strictes."
+            titleKey: 'entretiens_page.advantages.certifications.title',
+            descKey: 'entretiens_page.advantages.certifications.desc'
         },
         {
             icon: Clock,
-            title: "Disponibilité Rapide",
-            description: "Interventions rapides et planification flexible pour minimiser l'immobilisation de vos appareils."
+            titleKey: 'entretiens_page.advantages.availability.title',
+            descKey: 'entretiens_page.advantages.availability.desc'
         },
         {
             icon: Package,
-            title: "Stock de Pièces",
-            description: "Large stock de pièces détachées et consommables pour une maintenance efficace."
+            titleKey: 'entretiens_page.advantages.stock.title',
+            descKey: 'entretiens_page.advantages.stock.desc'
         }
     ];
 
     const capabilities = [
         {
-            category: "Moteurs & Propulsion",
-            items: ["Révision moteur", "Remplacement hélices", "Systèmes carburant", "Systèmes d'échappement"]
+            titleKey: 'entretiens_page.capabilities.engines.title',
+            items: [
+                'entretiens_page.capabilities.engines.item1',
+                'entretiens_page.capabilities.engines.item2',
+                'entretiens_page.capabilities.engines.item3',
+                'entretiens_page.capabilities.engines.item4'
+            ]
         },
         {
-            category: "Structure & Cellule",
-            items: ["Réparations structure", "Traitement corrosion", "Modifications STC", "Peinture & finition"]
+            titleKey: 'entretiens_page.capabilities.structure.title',
+            items: [
+                'entretiens_page.capabilities.structure.item1',
+                'entretiens_page.capabilities.structure.item2',
+                'entretiens_page.capabilities.structure.item3',
+                'entretiens_page.capabilities.structure.item4'
+            ]
         },
         {
-            category: "Avionique & Électrique",
-            items: ["Installation avionique", "Câblage électrique", "Systèmes de navigation", "Instruments de bord"]
+            titleKey: 'entretiens_page.capabilities.avionics.title',
+            items: [
+                'entretiens_page.capabilities.avionics.item1',
+                'entretiens_page.capabilities.avionics.item2',
+                'entretiens_page.capabilities.avionics.item3',
+                'entretiens_page.capabilities.avionics.item4'
+            ]
         },
         {
-            category: "Systèmes & Équipements",
-            items: ["Train d'atterrissage", "Systèmes hydrauliques", "Climatisation", "Équipements de sécurité"]
+            titleKey: 'entretiens_page.capabilities.systems.title',
+            items: [
+                'entretiens_page.capabilities.systems.item1',
+                'entretiens_page.capabilities.systems.item2',
+                'entretiens_page.capabilities.systems.item3',
+                'entretiens_page.capabilities.systems.item4'
+            ]
         }
     ];
 
     const stats = [
-        { number: "25+", label: "Années d'expérience" },
-        { number: "1000+", label: "Interventions/an" },
-        { number: "100%", label: "Conformité EASA" },
-        { number: "48h", label: "Délai moyen" }
+        { number: "25+", labelKey: "entretiens_page.stats.experience" },
+        { number: "1000+", labelKey: "entretiens_page.stats.interventions" },
+        { number: "100%", labelKey: "entretiens_page.stats.compliance" },
+        { number: "48h", labelKey: "entretiens_page.stats.delay" }
     ];
 
     return (
@@ -123,17 +144,17 @@ const EntretiensPage = () => {
                             transition={{ duration: 0.8 }}
                         >
                             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-6">
-                                Entretiens & <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">Maintenance</span>
+                                {t('entretiens_page.hero.title_prefix')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">{t('entretiens_page.hero.title_highlight')}</span>
                             </h1>
                             <p className="text-xl md:text-2xl text-gray-300 font-light max-w-3xl mx-auto mb-8">
-                                Excellence en maintenance aéronautique avec des services certifiés EASA pour garantir la sécurité et la performance de votre flotte
+                                {t('entretiens_page.hero.subtitle')}
                             </p>
                             <div className="flex flex-wrap gap-4 justify-center">
                                 <span className="px-6 py-2 bg-violet-600/20 border border-violet-500/30 rounded-full text-violet-300 text-sm font-semibold">
-                                    Certifié EASA Part-145
+                                    {t('entretiens_page.hero.badge_easa')}
                                 </span>
                                 <span className="px-6 py-2 bg-violet-600/20 border border-violet-500/30 rounded-full text-violet-300 text-sm font-semibold">
-                                    Techniciens Qualifiés
+                                    {t('entretiens_page.hero.badge_technicians')}
                                 </span>
                             </div>
                             <Link
@@ -161,7 +182,7 @@ const EntretiensPage = () => {
                                 <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400 mb-2">
                                     <AnimatedCounter value={stat.number} />
                                 </div>
-                                <div className="text-gray-400 text-sm uppercase tracking-wider">{stat.label}</div>
+                                <div className="text-gray-400 text-sm uppercase tracking-wider">{t(stat.labelKey)}</div>
                             </motion.div>
                         ))}
                     </div>
@@ -178,15 +199,15 @@ const EntretiensPage = () => {
                                 className="bg-zinc-900/50 backdrop-blur-sm border border-white/5 p-8 rounded-xl hover:border-violet-500/30 transition-all group"
                             >
                                 <advantage.icon className="w-12 h-12 text-violet-400 mb-4 group-hover:scale-110 transition-transform" />
-                                <h3 className="text-xl font-bold mb-3">{advantage.title}</h3>
-                                <p className="text-gray-400">{advantage.description}</p>
+                                <h3 className="text-xl font-bold mb-3">{t(advantage.titleKey)}</h3>
+                                <p className="text-gray-400">{t(advantage.descKey)}</p>
                             </motion.div>
                         ))}
                     </div>
 
                     {/* Maintenance Services Grid */}
                     <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-center mb-16">
-                        Nos <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">Services</span>
+                        {t('entretiens_page.services_title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">{t('entretiens_page.services_highlight')}</span>
                     </h2>
 
                     <div className="grid md:grid-cols-2 gap-8 mb-20">
@@ -206,7 +227,7 @@ const EntretiensPage = () => {
                                     <div className="relative h-64 overflow-hidden">
                                         <img
                                             src={service.image}
-                                            alt={service.title}
+                                            alt={t(service.titleKey)}
                                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent"></div>
@@ -218,37 +239,37 @@ const EntretiensPage = () => {
                                     {/* Content */}
                                     <div className="p-6">
                                         <h3 className="text-2xl font-bold mb-3 group-hover:text-violet-400 transition-colors">
-                                            {service.title}
+                                            {t(service.titleKey)}
                                         </h3>
                                         <p className="text-gray-400 mb-4 leading-relaxed">
-                                            {service.description}
+                                            {t(service.descKey)}
                                         </p>
 
                                         {/* Services List */}
                                         <div className="space-y-2 mb-4">
-                                            {service.services.map((item, idx) => (
+                                            {service.services.map((serviceKey, idx) => (
                                                 <div key={idx} className="flex items-center gap-2 text-sm text-gray-300">
                                                     <CheckCircle size={16} className="text-violet-500 flex-shrink-0" />
-                                                    <span>{item}</span>
+                                                    <span>{t(serviceKey)}</span>
                                                 </div>
                                             ))}
                                         </div>
 
                                         {/* Features */}
                                         <div className="flex flex-wrap gap-2 mb-4">
-                                            {service.features.map((feature, idx) => (
+                                            {service.features.map((featureKey, idx) => (
                                                 <span
                                                     key={idx}
                                                     className="text-xs px-3 py-1 bg-violet-600/10 border border-violet-500/20 rounded-full text-violet-300"
                                                 >
-                                                    {feature}
+                                                    {t(featureKey)}
                                                 </span>
                                             ))}
                                         </div>
 
                                         {/* CTA */}
                                         <div className="flex items-center gap-2 text-violet-400 font-semibold group-hover:gap-4 transition-all">
-                                            <span>En savoir plus</span>
+                                            <span>{t('entretiens_page.learn_more')}</span>
                                             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                                         </div>
                                     </div>
@@ -259,7 +280,7 @@ const EntretiensPage = () => {
 
                     {/* Capabilities Section */}
                     <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-center mb-16">
-                        Nos <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">Capacités</span>
+                        {t('entretiens_page.capabilities_title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">{t('entretiens_page.capabilities_highlight')}</span>
                     </h2>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
@@ -272,12 +293,12 @@ const EntretiensPage = () => {
                                 transition={{ delay: index * 0.1 }}
                                 className="bg-zinc-900/50 backdrop-blur-sm border border-white/5 p-6 rounded-xl hover:border-violet-500/30 transition-all"
                             >
-                                <h3 className="text-lg font-bold mb-4 text-violet-400">{capability.category}</h3>
+                                <h3 className="text-lg font-bold mb-4 text-violet-400">{t(capability.titleKey)}</h3>
                                 <ul className="space-y-2">
-                                    {capability.items.map((item, idx) => (
+                                    {capability.items.map((itemKey, idx) => (
                                         <li key={idx} className="flex items-start gap-2 text-sm text-gray-300">
                                             <div className="w-1.5 h-1.5 rounded-full bg-violet-500 mt-1.5 flex-shrink-0"></div>
-                                            <span>{item}</span>
+                                            <span>{t(itemKey)}</span>
                                         </li>
                                     ))}
                                 </ul>
@@ -292,9 +313,9 @@ const EntretiensPage = () => {
                         viewport={{ once: true }}
                         className="text-center bg-gradient-to-br from-violet-900/30 via-purple-900/20 to-indigo-900/30 backdrop-blur-md border border-violet-500/20 p-12 rounded-2xl mb-20"
                     >
-                        <h3 className="text-3xl font-bold mb-4">Besoin d'une maintenance ?</h3>
+                        <h3 className="text-3xl font-bold mb-4">{t('entretiens_page.cta.title')}</h3>
                         <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-                            Contactez notre équipe pour planifier l'entretien de votre aéronef et bénéficier de notre expertise certifiée EASA.
+                            {t('entretiens_page.cta.subtitle')}
                         </p>
                         <Link
                             to="/contact"

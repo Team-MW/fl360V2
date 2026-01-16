@@ -29,32 +29,32 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
     const links = [
         { name: t('header.nav.home'), path: '/' },
         {
-            name: 'Transport',
+            name: t('header.nav.transport'),
             path: '/transport-page',
             children: [
-                { name: 'Jets privés', path: '/jets-prives' },
-                { name: 'Hélicoptères', path: '/helicopteres' },
-                { name: "Avions d'affaires", path: '/avions-affaires' },
-                { name: 'Avions taxi', path: '/avions-taxi' },
-                { name: 'Colis accompagné – Hand Carry –', path: '/hand-carry' }
+                { name: t('header.nav.submenu.private_jets'), path: '/jets-prives' },
+                { name: t('header.nav.submenu.helicopters'), path: '/helicopteres' },
+                { name: t('header.nav.submenu.business_jets'), path: '/avions-affaires' },
+                { name: t('header.nav.submenu.taxi_planes'), path: '/avions-taxi' },
+                { name: t('header.nav.submenu.hand_carry'), path: '/hand-carry' }
             ]
         },
         {
-            name: 'Formation et Qualification',
+            name: t('header.nav.formation'),
             path: '/formation-qualification',
             children: [
-                { name: 'Formation', path: '/formation' },
-                { name: 'CAO / CAMO', path: '/cao-camo' },
-                { name: 'CAP LIST', path: '/cap-list' },
-                { name: 'Flotte intégration', path: '/flotte-integration' }
+                { name: t('header.nav.submenu.pilot_training'), path: '/formation' },
+                { name: t('header.nav.submenu.cao_camo'), path: '/cao-camo' },
+                { name: t('header.nav.submenu.cap_list'), path: '/cap-list' },
+                { name: t('header.nav.submenu.fleet_integration'), path: '/flotte-integration' }
             ]
         },
         {
-            name: 'Entretiens',
+            name: t('header.nav.maintenance'),
             path: '/entretiens',
             children: [
-                { name: 'MRO', path: '/mro' },
-                { name: 'Flotte intégration', path: '/flotte-integration' }
+                { name: t('header.nav.submenu.mro'), path: '/mro' },
+                { name: t('header.nav.submenu.fleet_integration'), path: '/flotte-integration' }
             ]
         },
     ];
@@ -212,7 +212,7 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
                                         className="text-2xl font-thin tracking-wide text-gray-400 hover:text-white hover:pl-4 transition-all flex items-center gap-4"
                                     >
                                         <span className="text-xs font-mono text-gray-600 mr-4">07</span>
-                                        Accès Clients <User size={20} />
+                                        {t('header.nav.submenu.client_access')} <User size={20} />
                                     </a>
                                     <Link
                                         to="/contact"
