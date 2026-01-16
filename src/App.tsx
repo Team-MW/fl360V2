@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence } from 'framer-motion';
@@ -40,6 +40,9 @@ const AnimatedRoutes = () => {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            {/* Language routes - redirect to home */}
+            <Route path="fr" element={<Navigate to="/" replace />} />
+            <Route path="en" element={<Navigate to="/" replace />} />
             {/* Main Category Pages */}
             <Route path="transport-page" element={<TransportPage />} />
             <Route path="formation-qualification" element={<FormationQualificationPage />} />
