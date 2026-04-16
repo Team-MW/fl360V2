@@ -576,6 +576,13 @@ const Contact = () => {
                                         )}
                                     </div>
 
+                                    {/* JotForm integrated directly in Step 1 */}
+                                    <div className="mt-8 pt-8 border-t border-zinc-800">
+                                        <div className="bg-black/20 rounded-xl p-4 md:p-6 border border-white/5">
+                                            <JotFormEmbed formId="261053655420349" />
+                                        </div>
+                                    </div>
+
                                     <div className="flex justify-end pt-8">
                                         <button
                                             type="button"
@@ -792,24 +799,6 @@ const Contact = () => {
                                 </motion.div>
                             )}
                         </form>
-                    </motion.div>
-
-                    {/* JotForm Section */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="mt-20 w-full"
-                    >
-                        <div className="text-center mb-12">
-                            <h2 className="text-2xl md:text-4xl font-bold uppercase tracking-[0.2em] text-white">
-                                {t('contact_page.form.contact_title', 'Contactez-nous')}
-                            </h2>
-                            <div className="w-20 h-1 bg-indigo-600 mx-auto mt-4"></div>
-                        </div>
-                        <div className="bg-black/30 backdrop-blur-md border border-white/5 rounded-2xl p-4 md:p-8">
-                            <JotFormEmbed formId="261053655420349" />
-                        </div>
                     </motion.div>
 
                     {/* Location / Access Section */}
