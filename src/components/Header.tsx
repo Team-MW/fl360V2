@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowRight, User, ChevronDown, Plane } from 'lucide-react';
+import { Menu, X, ArrowRight, User, ChevronDown, Plane, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/logo360.webp';
 import { useTranslation } from 'react-i18next';
@@ -27,7 +27,6 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
     }, []);
 
     const links = [
-        { name: t('header.nav.home'), path: '/' },
         {
             name: t('header.nav.transport'),
             path: '/transport-page',
@@ -68,7 +67,7 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
                 {/* Logo */}
                 <Link to="/" className="flex items-center gap-2 group">
                     <div className="relative">
-                        <img src={logo} alt="fl360 Logo" className="w-12 h-12 object-contain transition-transform group-hover:scale-105" />
+                        <img src={logo} alt="fl360 Logo" className="w-16 h-16 md:w-20 md:h-20 object-contain transition-transform group-hover:scale-105" />
                     </div>
                 </Link>
 
@@ -113,8 +112,9 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
                         </Link>
                         <Link
                             to="/contact"
-                            className="text-sm uppercase tracking-widest font-medium text-gray-400 hover:text-white transition-colors"
+                            className="text-sm uppercase tracking-widest font-medium text-gray-400 hover:text-white transition-colors flex items-center gap-2"
                         >
+                            <Mail size={16} />
                             Contact
                         </Link>
                         <a
@@ -232,6 +232,7 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
                                         onClick={toggleMenu}
                                         className="w-full border border-white/20 text-white text-center py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-white/5 transition-all flex items-center justify-center gap-3"
                                     >
+                                        <Mail size={18} />
                                         Contact <ArrowRight size={18} />
                                     </Link>
                                 </nav>

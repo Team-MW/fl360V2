@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
 import PageTransition from '../components/PageTransition';
 import Starfield from '../components/Starfield';
 
@@ -24,7 +23,6 @@ const JotFormEmbed = ({ formId }: { formId: string }) => {
 };
 
 const ContactUs = () => {
-    const { t } = useTranslation();
 
     return (
         <PageTransition>
