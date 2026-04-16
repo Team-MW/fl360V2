@@ -19,6 +19,7 @@ const HandCarry = lazy(() => import('./pages/HandCarry'));
 const Services = lazy(() => import('./pages/Services'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
 const Contact = lazy(() => import('./pages/Contact'));
+const ContactUs = lazy(() => import('./pages/ContactUs'));
 const MentionsLegales = lazy(() => import('./pages/MentionsLegales'));
 const PolitiqueConfidentialite = lazy(() => import('./pages/PolitiqueConfidentialite'));
 const Formation = lazy(() => import('./pages/Formation'));
@@ -62,7 +63,8 @@ const AnimatedRoutes = () => {
             <Route path="cap-list" element={<CapList />} />
             <Route path="mro" element={<Mro />} />
             <Route path="flotte-integration" element={<FlotteIntegration />} />
-            <Route path="contact" element={<Contact />} />
+            <Route path="reserver-un-vol" element={<Contact />} />
+            <Route path="contact" element={<ContactUs />} />
             <Route path="mentions-legales" element={<MentionsLegales />} />
             <Route path="politique-confidentialite" element={<PolitiqueConfidentialite />} />
           </Route>

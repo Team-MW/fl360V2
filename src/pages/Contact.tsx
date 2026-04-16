@@ -8,24 +8,6 @@ import { AirportAutocomplete, type Airport } from '../components/AirportAutocomp
 import emailjs from '@emailjs/browser';
 import Starfield from '../components/Starfield';
 
-const JotFormEmbed = ({ formId }: { formId: string }) => {
-    const containerRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        if (containerRef.current && !containerRef.current.querySelector('script')) {
-            const script = document.createElement('script');
-            script.src = `https://form.jotform.com/jsform/${formId}`;
-            script.type = 'text/javascript';
-            script.async = true;
-            containerRef.current.appendChild(script);
-        }
-    }, [formId]);
-
-    return (
-        <div ref={containerRef} className="w-full min-h-[500px] flex justify-center" />
-    );
-};
-
 const Contact = () => {
     const { t } = useTranslation();
     const form = useRef<HTMLFormElement>(null);
@@ -574,13 +556,6 @@ const Contact = () => {
                                                 ></textarea>
                                             </>
                                         )}
-                                    </div>
-
-                                    {/* JotForm integrated directly in Step 1 */}
-                                    <div className="mt-8 pt-8 border-t border-zinc-800">
-                                        <div className="bg-black/20 rounded-xl p-4 md:p-6 border border-white/5">
-                                            <JotFormEmbed formId="261053655420349" />
-                                        </div>
                                     </div>
 
                                     <div className="flex justify-end pt-8">

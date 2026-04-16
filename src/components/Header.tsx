@@ -105,11 +105,17 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
                     ))}
                     <div className="flex items-center gap-6">
                         <Link
-                            to="/contact"
-                            className="group border border-white/20 hover:border-white text-white px-6 py-2 rounded-full text-sm font-semibold transition-all hover:bg-white hover:text-black flex items-center gap-2"
+                            to="/reserver-un-vol"
+                            className="group bg-white text-black px-6 py-2 rounded-full text-sm font-bold transition-all hover:bg-gray-200 flex items-center gap-2"
                         >
                             {t('header.nav.quote')}
                             <Plane size={14} className="transition-all duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:rotate-12" />
+                        </Link>
+                        <Link
+                            to="/contact"
+                            className="text-sm uppercase tracking-widest font-medium text-gray-400 hover:text-white transition-colors"
+                        >
+                            Contact
                         </Link>
                         <a
                             href="https://gestion.progdigital.fr/login"
@@ -215,11 +221,18 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
                                         {t('header.nav.submenu.client_access')} <User size={20} />
                                     </a>
                                     <Link
-                                        to="/contact"
+                                        to="/reserver-un-vol"
                                         onClick={toggleMenu}
-                                        className="mt-8 mb-4 w-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-center py-5 rounded-xl font-bold uppercase tracking-widest hover:from-violet-500 hover:to-indigo-500 transition-all shadow-lg hover:shadow-indigo-500/25 flex items-center justify-center gap-3"
+                                        className="mt-8 mb-2 w-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-center py-5 rounded-xl font-bold uppercase tracking-widest hover:from-violet-500 hover:to-indigo-500 transition-all shadow-lg hover:shadow-indigo-500/25 flex items-center justify-center gap-3"
                                     >
                                         {t('header.mobile.quote')} <ArrowRight size={18} />
+                                    </Link>
+                                    <Link
+                                        to="/contact"
+                                        onClick={toggleMenu}
+                                        className="w-full border border-white/20 text-white text-center py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-white/5 transition-all flex items-center justify-center gap-3"
+                                    >
+                                        Contact <ArrowRight size={18} />
                                     </Link>
                                 </nav>
 

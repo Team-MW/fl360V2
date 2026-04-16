@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageTransition from '../components/PageTransition';
-import { ArrowRight, ChevronDown, Plane, Hexagon, FileBadge, FileCheck, CheckCircle } from 'lucide-react';
+import { ArrowRight, ChevronDown, Plane, Hexagon, FileBadge, FileCheck, CheckCircle, Mail } from 'lucide-react';
 
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -91,14 +91,15 @@ const Home = () => {
                         transition={{ duration: 0.8, delay: 0.8 }}
                         className="flex flex-col md:flex-row gap-6 justify-center items-center"
                     >
-                        <Link to="/contact" className="group relative px-8 py-4 bg-white text-black font-bold uppercase tracking-widest overflow-hidden hover:bg-violet-50 transition-colors">
+                        <Link to="/reserver-un-vol" className="group relative px-8 py-4 bg-white text-black font-bold uppercase tracking-widest overflow-hidden hover:bg-violet-50 transition-colors">
                             <span className="relative z-10 flex items-center gap-2 group-hover:gap-4 transition-all group-hover:text-violet-700">
                                 {t('hero.primary_cta')}
                                 <Plane size={18} className="transition-all duration-500 group-hover:-translate-y-2 group-hover:translate-x-2 group-hover:rotate-12" />
                             </span>
                             <div className="absolute inset-0 bg-gray-200 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
                         </Link>
-                        <Link to="/services" className="px-8 py-4 border border-white/20 text-white uppercase tracking-widest hover:border-violet-500 hover:text-violet-400 transition-colors">
+                        <Link to="/contact" className="px-8 py-4 border border-white/20 text-white uppercase tracking-widest hover:border-violet-500 hover:text-violet-400 transition-colors flex items-center gap-2">
+                            <Mail size={18} />
                             {t('hero.secondary_cta')}
                         </Link>
                     </motion.div>
@@ -366,7 +367,7 @@ const Home = () => {
                     <p className="text-xl text-gray-400 mb-12 max-w-xl mx-auto font-light">
                         {t('home.cta.subtitle')}
                     </p>
-                    <Link to="/contact" className="inline-block px-12 py-5 bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-lg font-bold uppercase tracking-widest hover:from-violet-500 hover:to-indigo-500 transition-all shadow-2xl hover:shadow-violet-500/50 hover:scale-105">
+                    <Link to="/reserver-un-vol" className="inline-block px-12 py-5 bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-lg font-bold uppercase tracking-widest hover:from-violet-500 hover:to-indigo-500 transition-all shadow-2xl hover:shadow-violet-500/50 hover:scale-105">
                         {t('home.cta.button')}
                     </Link>
                 </div>
