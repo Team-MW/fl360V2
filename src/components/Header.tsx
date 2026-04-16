@@ -104,18 +104,18 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
                     ))}
                     <div className="flex items-center gap-6">
                         <Link
-                            to="/reserver-un-vol"
-                            className="group bg-white text-black px-6 py-2 rounded-full text-sm font-bold transition-all hover:bg-gray-200 flex items-center gap-2"
-                        >
-                            {t('header.nav.quote')}
-                            <Plane size={14} className="transition-all duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:rotate-12" />
-                        </Link>
-                        <Link
                             to="/contact"
-                            className="text-sm uppercase tracking-widest font-medium text-gray-400 hover:text-white transition-colors flex items-center gap-2"
+                            className="group bg-white text-black px-6 py-2 rounded-full text-sm font-bold transition-all hover:bg-gray-200 flex items-center gap-2"
                         >
                             <Mail size={16} />
                             Contact
+                        </Link>
+                        <Link
+                            to="/reserver-un-vol"
+                            className="text-sm uppercase tracking-widest font-medium text-gray-400 hover:text-white transition-colors flex items-center gap-2"
+                        >
+                            {t('header.nav.quote')}
+                            <Plane size={14} className="transition-all duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:rotate-12" />
                         </Link>
                         <a
                             href="https://gestion.progdigital.fr/login"

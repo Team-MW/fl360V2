@@ -1,11 +1,12 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import PageTransition from '../components/PageTransition';
 import Starfield from '../components/Starfield';
 
 const JotFormEmbed = ({ formId }: { formId: string }) => {
     const containerRef = useRef<HTMLDivElement>(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         if (containerRef.current && !containerRef.current.querySelector('script')) {
@@ -13,12 +14,39 @@ const JotFormEmbed = ({ formId }: { formId: string }) => {
             script.src = `https://form.jotform.com/jsform/${formId}`;
             script.type = 'text/javascript';
             script.async = true;
+
+            // Simple timeout to hide loader as script injection load detection is complex
+            const timer = setTimeout(() => setIsLoading(false), 2500);
+
             containerRef.current.appendChild(script);
+            return () => clearTimeout(timer);
         }
     }, [formId]);
 
     return (
-        <div ref={containerRef} className="w-full min-h-[600px] flex justify-center" />
+        <div className="relative w-full min-h-[600px]">
+            <AnimatePresence>
+                {isLoading && (
+                    <motion.div
+                        initial={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/40 backdrop-blur-sm rounded-2xl"
+                    >
+                        <div className="relative w-20 h-20">
+                            <motion.div
+                                animate={{ rotate: 360 }}
+                                transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                                className="w-full h-full border-4 border-t-violet-600 border-r-transparent border-b-indigo-600 border-l-transparent rounded-full shadow-[0_0_20px_rgba(139,92,246,0.3)]"
+                            ></motion.div>
+                            <div className="absolute inset-0 flex items-center justify-center text-[10px] font-bold uppercase tracking-widest text-white/50 animate-pulse">
+                                Loading
+                            </div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+            <div ref={containerRef} className="w-full min-h-[600px] flex justify-center" />
+        </div>
     );
 };
 
