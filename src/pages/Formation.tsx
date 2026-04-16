@@ -183,65 +183,104 @@ const Formation = () => {
                     </div>
                 </section>
                 {/* Pricing Section */}
-                <section className="py-20 bg-zinc-900 border-t border-white/5 relative">
-                    <div className="container mx-auto px-6">
-                        <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-widest mb-6 text-white">{t('formation.pricing.title')}</h2>
-                            <p className="text-indigo-400 font-bold tracking-widest uppercase">{t('formation.pricing.guarantee')}</p>
+                <section className="py-24 bg-zinc-950 border-t border-white/5 relative overflow-hidden">
+                    {/* Background decoration */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-indigo-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+                    <div className="container mx-auto px-6 relative z-10">
+                        <div className="text-center mb-20">
+                            <motion.span
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                className="text-indigo-400 font-bold tracking-[0.3em] uppercase text-sm mb-4 block"
+                            >
+                                {t('formation.pricing.guarantee')}
+                            </motion.span>
+                            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white">{t('formation.pricing.title')}</h2>
                         </div>
 
-                        <div className="grid lg:grid-cols-3 gap-8 items-start max-w-6xl mx-auto">
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch max-w-7xl mx-auto">
                             {/* Card 1: Initiation */}
                             <motion.div
-                                whileHover={{ y: -5 }}
-                                className="bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 p-8 rounded-none flex flex-col items-center text-center hover:border-indigo-500/50 transition-all shadow-xl"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                whileHover={{ y: -8, borderColor: 'rgba(99,102,241,0.5)' }}
+                                transition={{ duration: 0.3 }}
+                                className="bg-zinc-900/40 backdrop-blur-md border border-white/10 p-8 flex flex-col hover:bg-zinc-900/60 transition-all group"
                             >
-                                <div className="bg-indigo-500/10 p-4 rounded-full mb-6">
-                                    <Plane className="w-8 h-8 text-indigo-400" />
+                                <div className="w-12 h-12 bg-indigo-500/10 flex items-center justify-center rounded-xl mb-8 group-hover:scale-110 transition-transform">
+                                    <Plane className="w-6 h-6 text-indigo-400" />
                                 </div>
-                                <h3 className="text-xl font-bold uppercase tracking-widest mb-2 text-white">{t('formation.pricing.initiation.title')}</h3>
-                                <div className="mt-auto pt-6 border-t border-white/5 w-full">
-                                    <span className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">{t('formation.pricing.initiation.price')}</span>
+                                <h3 className="text-xl font-bold uppercase tracking-wider mb-2 text-white">{t('formation.pricing.initiation.title')}</h3>
+                                <p className="text-zinc-500 text-sm mb-6 leading-relaxed">{t('formation.pricing.initiation.subtitle')}</p>
+                                <div className="mt-auto pt-6 border-t border-white/5">
+                                    <span className="text-3xl font-black text-white">{t('formation.pricing.initiation.price')}</span>
                                 </div>
                             </motion.div>
 
-                            {/* Card 2: Theory (Highlighted) */}
+                            {/* Card 2: PPL Pilot */}
                             <motion.div
-                                whileHover={{ y: -10 }}
-                                className="bg-zinc-950 border border-indigo-500 p-8 rounded-none flex flex-col items-center text-center shadow-[0_0_30px_rgba(99,102,241,0.15)] relative scale-105 z-10"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.3, delay: 0.1 }}
+                                whileHover={{ y: -8, borderColor: 'rgba(99,102,241,0.5)' }}
+                                className="bg-zinc-900/40 backdrop-blur-md border border-white/10 p-8 flex flex-col hover:bg-zinc-900/60 transition-all group"
                             >
-                                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-indigo-600 text-white text-xs font-bold uppercase px-4 py-1 rounded-full tracking-widest whitespace-nowrap">
+                                <div className="w-12 h-12 bg-indigo-500/10 flex items-center justify-center rounded-xl mb-8 group-hover:scale-110 transition-transform">
+                                    <Check className="w-6 h-6 text-indigo-400" />
+                                </div>
+                                <h3 className="text-xl font-bold uppercase tracking-wider mb-2 text-white">{t('formation.pricing.ppl_pilot.title')}</h3>
+                                <p className="text-zinc-500 text-sm mb-6 leading-relaxed">{t('formation.pricing.ppl_pilot.subtitle')}</p>
+                                <div className="mt-auto pt-6 border-t border-white/5">
+                                    <span className="text-3xl font-black text-white">{t('formation.pricing.ppl_pilot.price')}</span>
+                                </div>
+                            </motion.div>
+
+                            {/* Card 3: Theory */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.3, delay: 0.2 }}
+                                className="bg-zinc-950 border-2 border-indigo-500 p-8 flex flex-col shadow-[0_0_40px_rgba(99,102,241,0.1)] relative scale-105 z-10"
+                            >
+                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-indigo-500 text-white text-[10px] font-black uppercase px-4 py-1.5 tracking-[0.2em] whitespace-nowrap">
                                     {t('formation.pricing.dedicated')}
                                 </div>
-                                <h3 className="text-2xl font-bold uppercase tracking-widest mb-2 text-white mt-4">{t('formation.pricing.theory.title')}</h3>
-                                <p className="text-gray-400 text-sm mb-4">{t('formation.pricing.theory.subtitle')}</p>
-                                <div className="bg-green-500/10 text-green-400 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide mb-8">
-                                    + {t('formation.pricing.theory.bonus')}
+                                <div className="w-12 h-12 bg-indigo-500 flex items-center justify-center rounded-xl mb-8 shadow-lg shadow-indigo-500/20">
+                                    <Video className="w-6 h-6 text-white" />
                                 </div>
-                                <div className="mt-auto pt-6 border-t border-indigo-500/30 w-full">
-                                    <span className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">{t('formation.pricing.theory.price')}</span>
+                                <h3 className="text-xl font-bold uppercase tracking-wider mb-2 text-white">{t('formation.pricing.theory.title')}</h3>
+                                <p className="text-zinc-400 text-sm mb-6 leading-relaxed">{t('formation.pricing.theory.subtitle')}</p>
+                                <div className="mt-auto pt-6 border-t border-indigo-500/30">
+                                    <span className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-400">{t('formation.pricing.theory.price')}</span>
                                 </div>
                             </motion.div>
 
-                            {/* Card 3: Practical Packs */}
+                            {/* Card 4: Mûrissement */}
                             <motion.div
-                                whileHover={{ y: -5 }}
-                                className="bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 p-8 rounded-none flex flex-col items-center text-center hover:border-indigo-500/50 transition-all shadow-xl"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.3, delay: 0.3 }}
+                                whileHover={{ y: -8, borderColor: 'rgba(99,102,241,0.5)' }}
+                                className="bg-zinc-900/40 backdrop-blur-md border border-white/10 p-8 flex flex-col hover:bg-zinc-900/60 transition-all group"
                             >
-                                <div className="bg-indigo-500/10 p-4 rounded-full mb-6">
-                                    <Check className="w-8 h-8 text-indigo-400" />
+                                <div className="w-12 h-12 bg-indigo-500/10 flex items-center justify-center rounded-xl mb-8 group-hover:scale-110 transition-transform">
+                                    <Download className="w-6 h-6 text-indigo-400" />
                                 </div>
-                                <h3 className="text-xl font-bold uppercase tracking-widest mb-2 text-white">{t('formation.pricing.practical.title')}</h3>
-                                <p className="text-gray-400 text-sm mb-6">{t('formation.pricing.practical.subtitle')}</p>
+                                <h3 className="text-xl font-bold uppercase tracking-wider mb-1 text-white">{t('formation.pricing.mûrissement.title')}</h3>
+                                <p className="text-zinc-500 text-[10px] uppercase tracking-widest mb-6 font-bold">{t('formation.pricing.mûrissement.subtitle')}</p>
 
-                                <ul className="w-full space-y-4 text-left">
-                                    {(t('formation.pricing.practical.packs', { returnObjects: true }) as any[]).map((pack, idx) => (
-                                        <li key={idx} className="flex justify-between items-center border-b border-white/5 pb-2 last:border-0 last:pb-0">
-                                            <span className="text-gray-300 font-medium">{pack.hours}</span>
-                                            <span className="text-indigo-400 font-bold">{pack.price}</span>
-                                        </li>
+                                <div className="space-y-3 mb-6">
+                                    {(t('formation.pricing.mûrissement.packs', { returnObjects: true }) as any[]).map((pack, idx) => (
+                                        <div key={idx} className="flex justify-between items-center text-xs border-b border-white/5 pb-2 last:border-0">
+                                            <span className="text-zinc-400">{pack.hours}</span>
+                                            <span className="text-white font-bold">{pack.price}</span>
+                                        </div>
                                     ))}
-                                </ul>
+                                </div>
+                                <div className="mt-auto pt-4 border-t border-white/5 text-[10px] text-zinc-500 font-medium italic">
+                                    * Tarif préférentiel
+                                </div>
                             </motion.div>
                         </div>
                     </div>

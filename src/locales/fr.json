@@ -166,7 +166,7 @@
         "sections": {
             "editor": {
                 "title": "1. Éditeur du site",
-                "content": "<0>Le site internet <1>fl360.com</1> est édité par la société <3>FL 360 AVIATION</3>, société par actions simplifiée unipersonnelle (SASU) au capital de 1 000,00 euros.<br/><br/><3>Siège social :</3><br/>BUSINESS CENTRE BATIMENT SOCRAT<br/>17 AVENUE DIDIER DAURAT<br/>31700 BLAGNAC<br/><br/><3>Informations légales :</3><br/>SIREN : 920 041 654<br/>SIRET (siège) : 920 041 654 00012<br/>Inscription au RCS : INSCRIT (au greffe de TOULOUSE , le 04/10/2022 )<br/>Inscription au RNE : INSCRIT (le 04/10/2022)<br/>Numéro RCS : 920 041 654 R.C.S. Toulouse<br/>Numéro de TVA : FR62920041654<br/>Code NAF/APE : 51.10Z (Transports aériens de passagers)<br/><br/><3>Contact :</3><br/>Email : nav@fl360aviation.com<br/>Téléphone : +33 6 82 27 49 16</0>"
+                "content": "<0>Le site internet <1>fl360.com</1> est édité par la société <3>FL 360 AVIATION</3>, société par actions simplifiée unipersonnelle (SASU) au capital de 1 000,00 euros.<br/><br/><3>Siège social :</3><br/>BUSINESS CENTRE BATIMENT SOCRAT<br/>17 AVENUE DIDIER DAURAT<br/>31700 BLAGNAC<br/><br/><3>Informations légales :</3><br/>SIREN : 920 041 654<br/>SIRET (siège) : 920 041 654 00012<br/>Inscription au RCS : INSCRIT (au greffe de TOULOUSE , le 04/10/2022 )<br/>Inscription au RNE : INSCRIT (le 04/10/2022)<br/>Numéro RCS : 920 041 654 R.C.S. Toulouse<br/>Numéro de TVA : FR62920041654<br/>Code NAF/APE : 51.10Z (Transports aériens de passagers)<br/><br/><3>Contact :</3><br/>Email : admin@fl360aviation.com<br/>Téléphone : +33 6 82 27 49 16</0>"
             },
             "director": {
                 "title": "2. Directeur de la publication",
@@ -373,34 +373,39 @@
         "pricing": {
             "title": "Nos Formules",
             "initiation": {
-                "title": "Initiation Baptême Vol",
-                "price": "225€"
+                "title": "Initiation au vol",
+                "subtitle": "Vol local : Paris vue d'en Haut",
+                "price": "À partir de 225€"
+            },
+            "ppl_pilot": {
+                "title": "Devenir Pilote Privé",
+                "subtitle": "Ton PPL en poche en 45 heures",
+                "price": "Contactez-nous"
             },
             "theory": {
-                "title": "Théorie PPL en 15 jours",
-                "subtitle": "Licence de pilote d'avion",
-                "bonus": "Baptême offert",
+                "title": "Théorie PPL",
+                "subtitle": "Obtiens ta théorie en 15 jours",
                 "price": "1500€"
             },
-            "practical": {
-                "title": "Pack Pratique PPL",
-                "subtitle": "À partir de 3 mois",
+            "mûrissement": {
+                "title": "Pack Mûrissement",
+                "subtitle": "Pour ceux qui veulent aller plus loin",
                 "packs": [
                     {
-                        "hours": "5 heures",
+                        "hours": "5 heures de vol",
                         "price": "1000€"
                     },
                     {
-                        "hours": "10 heures",
+                        "hours": "10 heures de vol",
                         "price": "1800€"
                     },
                     {
-                        "hours": "20 heures",
+                        "hours": "20 heures de vol",
                         "price": "3500€"
                     }
                 ]
             },
-            "dedicated": "Formule dédiée pour les 2",
+            "dedicated": "Formation d'Excellence",
             "guarantee": "Satisfait ou Remboursé"
         },
         "docs": {
@@ -635,7 +640,8 @@
             "submit": "Soumettre",
             "next": "Suivant",
             "back": "Retour",
-            "book_flight": "Réserver un vol"
+            "book_flight": "Réserver un vol",
+            "contact_title": "Contactez-nous"
         },
         "success": {
             "title": "Demande Envoyée",

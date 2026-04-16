@@ -8,6 +8,24 @@ import { AirportAutocomplete, type Airport } from '../components/AirportAutocomp
 import emailjs from '@emailjs/browser';
 import Starfield from '../components/Starfield';
 
+const JotFormEmbed = ({ formId }: { formId: string }) => {
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (containerRef.current && !containerRef.current.querySelector('script')) {
+            const script = document.createElement('script');
+            script.src = `https://form.jotform.com/jsform/${formId}`;
+            script.type = 'text/javascript';
+            script.async = true;
+            containerRef.current.appendChild(script);
+        }
+    }, [formId]);
+
+    return (
+        <div ref={containerRef} className="w-full min-h-[500px] flex justify-center" />
+    );
+};
+
 const Contact = () => {
     const { t } = useTranslation();
     const form = useRef<HTMLFormElement>(null);
@@ -774,6 +792,24 @@ const Contact = () => {
                                 </motion.div>
                             )}
                         </form>
+                    </motion.div>
+
+                    {/* JotForm Section */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="mt-20 w-full"
+                    >
+                        <div className="text-center mb-12">
+                            <h2 className="text-2xl md:text-4xl font-bold uppercase tracking-[0.2em] text-white">
+                                {t('contact_page.form.contact_title', 'Contactez-nous')}
+                            </h2>
+                            <div className="w-20 h-1 bg-indigo-600 mx-auto mt-4"></div>
+                        </div>
+                        <div className="bg-black/30 backdrop-blur-md border border-white/5 rounded-2xl p-4 md:p-8">
+                            <JotFormEmbed formId="261053655420349" />
+                        </div>
                     </motion.div>
 
                     {/* Location / Access Section */}

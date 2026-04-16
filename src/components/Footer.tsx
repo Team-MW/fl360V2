@@ -149,8 +149,8 @@ const Footer = () => {
                                     <Mail size={18} className="text-violet-400 mt-0.5 flex-shrink-0" />
                                     <div>
                                         <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Email</p>
-                                        <a href="mailto:nav@fl360aviation.com" className="text-gray-300 text-sm hover:text-violet-400 transition-colors break-all">
-                                            nav@fl360aviation.com
+                                        <a href="mailto:admin@fl360aviation.com" className="text-gray-300 text-sm hover:text-violet-400 transition-colors break-all">
+                                            admin@fl360aviation.com
                                         </a>
                                     </div>
                                 </div>

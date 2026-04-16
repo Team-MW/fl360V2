@@ -166,7 +166,7 @@
         "sections": {
             "editor": {
                 "title": "1. Site Publisher",
-                "content": "<0>The website <1>fl360.com</1> is published by <3>FL 360 AVIATION</3>, a simplified single-member joint-stock company (SASU) with a capital of 1,000.00 euros.<br/><br/><3>Headquarters:</3><br/>BUSINESS CENTRE BATIMENT SOCRAT<br/>17 AVENUE DIDIER DAURAT<br/>31700 BLAGNAC<br/>FRANCE<br/><br/><3>Legal Information:</3><br/>SIREN: 920 041 654<br/>SIRET (Headquarters): 920 041 654 00012<br/>RCS Registration: REGISTERED (at TOULOUSE registry, on 04/10/2022)<br/>RNE Registration: REGISTERED (on 04/10/2022)<br/>RCS Number: 920 041 654 R.C.S. Toulouse<br/>VAT Number: FR62920041654<br/>NAF/APE Code: 51.10Z (Passenger air transport)<br/><br/><3>Contact:</3><br/>Email: nav@fl360aviation.com<br/>Phone: +33 6 82 27 49 16</0>"
+                "content": "<0>The website <1>fl360.com</1> is published by <3>FL 360 AVIATION</3>, a simplified single-member joint-stock company (SASU) with a capital of 1,000.00 euros.<br/><br/><3>Headquarters:</3><br/>BUSINESS CENTRE BATIMENT SOCRAT<br/>17 AVENUE DIDIER DAURAT<br/>31700 BLAGNAC<br/>FRANCE<br/><br/><3>Legal Information:</3><br/>SIREN: 920 041 654<br/>SIRET (Headquarters): 920 041 654 00012<br/>RCS Registration: REGISTERED (at TOULOUSE registry, on 04/10/2022)<br/>RNE Registration: REGISTERED (on 04/10/2022)<br/>RCS Number: 920 041 654 R.C.S. Toulouse<br/>VAT Number: FR62920041654<br/>NAF/APE Code: 51.10Z (Passenger air transport)<br/><br/><3>Contact:</3><br/>Email: admin@fl360aviation.com<br/>Phone: +33 6 82 27 49 16</0>"
             },
             "director": {
                 "title": "2. Publication Director",
@@ -373,35 +373,40 @@
         "pricing": {
             "title": "Our Packages",
             "initiation": {
-                "title": "Initiation Flight Baptism",
-                "price": "225€"
+                "title": "Discovery Flight",
+                "subtitle": "Local flight: Paris Hovering",
+                "price": "From 225€"
+            },
+            "ppl_pilot": {
+                "title": "Become a Private Pilot",
+                "subtitle": "Get your PPL in 45 hours",
+                "price": "Contact us"
             },
             "theory": {
-                "title": "PPL Theory in 15 days",
-                "subtitle": "Pilot License",
-                "bonus": "Free Baptism",
+                "title": "PPL Theory",
+                "subtitle": "Get your theory in 15 days",
                 "price": "1500€"
             },
-            "practical": {
-                "title": "PPL Practical Pack",
-                "subtitle": "From 3 months",
+            "mûrissement": {
+                "title": "Hour Building Pack",
+                "subtitle": "For those who want to go further",
                 "packs": [
                     {
-                        "hours": "5 hours",
+                        "hours": "5 flight hours",
                         "price": "1000€"
                     },
                     {
-                        "hours": "10 hours",
+                        "hours": "10 flight hours",
                         "price": "1800€"
                     },
                     {
-                        "hours": "20 hours",
+                        "hours": "20 flight hours",
                         "price": "3500€"
                     }
                 ]
             },
-            "dedicated": "Dedicated formula for both",
-            "guarantee": "Satisfaction Guaranteed or Refunded"
+            "dedicated": "Excellence Training",
+            "guarantee": "Satisfaction Guaranteed"
         },
         "docs": {
             "title": "Official Documents",
@@ -635,7 +640,8 @@
             "submit": "Submit",
             "next": "Next",
             "back": "Back",
-            "book_flight": "Book a Flight"
+            "book_flight": "Book a Flight",
+            "contact_title": "Contact Us"
         },
         "success": {
             "title": "Request Sent",
